@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>JAndASelect</title>
+    <title><%= t('brand') %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container-fluid">
+      <!--=== navbar ===-->
+      <div class="row">
+        <%= render "common/navbar" %>
+      </div>
+
+      <!--=== 網站內容 ===-->
+      <%= yield %>
+    </div>
+
+    <%= render "common/footer" %>
+
   </body>
 </html>
