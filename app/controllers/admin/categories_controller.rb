@@ -44,6 +44,20 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
+  # 發佈
+  def publish
+    @category = Category.find(params[:id])
+    @category.publish!
+    redirect_to :back
+  end
+
+  # 隱藏
+  def hide
+    @category = Category.find(params[:id])
+    @category.hide!
+    redirect_to :back
+  end
+
   private
 
   def category_params

@@ -24,7 +24,14 @@
       <td><%= link_to(category.name, admin_category_path(category)) %></td>
       <!--=== 操作選項 ===-->
       <td>
-        <%= link_to(t('btn-category-edit'), edit_admin_category_path(category), :class => 'btn btn-sm btn-default') %>
+        <!-- 編輯 -->
+        <%= link_to(t('btn-edit'), edit_admin_category_path(category), :class => 'btn btn-sm btn-default') %>
+        <!-- 發佈 / 隱藏 -->
+        <% if category.is_hidden %>
+          <%= link_to(t('btn-publish'), publish_admin_category_path(category), :method => :post, :class => 'btn btn-sm btn-default') %>
+        <% else %>
+          <%= link_to(t('btn-hide'), hide_admin_category_path(category), :method => :post, :class => 'btn btn-sm btn-default') %>
+        <% end %>
       </td>
     </tr>
   <% end %>

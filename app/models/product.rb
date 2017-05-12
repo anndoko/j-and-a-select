@@ -9,4 +9,15 @@ class Product < ApplicationRecord
   # 關聯 #
   belongs_to :category
   belongs_to :brand
+
+  # 發佈 / 隱藏 #
+  def publish!
+    self.is_hidden = false
+    self.save
+  end
+
+  def hide!
+    self.is_hidden = true
+    self.save
+  end
 end

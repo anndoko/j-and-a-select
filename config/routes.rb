@@ -4,12 +4,31 @@ Rails.application.routes.draw do
 
   #--=== 後台 ===-->
   namespace :admin do
-    # 品牌
-    resources :brands
-    # 分類
-    resources :categories
-    # 商品
-    resources :products
+
+    # 品牌 #
+    resources :brands do
+      member do
+        post :publish
+        post :hide
+      end
+    end
+
+    # 分類 #
+    resources :categories do
+      member do
+        post :publish
+        post :hide
+      end
+    end
+
+    # 商品 #
+    resources :products do
+      member do
+        post :publish
+        post :hide
+      end
+    end
+    
   end
 
   #--=== 首頁 ===-->
