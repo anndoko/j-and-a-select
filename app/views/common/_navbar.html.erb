@@ -31,7 +31,7 @@
                 <li> <%= link_to(t('admin_access'), admin_brands_path) %> </li>
               <% end %>
               <!--=== user 選項 ===-->
-              <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
+              <li> <%= link_to(t('logout'), destroy_user_session_path, method: :delete) %> </li>
             </ul>
           </li>
         <% end %>
