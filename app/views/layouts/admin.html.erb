@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t('j-and-a-select') %></title>
+    <title><%= t('brand') %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,14 +15,18 @@
         <%= render "common/navbar" %>
       </div>
 
-      <!--=== 提示訊息 ===-->
-      <%= render "common/flashes" %>
+      <!--=== 後台操作面板 ===-->
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+          <li> <%= link_to(t('brand'), admin_brands_path, :class => 'btn btn-md btn-default') %> </li>
+        </ul>
+      </div>
 
-      <!--=== 網站內容 ===-->
-      <%= yield %>
+      <!--=== 後台內容 ===-->
+      <div class="col-md-10">
+        <%= yield %>
+      </div>
     </div>
-
     <%= render "common/footer" %>
-
   </body>
 </html>

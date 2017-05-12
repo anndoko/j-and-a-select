@@ -3,7 +3,7 @@
 
     <!--=== navbar 品牌名稱 ===-->
     <div class="navbar-header">
-      <a class="navbar-brand" href="/"><%= t('brand') %></a>
+      <a class="navbar-brand" href="/"><%= t('j-and-a-select') %></a>
     </div>
 
 
@@ -25,6 +25,12 @@
             </a>
             <!--=== 選單選項 ===-->
             <ul class="dropdown-menu">
+
+              <!--=== admin 後台 ===-->
+              <% if current_user.admin? %>
+                <li> <%= link_to(t('admin_access'), admin_brands_path) %> </li>
+              <% end %>
+              <!--=== user 選項 ===-->
               <li> <%= link_to("登出", destroy_user_session_path, method: :delete) %> </li>
             </ul>
           </li>

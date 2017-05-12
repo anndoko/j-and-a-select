@@ -1,4 +1,10 @@
 class Admin::BrandsController < ApplicationController
+  # 使用者必須登入
+  before_action :authenticate_user!
+  # 使用者必須是 admin 身份
+  before_action :admin_required
+  # 後台頁面排版
+  layout "admin"
 
   def index
     @brands = Brand.all
