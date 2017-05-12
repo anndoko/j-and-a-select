@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :brands
     # 分類
     resources :categories
+    # 商品
+    resources :products
   end
 
   #--=== 首頁 ===-->

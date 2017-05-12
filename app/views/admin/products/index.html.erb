@@ -1,0 +1,35 @@
+<!--=== 頁面標題 ===-->
+<h2><%= t('product-index') %></h2>
+
+<!--=== 新增商品 ===-->
+<div class="pull-right">
+  <%= link_to(t('btn-product-new'), new_admin_product_path, :class => 'btn btn-sm btn-default')%>
+</div>
+
+<!--=== 商品列表 ===-->
+<table class="table">
+  <!--=== 商品列表標題 ===-->
+  <thead>
+    <tr>
+      <th><%= t('id') %></th>
+      <th><%= t('f-product-name') %></th>
+      <th><%= t('f-product-brand') %></th>
+      <th><%= t('f-product-category') %></th>
+      <th><%= t('f-product-options') %></th>
+    </tr>
+  </thead>
+
+  <!--=== 商品列表內容 ===-->
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.id %></td>
+      <td><%= link_to(product.name, admin_product_path(product)) %></td>
+      <td><%= product.brand.name %></td>
+      <td><%= product.category.name %></td>
+      <!--=== 操作選項 ===-->
+      <td>
+        <%= link_to(t('btn-product-edit'), edit_admin_product_path(product), :class => 'btn btn-sm btn-default') %>
+      </td>
+    </tr>
+  <% end %>
+</table>

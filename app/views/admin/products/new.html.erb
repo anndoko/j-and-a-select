@@ -1,0 +1,34 @@
+<!--=== 新增商品 ===-->
+<h2><%= t('product-new') %></h2>
+
+<!--=== 新增商品 ===-->
+<%= simple_form_for [:admin, @product] do |f| %>
+
+<div class="group">
+  <%= f.input :name, :label => t('f-product-name') %>
+</div>
+
+<div class="group">
+  <%= f.input :description, :label => t('f-product-description') %>
+</div>
+
+<div class="group">
+  <%= f.input :price, :label => t('f-product-price') %>
+</div>
+
+<div class="group">
+  <%= f.input :quantity, :label => t('f-product-quantity') %>
+</div>
+
+<div class="group">
+  <%= f.input :category_id, :label => t('f-product-category') %>
+</div>
+
+<div class="group">
+  <%= f.input :brand_id, :label => t('f-product-brand') %>
+</div>
+
+
+<%= f.submit t('f-product-submit'), data: { disable_with: "Submitting..." } %>
+
+<% end %>
