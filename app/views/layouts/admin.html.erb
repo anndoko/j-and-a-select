@@ -18,7 +18,10 @@
       <!--=== 後台操作面板 ===-->
       <div class="col-md-2">
         <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
-          <li> <%= link_to(t('brand'), admin_brands_path, :class => 'btn btn-md btn-default') %> </li>
+          <!-- 品牌管理 -->
+          <li> <%= link_to(t('admin-brand'), admin_brands_path, :class => 'btn btn-md btn-default') %> </li>
+          <!-- 分類管理 -->
+          <li> <%= link_to(t('admin-category'), admin_categories_path, :class => 'btn btn-md btn-default') %> </li>
         </ul>
       </div>
 

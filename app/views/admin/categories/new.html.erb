@@ -1,0 +1,13 @@
+<!--=== 新增分類 ===-->
+<h2><%= t('category-new') %></h2>
+
+<!--=== 新增分類表單 ===-->
+<%= simple_form_for [:admin, @category] do |f| %>
+
+<div class="group">
+  <%= f.input :name, :label => t('f-category-name') %>
+</div>
+
+<%= f.submit t('f-category-submit'), data: { disable_with: "Submitting..." } %>
+
+<% end %>

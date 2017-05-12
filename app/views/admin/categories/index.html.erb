@@ -1,0 +1,31 @@
+<!--=== 頁面標題 ===-->
+<h2><%= t('category-index') %></h2>
+
+<!--=== 新增分類 ===-->
+<div class="pull-right">
+  <%= link_to(t('btn-category-new'), new_admin_category_path, :class => 'btn btn-sm btn-default')%>
+</div>
+
+<!--=== 分類列表 ===-->
+<table class="table">
+  <!--=== 分類列表標題 ===-->
+  <thead>
+    <tr>
+      <th><%= t('id') %></th>
+      <th><%= t('f-category-name') %></th>
+      <th><%= t('f-category-options') %></th>
+    </tr>
+  </thead>
+
+  <!--=== 分類列表內容 ===-->
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.id %></td>
+      <td><%= category.name %></td>
+      <!--=== 操作選項 ===-->
+      <td>
+        <%= link_to(t('btn-category-edit'), edit_admin_category_path(category), :class => 'btn btn-sm btn-default') %>
+      </td>
+    </tr>
+  <% end %>
+</table>

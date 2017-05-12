@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   namespace :admin do
     # 品牌
     resources :brands
+    # 分類
+    resources :categories
   end
 
   #--=== 首頁 ===-->
