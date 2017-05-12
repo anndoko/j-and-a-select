@@ -11,6 +11,7 @@
   <!--=== 分類列表標題 ===-->
   <thead>
     <tr>
+      <th></th>
       <th><%= t('f-category-name') %></th>
       <th><%= t('f-category-options') %></th>
     </tr>
@@ -19,6 +20,7 @@
   <!--=== 分類列表內容 ===-->
   <% @categories.each do |category| %>
     <tr>
+      <td><%= render_category_status(category) %></td>
       <td><%= link_to(category.name, admin_category_path(category)) %></td>
       <!--=== 操作選項 ===-->
       <td>

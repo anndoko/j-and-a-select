@@ -8,6 +8,10 @@
   <%= f.input :name, :label => t('f-category-name') %>
 </div>
 
+<div class="group">
+  <%= f.input :is_hidden, :label => t('f-category-hide') %>
+</div>
+
 <%= f.submit t('f-category-submit'), class: 'btn btn-lg btn-default' %>
 
 <% end %>
