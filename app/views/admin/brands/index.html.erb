@@ -11,7 +11,6 @@
   <!--=== 品牌列表標題 ===-->
   <thead>
     <tr>
-      <th><%= t('id') %></th>
       <th><%= t('f-brand-name') %></th>
       <th><%= t('f-brand-logo') %></th>
       <th><%= t('f-brand-description') %></th>
@@ -22,8 +21,7 @@
   <!--=== 品牌列表內容 ===-->
   <% @brands.each do |brand| %>
     <tr>
-      <td><%= brand.id %></td>
-      <td><%= brand.name %></td>
+      <td><%= link_to(brand.name, admin_brand_path(brand)) %></td>
       <td><%= brand.logo %></td>
       <td><%= brand.description %></td>
       <!--=== 操作選項 ===-->

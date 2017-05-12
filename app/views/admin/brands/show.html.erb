@@ -1,8 +1,17 @@
 <!--=== 品牌資訊 ===-->
 <h1> <%= @brand.name %> </h1>
+
+<h3><%= t('f-brand-logo') %></h3>
 <p>
   <%= simple_format(@brand.logo) %>
 </p>
+
+<h3><%= t('f-brand-description') %></h3>
 <p>
   <%= simple_format(@brand.description) %>
 </p>
+
+<h3><%= t('f-brand-products') %></h3>
+<% @brand.products.each do |product| %>
+  <li><%= link_to(product.name, admin_product_path(product)) %></li>
+<% end %>
