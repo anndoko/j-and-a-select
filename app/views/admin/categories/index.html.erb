@@ -11,7 +11,6 @@
   <!--=== 分類列表標題 ===-->
   <thead>
     <tr>
-      <th><%= t('id') %></th>
       <th><%= t('f-category-name') %></th>
       <th><%= t('f-category-options') %></th>
     </tr>
@@ -20,8 +19,7 @@
   <!--=== 分類列表內容 ===-->
   <% @categories.each do |category| %>
     <tr>
-      <td><%= category.id %></td>
-      <td><%= category.name %></td>
+      <td><%= link_to(category.name, admin_category_path(category)) %></td>
       <!--=== 操作選項 ===-->
       <td>
         <%= link_to(t('btn-category-edit'), edit_admin_category_path(category), :class => 'btn btn-sm btn-default') %>

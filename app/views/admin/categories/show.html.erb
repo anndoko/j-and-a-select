@@ -1,2 +1,7 @@
 <!--=== 分類資訊 ===-->
 <h1> <%= @category.name %> </h1>
+
+<h3><%= t('f-category-products') %></h3>
+<% @category.products.each do |product| %>
+  <li><%= link_to(product.name, admin_product_path(product)) %></li>
+<% end %>
