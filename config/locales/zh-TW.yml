@@ -1,2 +1,63 @@
 zh-TW:
-  j-and-a-select: "J & A 選物"
+#--=== J&A SELECT ===--#
+  j-and-a-select: J & A SELECT
+
+#--=== 選單介面 ===--#
+  # Navbar #
+  signup: 註冊
+  login: 登入
+  logout: 登出
+  greeting: 您好，
+  admin-access: 後台專區
+
+  # 後台操作面板 #
+  admin-product: 商品管理
+  admin-brand: 品牌管理
+  admin-category: 分類管理
+
+#--=== 表單 ===--#
+  # 共用 #
+  f-hide: 是否隱藏
+  f-submit: 確認送交
+  f-options: 操作選項
+
+  btn-edit: 編輯
+  btn-hide: 隱藏
+  btn-publish: 公開
+
+  # 品牌管理 #
+  brand-index: 品牌一覽
+  brand-new: 新增品牌
+  brand-edit: 編輯品牌
+
+  f-brand-name: 品牌名稱
+  f-brand-logo: 品牌標誌
+  f-brand-description: 品牌故事
+  f-brand-products: 品牌產品一覽
+
+  btn-brand-new: 新增品牌
+
+  # 分類管理 #
+  category-index: 分類一覽
+  category-new: 新增分類
+  category-edit: 編輯分類
+
+  f-category-name: 分類名稱
+  f-category-group: 類型
+  f-category-products: 分類產品一覽
+
+  btn-category-new: 新增分類
+
+  # 產品管理 #
+  product-index: 產品一覽
+  product-new: 新增產品
+  product-edit: 編輯產品
+
+  f-product-name: 產品名稱
+  f-product-description: 產品介紹
+  f-product-price: 產品售價
+  f-product-quantity: 庫存數量
+  f-product-category: 產品分類
+  f-product-brand: 產品品牌
+
+  btn-product-new: 新增產品

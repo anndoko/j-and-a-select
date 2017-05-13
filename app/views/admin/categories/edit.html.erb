@@ -7,15 +7,15 @@
   <div class="group">
     <%= f.select :category_group_id, @category_groups %>
   </div>
-  
+
   <div class="group">
     <%= f.input :name, :label => t('f-category-name') %>
   </div>
 
   <div class="group">
-    <%= f.input :is_hidden, :label => t('f-category-hide') %>
+    <%= f.input :is_hidden, :label => t('f-hide') %>
   </div>
 
-  <%= f.submit t('f-category-submit'), class: 'btn btn-lg btn-default' %>
+  <%= f.submit t('f-submit'), class: 'btn btn-lg btn-default' %>
 
 <% end %>

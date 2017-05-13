@@ -5,7 +5,7 @@
 <%= simple_form_for [:admin, @category] do |f| %>
 
   <div class="group">
-    <%= select_tag(:category_group_id, options_for_select(@category_groups), :prompt => t('f_category_group')) %>
+    <%= select_tag(:category_group_id, options_for_select(@category_groups), :prompt => t('f-category-group')) %>
   </div>
 
   <div class="group">
@@ -13,9 +13,9 @@
   </div>
 
   <div class="group">
-    <%= f.input :is_hidden, :label => t('f-category-hide') %>
+    <%= f.input :is_hidden, :label => t('f-hide') %>
   </div>
 
-  <%= f.submit t('f-category-submit'), class: 'btn btn-lg btn-default' %>
+  <%= f.submit t('f-submit'), class: 'btn btn-lg btn-default' %>
 
 <% end %>
