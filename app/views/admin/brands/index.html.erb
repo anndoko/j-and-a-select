@@ -24,8 +24,9 @@
     <tr>
       <td><%= render_brand_status(brand) %></td>
       <td><%= link_to(brand.name, admin_brand_path(brand)) %></td>
-      <td><%= brand.logo %></td>
-      <td><%= brand.description %></td>
+      <td><%= render_brand_logo(brand) %></td>
+      <td><%= simple_format(brand.description) %></td>
+
       <!--=== 操作選項 ===-->
       <td>
         <!-- 編輯 -->

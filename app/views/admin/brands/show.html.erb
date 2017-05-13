@@ -2,8 +2,13 @@
 <h1> <%= @brand.name %> </h1>
 
 <h3><%= t('f-brand-logo') %></h3>
+
 <p>
-  <%= simple_format(@brand.logo) %>
+  <% if @brand.logo.present? %>
+    <%= image_tag(@brand.logo.thumb.url) %>
+  <% else %>
+    <%= t('notice-no-image') %>
+  <% end %>
 </p>
 
 <h3><%= t('f-brand-description') %></h3>

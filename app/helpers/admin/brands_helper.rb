@@ -17,4 +17,13 @@ module Admin::BrandsHelper
     end
   end
 
+  # 判斷品牌 Logo，顯示圖片或尚無圖片訊息
+  def render_brand_logo(brand)
+    if brand.logo.present?
+      image_tag(brand.logo.thumb.url)
+    else
+      t('notice-no-image')
+    end
+  end
+
 end

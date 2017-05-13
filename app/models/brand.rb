@@ -16,4 +16,7 @@ class Brand < ApplicationRecord
     self.save
   end
 
+  # 上傳品牌 Logo 圖 #
+  mount_uploader :logo, ImageUploader
+
 end
