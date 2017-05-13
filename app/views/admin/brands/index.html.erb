@@ -31,11 +31,7 @@
         <!-- 編輯 -->
         <%= link_to(t('btn-edit'), edit_admin_brand_path(brand), :class => 'btn btn-sm btn-default') %>
         <!-- 發佈 / 隱藏 -->
-        <% if brand.is_hidden %>
-          <%= link_to(t('btn-publish'), publish_admin_brand_path(brand), :method => :post, :class => 'btn btn-sm btn-default') %>
-        <% else %>
-          <%= link_to(t('btn-hide'), hide_admin_brand_path(brand), :method => :post, :class => 'btn btn-sm btn-default') %>
-        <% end %>
+        <%= render_brand_publish_or_hide(brand) %>
       </td>
     </tr>
   <% end %>

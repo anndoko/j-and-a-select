@@ -29,11 +29,7 @@
         <!-- 編輯 -->
         <%= link_to(t('btn-edit'), edit_admin_category_path(category), :class => 'btn btn-sm btn-default') %>
         <!-- 發佈 / 隱藏 -->
-        <% if category.is_hidden %>
-          <%= link_to(t('btn-publish'), publish_admin_category_path(category), :method => :post, :class => 'btn btn-sm btn-default') %>
-        <% else %>
-          <%= link_to(t('btn-hide'), hide_admin_category_path(category), :method => :post, :class => 'btn btn-sm btn-default') %>
-        <% end %>
+        <%= render_category_publish_or_hide(category) %>
       </td>
     </tr>
   <% end %>
