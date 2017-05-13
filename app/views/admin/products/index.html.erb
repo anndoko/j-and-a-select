@@ -1,10 +1,10 @@
-<!--=== 頁面標題 ===-->
-<h2><%= t('product-index') %></h2>
-
 <!--=== 新增商品 ===-->
 <div class="pull-right">
   <%= link_to(t('btn-product-new'), new_admin_product_path, :class => 'btn btn-sm btn-default')%>
 </div>
+
+<!--=== 頁面標題 ===-->
+<h2><%= t('product-index') %></h2>
 
 <!--=== 商品列表 ===-->
 <table class="table">
@@ -15,6 +15,7 @@
       <th><%= t('f-product-name') %></th>
       <th><%= t('f-product-brand') %></th>
       <th><%= t('f-product-category') %></th>
+      <th><%= t('f-category-group') %></th>
       <th><%= t('f-product-options') %></th>
     </tr>
   </thead>
@@ -22,10 +23,13 @@
   <!--=== 商品列表內容 ===-->
   <% @products.each do |product| %>
     <tr>
+
       <td><%= render_product_status(product) %></td>
       <td><%= link_to(product.name, admin_product_path(product)) %></td>
       <td><%= product.brand.name %></td>
       <td><%= product.category.name %></td>
+      <td><%= product.category.category_group.name %></td>
+
       <!--=== 操作選項 ===-->
       <td>
         <!-- 編輯 -->

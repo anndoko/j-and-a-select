@@ -16,10 +16,19 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+
+    # 產品所屬的品牌/分類
+    @brands = Brand.all.map { |b| [b.name, b.id] }
+    @categories = Category.all.map { |c| [c.name, c.id] }
+
   end
 
   def create
     @product = Product.new(product_params)
+
+    # 產品所屬的品牌/分類
+    @product.brand_id = params[:brand_id]
+    @product.category_id = params[:category_id]
 
     if @product.save
       redirect_to admin_products_path
@@ -30,10 +39,18 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+
+    # 產品所屬的品牌/分類
+    @brands = Brand.all.map { |b| [b.name, b.id] }
+    @categories = Category.all.map { |c| [c.name, c.id] }
   end
 
   def update
     @product = Product.find(params[:id])
+
+    # 產品所屬的品牌/分類
+    @product.brand_id = params[:brand_id]
+    @product.category_id = params[:category_id]
 
     if @product.update(product_params)
       redirect_to admin_products_path

@@ -4,34 +4,36 @@
 <!--=== 新增商品 ===-->
 <%= simple_form_for [:admin, @product] do |f| %>
 
-<div class="group">
-  <%= f.input :name, :label => t('f-product-name') %>
-</div>
+  <div class="group">
+    <%= f.input :name, :label => t('f-product-name') %>
+  </div>
 
-<div class="group">
-  <%= f.input :description, :label => t('f-product-description') %>
-</div>
+  <div class="group">
+    <%= f.input :description, :label => t('f-product-description') %>
+  </div>
 
-<div class="group">
-  <%= f.input :price, :label => t('f-product-price') %>
-</div>
+  <div class="group">
+    <%= f.input :price, :label => t('f-product-price') %>
+  </div>
 
-<div class="group">
-  <%= f.input :quantity, :label => t('f-product-quantity') %>
-</div>
+  <div class="group">
+    <%= f.input :quantity, :label => t('f-product-quantity') %>
+  </div>
 
-<div class="group">
-  <%= f.input :category_id, :label => t('f-product-category') %>
-</div>
+  <!-- 選擇分類 -->
+  <div class="group">
+    <%= select_tag(:category_id, options_for_select(@categories), :prompt => t('f-product-category')) %>
+  </div>
 
-<div class="group">
-  <%= f.input :brand_id, :label => t('f-product-brand') %>
-</div>
+  <!-- 選擇品牌 -->
+  <div class="group">
+    <%= select_tag(:brand_id, options_for_select(@brands), :prompt => t('f-product-brand')) %>
+  </div>
 
-<div class="group">
-  <%= f.input :is_hidden, :label => t('f-product-hide') %>
-</div>
+  <div class="group">
+    <%= f.input :is_hidden, :label => t('f-product-hide') %>
+  </div>
 
-<%= f.submit t('f-product-submit'), class: 'btn btn-lg btn-default' %>
+  <%= f.submit t('f-product-submit'), class: 'btn btn-lg btn-default' %>
 
 <% end %>
