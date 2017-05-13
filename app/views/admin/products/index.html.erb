@@ -16,6 +16,8 @@
       <th><%= t('f-product-brand') %></th>
       <th><%= t('f-product-category') %></th>
       <th><%= t('f-category-group') %></th>
+      <th><%= t('f-product-price') %></th>
+      <th><%= t('f-product-quantity') %></th>
       <th><%= t('f-product-options') %></th>
     </tr>
   </thead>
@@ -29,7 +31,9 @@
       <td><%= product.brand.name %></td>
       <td><%= product.category.name %></td>
       <td><%= product.category.category_group.name %></td>
-
+      <td><%= product.price %></td>
+      <td><%= product.quantity %></td>
+      
       <!--=== 操作選項 ===-->
       <td>
         <!-- 編輯 -->
