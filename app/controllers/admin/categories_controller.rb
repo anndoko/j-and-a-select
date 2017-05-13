@@ -16,11 +16,14 @@ class Admin::CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    # 所屬的大分類
     @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
   end
 
   def create
     @category = Category.new(category_params)
+    # 所屬的大分類
+    @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
     @category.category_group_id = params[:category_group_id]
 
     if @category.save
@@ -32,11 +35,14 @@ class Admin::CategoriesController < ApplicationController
 
   def edit
     @category = Category.find(params[:id])
+    # 所屬的大分類
     @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
   end
 
   def update
     @category = Category.find(params[:id])
+    # 所屬的大分類
+    @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
     @category.category_group_id = params[:category_group_id]
 
     if @category.update(category_params)

@@ -26,14 +26,18 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    # 產品所屬的品牌/分類
+    # 產品所屬的品牌
+    @brands = Brand.all.map { |b| [b.name, b.id] }
     @product.brand_id = params[:brand_id]
+    # 產品所屬的分類
+    @categories = Category.all.map { |c| [c.name, c.id] }
     @product.category_id = params[:category_id]
 
     if @product.save
       redirect_to admin_products_path
     else
       render :new
+      # redirect_to new_admin_product_path, notice: t('Failure')
     end
   end
 
@@ -48,8 +52,11 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
-    # 產品所屬的品牌/分類
+    # 產品所屬的品牌
+    @brands = Brand.all.map { |b| [b.name, b.id] }
     @product.brand_id = params[:brand_id]
+    # 產品所屬的分類
+    @categories = Category.all.map { |c| [c.name, c.id] }
     @product.category_id = params[:category_id]
 
     if @product.update(product_params)
