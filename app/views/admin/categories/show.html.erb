@@ -1,6 +1,11 @@
 <!--=== 分類資訊 ===-->
 <h1> <%= @category.name %> </h1>
 
+<!-- 所屬主類別 -->
+<h3><%= t('f_category_group') %></h3>
+<%= @category.category_group.name %>
+
+<!-- 該分類下的商品一覽 -->
 <h3><%= t('f-category-products') %></h3>
 <% @category.products.each do |product| %>
   <li><%= link_to(product.name, admin_product_path(product)) %></li>

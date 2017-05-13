@@ -12,6 +12,7 @@
   <thead>
     <tr>
       <th></th>
+      <th><%= t('f-category-group') %></th>
       <th><%= t('f-category-name') %></th>
       <th><%= t('f-category-options') %></th>
     </tr>
@@ -21,6 +22,7 @@
   <% @categories.each do |category| %>
     <tr>
       <td><%= render_category_status(category) %></td>
+      <td><%= category.category_group.name %></td>
       <td><%= link_to(category.name, admin_category_path(category)) %></td>
       <!--=== 操作選項 ===-->
       <td>
