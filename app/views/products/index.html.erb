@@ -1,0 +1,29 @@
+<!--=== 頁面標題 ===-->
+<h2><%= t('product-index') %></h2>
+
+<!--=== 商品列表 ===-->
+<table class="table">
+  <!--=== 商品列表標題 ===-->
+  <thead>
+    <tr>
+      <th><%= t('f-product-name') %></th>
+      <th><%= t('f-product-brand') %></th>
+      <th><%= t('f-product-category') %></th>
+      <th><%= t('f-category-group') %></th>
+      <th><%= t('f-product-price') %></th>
+      <th><%= t('f-product-quantity') %></th>
+    </tr>
+  </thead>
+
+  <!--=== 商品列表內容 ===-->
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= link_to(product.name, product_path(product)) %></td>
+      <td><%= product.brand.name %></td>
+      <td><%= product.category.name %></td>
+      <td><%= product.category.category_group.name %></td>
+      <td><%= product.price %></td>
+      <td><%= product.quantity %></td>
+    </tr>
+  <% end %>
+</table>

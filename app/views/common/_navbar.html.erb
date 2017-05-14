@@ -7,30 +7,38 @@
     </div>
 
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 
-    <!--=== navbar 右側按鈕 ===-->
+    <!--=== navbar 按鈕 ===-->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!--=== 左側按鈕：商品 ===-->
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <%= link_to(t('product-access'), products_path) %>
+        </li>
+      </ul>
+
+      <!--=== 右側按鈕： ===-->
       <ul class="nav navbar-nav  navbar-right">
         <% if !current_user %>
-          <!--=== 訪客註冊 / 登入 ===-->
+          <!-- 訪客註冊 / 登入 -->
           <li><%= link_to(t('signup'), new_user_registration_path) %> </li>
           <li><%= link_to(t('login'), new_user_session_path) %></li>
         <% else %>
-          <!--=== 使用者下拉式選單 ===-->
+          <!-- 使用者下拉式選單 -->
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <%= t('greeting') %>
               <%= current_user.email %>
               <b class="caret"></b>
             </a>
-            <!--=== 選單選項 ===-->
+            <!-- 選單選項 -->
             <ul class="dropdown-menu">
 
-              <!--=== admin 後台 ===-->
+              <!-- admin 後台 -->
               <% if current_user.admin? %>
                 <li> <%= link_to(t('admin-access'), admin_products_path) %> </li>
               <% end %>
-              <!--=== user 選項 ===-->
+              <!-- user 選項 -->
               <li> <%= link_to(t('logout'), destroy_user_session_path, method: :delete) %> </li>
             </ul>
           </li>

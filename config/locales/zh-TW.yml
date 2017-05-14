@@ -8,6 +8,7 @@ zh-TW:
   login: 登入
   logout: 登出
   greeting: 您好，
+  product-access: 選物
   admin-access: 後台專區
 
   # 後台操作面板 #
