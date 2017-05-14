@@ -8,6 +8,15 @@ zh-TW:
 #--=== 產品 ===--#
   btn-add-to-cart: 加入購物車
 
+#--=== 購物車 ===--#
+  cart-index: 購物車
+
+  f-cart-product-info: 商品資訊
+  f-cart-product-price: 商品單價
+  f-cart-product-quantity: 商品數量
+  f-cart-total: 總計：
+
+  btn-checkout: 確認結帳
 
 #--=== 選單介面 ===--#
   # Navbar #
@@ -23,8 +32,8 @@ zh-TW:
   admin-brand: 品牌管理
   admin-category: 分類管理
 
-#--=== 表單 ===--#
-  # 共用 #
+#--=== 後台 ===--#
+  # 共用元素 #
   f-hide: 是否隱藏
   f-submit: 確認送交
   f-options: 操作選項

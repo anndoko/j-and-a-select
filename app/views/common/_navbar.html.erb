@@ -6,10 +6,9 @@
       <a class='navbar-brand' href='/'><%= t('j-and-a-select') %></a>
     </div>
 
-
-
     <!--=== navbar 按鈕 ===-->
     <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
+
       <!--=== 左側按鈕：商品 ===-->
       <ul class='nav navbar-nav'>
         <li class='active'>
@@ -21,7 +20,7 @@
       <ul class='nav navbar-nav  navbar-right'>
         <!-- 購物車 -->
         <li>
-          <%= link_to '#' do %>
+          <%= link_to carts_path do %>
             <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
           <% end %>
         </li>

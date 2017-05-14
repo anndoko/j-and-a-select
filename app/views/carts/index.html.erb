@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-md-12">
+    <!--=== 頁面標題 ===-->
+    <h2><%= t('cart-index') %></h2>
+
+    <!--=== 購物車資訊 ===-->
+    <table class="table">
+      <!-- 購物車列表標題 -->
+      <thead>
+        <tr>
+          <th><%= t('f-cart-product-info') %></th>
+          <th><%= t('f-cart-product-price') %></th>
+          <th><%= t('f-cart-product-quantity') %></th>
+        </tr>
+      </thead>
+      <!-- 購物車列表內容 -->
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+          <tr>
+            <td>
+              <%= link_to(cart_item.product.name, product_path(cart_item.product)) %>
+            </td>
+            <td>
+              <%= cart_item.product.price %>
+            </td>
+            <td>
+              <%= cart_item.quantity %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br/>
+    <!--=== 購物車內商品總價 ===-->
+    <div class='totol clearfix'>
+      <span class='pull-right'>
+        <span><%= t('f-cart-total') %></span>
+      </span>
+    </div>
+
+    <hr/>
+    <!--=== 購物車結帳 ===-->
+    <div class='checkout clearfix'>
+      <span class='pull-right'>
+        <%= link_to(t('btn-checkout'), '#', method: :post, class: 'btn btn-lg btn-default') %>
+      </span>
+    </div>
+  </div>
+</div>
