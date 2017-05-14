@@ -9,18 +9,22 @@
     <%= f.file_field :product_image, :multiple => true, name: 'product_images[image][]' %>
   </div>
 
+  <!-- 商品名稱 -->
   <div class='group'>
     <%= f.input :name, :label => t('f-product-name') %>
   </div>
 
+  <!-- 商品敘述 -->
   <div class='group'>
     <%= f.input :description, :label => t('f-product-description') %>
   </div>
 
+  <!-- 商品售價 -->
   <div class='group'>
     <%= f.input :price, :label => t('f-product-price') %>
   </div>
 
+  <!-- 商品庫存數量 -->
   <div class='group'>
     <%= f.input :quantity, :label => t('f-product-quantity') %>
   </div>
@@ -35,6 +39,7 @@
     <%= select_tag(:brand_id, options_for_select(@brands), :prompt => t('f-product-brand')) %>
   </div>
 
+  <!-- 商品隱藏與否 -->
   <div class='group'>
     <%= f.input :is_hidden, :label => t('f-hide') %>
   </div>
