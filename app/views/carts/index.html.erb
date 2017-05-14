@@ -35,7 +35,8 @@
     <!--=== 購物車內商品總價 ===-->
     <div class='totol clearfix'>
       <span class='pull-right'>
-        <span><%= t('f-cart-total') %></span>
+        <%= t('f-cart-total') %>
+        <%= render_cart_total_price(current_cart) %>
       </span>
     </div>
 
