@@ -11,7 +11,9 @@ class ProductsController < ApplicationController
   # 加入購物車
   def add_to_cart
     @product = Product.find(params[:id])
-    redirect_to :back, notice: t('message-add-to-cart-success')
+    current_cart.add_product_to_cart(@product)
+    flash[:notice] = t('message-add-to-cart-success')
+    redirect_to :back
   end
 
 end
