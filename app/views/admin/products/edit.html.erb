@@ -1,36 +1,50 @@
-<!--=== 新增商品 ===-->
+<!--=== 編輯商品 ===-->
 <h2><%= t('product-edit') %></h2>
 
-<!--=== 新增商品 ===-->
+<!--=== 編輯商品 ===-->
 <%= simple_form_for [:admin, @product] do |f| %>
 
-  <div class="group">
+  <!-- 商品圖片 -->
+  <div class='group'>
+    <% if @product.product_images.present? %>
+      <% @product.product_images.each do |p| %>
+        <%= image_tag p.image.thumb.url %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class='group'>
+    <%= f.label t('f-product-images') %><br>
+    <%= f.file_field :product_image, :multiple => true, name: 'product_images[image][]' %>
+  </div>
+
+  <div class='group'>
     <%= f.input :name, :label => t('f-product-name') %>
   </div>
 
-  <div class="group">
+  <div class='group'>
     <%= f.input :description, :label => t('f-product-description') %>
   </div>
 
-  <div class="group">
+  <div class='group'>
     <%= f.input :price, :label => t('f-product-price') %>
   </div>
 
-  <div class="group">
+  <div class='group'>
     <%= f.input :quantity, :label => t('f-product-quantity') %>
   </div>
 
   <!-- 選擇分類 -->
-  <div class="group">
+  <div class='group'>
     <%= f.select :category_id, @categories %>
   </div>
 
   <!-- 選擇品牌 -->
-  <div class="group">
+  <div class='group'>
     <%= f.select :brand_id, @brands %>
   </div>
 
-  <div class="group">
+  <div class='group'>
     <%= f.input :is_hidden, :label => t('f-hide') %>
   </div>
 

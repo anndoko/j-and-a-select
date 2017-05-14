@@ -9,6 +9,8 @@ class Product < ApplicationRecord
   # 關聯 #
   belongs_to :category
   belongs_to :brand
+  has_many :product_images, dependent: :destroy
+  accepts_nested_attributes_for :product_images
 
   # 發佈 / 隱藏 #
   def publish!

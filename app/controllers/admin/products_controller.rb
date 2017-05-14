@@ -12,12 +12,19 @@ class Admin::ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+
+    # 商品圖片
+    @product_images = @product.product_images.all
   end
 
   def new
     @product = Product.new
 
-    # 產品所屬的品牌/分類
+    # 商品圖片
+    @product_image = @product.product_images.build
+
+
+    # 商品所屬的品牌/分類
     @brands = Brand.all.map { |b| [b.name, b.id] }
     @categories = Category.all.map { |c| [c.name, c.id] }
 
@@ -26,25 +33,29 @@ class Admin::ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
-    # 產品所屬的品牌
+    # 商品所屬的品牌
     @brands = Brand.all.map { |b| [b.name, b.id] }
     @product.brand_id = params[:brand_id]
-    # 產品所屬的分類
+    # 商品所屬的分類
     @categories = Category.all.map { |c| [c.name, c.id] }
     @product.category_id = params[:category_id]
 
     if @product.save
+      if params[:product_images] != nil
+        params[:product_images]['image'].each do |i|
+          @product_image = @product.product_images.create(:image => i)
+        end
+      end
       redirect_to admin_products_path
     else
       render :new
-      # redirect_to new_admin_product_path, notice: t('Failure')
     end
   end
 
   def edit
     @product = Product.find(params[:id])
 
-    # 產品所屬的品牌/分類
+    # 商品所屬的品牌/分類
     @brands = Brand.all.map { |b| [b.name, b.id] }
     @categories = Category.all.map { |c| [c.name, c.id] }
   end
@@ -52,7 +63,25 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
-    # 產品所屬的品牌
+    # 商品圖片
+    if params[:product_images] != nil
+      #刪除舊圖
+      @product.product_images.destroy_all
+
+      params[:product_images]['image'].each do |i|
+        @product_image = @product.product_images.create(:image => i)
+      end
+      @product.update(product_params)
+
+    elsif @product.update(product_params)
+      redirect_to admin_products_path
+
+    else
+      render :edit
+
+    end
+
+    # 商品所屬的品牌
     @brands = Brand.all.map { |b| [b.name, b.id] }
     @product.brand_id = params[:brand_id]
     # 產品所屬的分類

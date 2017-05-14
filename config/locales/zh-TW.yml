@@ -6,7 +6,7 @@ zh-TW:
   message-add-to-cart-success: 成功加入購物車！
   message-already-added: 您的購物車已有此商品
 
-#--=== 產品 ===--#
+#--=== 商品 ===--#
   btn-add-to-cart: 加入購物車
 
 #--=== 購物車 ===--#
@@ -52,7 +52,7 @@ zh-TW:
   f-brand-name: 品牌名稱
   f-brand-logo: 品牌標誌
   f-brand-description: 品牌故事
-  f-brand-products: 品牌產品一覽
+  f-brand-products: 品牌商品一覽
 
   btn-brand-new: 新增品牌
 
@@ -73,20 +73,21 @@ zh-TW:
 
   f-category-name: 分類名稱
   f-category-group: 類型
-  f-category-products: 分類產品一覽
+  f-category-products: 分類商品一覽
 
   btn-category-new: 新增分類
 
-  # 產品管理 #
-  product-index: 產品一覽
-  product-new: 新增產品
-  product-edit: 編輯產品
+  # 商品管理 #
+  product-index: 商品一覽
+  product-new: 新增商品
+  product-edit: 編輯商品
 
-  f-product-name: 產品名稱
-  f-product-description: 產品介紹
-  f-product-price: 產品售價
+  f-product-images: 商品圖片
+  f-product-name: 商品名稱
+  f-product-description: 商品介紹
+  f-product-price: 商品售價
   f-product-quantity: 庫存數量
-  f-product-category: 產品分類
-  f-product-brand: 產品品牌
+  f-product-category: 商品分類
+  f-product-brand: 商品品牌
 
-  btn-product-new: 新增產品
+  btn-product-new: 新增商品
