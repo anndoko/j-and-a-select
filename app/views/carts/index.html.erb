@@ -11,6 +11,7 @@
           <th><%= t('f-cart-product-info') %></th>
           <th><%= t('f-cart-product-price') %></th>
           <th><%= t('f-cart-product-quantity') %></th>
+          <th></th>
         </tr>
       </thead>
       <!-- 購物車列表內容 -->
@@ -26,13 +27,18 @@
             <td>
               <%= cart_item.quantity %>
             </td>
+            <td>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                <i class="fa fa-close"></i>
+              <% end %>
+            </td>
           </tr>
         <% end %>
       </tbody>
     </table>
 
     <br/>
-    <!--=== 購物車內商品總價 ===-->
+    <!-- 購物車內商品總價 -->
     <div class='totol clearfix'>
       <span class='pull-right'>
         <%= t('f-cart-total') %>
@@ -41,7 +47,7 @@
     </div>
 
     <hr/>
-    <!--=== 購物車結帳 ===-->
+    <!-- 購物車結帳 -->
     <div class='checkout clearfix'>
       <span class='pull-right'>
         <%= link_to(t('btn-checkout'), '#', method: :post, class: 'btn btn-lg btn-default') %>
