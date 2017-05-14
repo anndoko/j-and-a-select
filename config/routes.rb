@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   #--=== 前台 ===--#
-  resources :products
-
+  resources :products do
+    member do
+      post :add_to_cart
+    end
+  end
 
   #--=== 後台 ===--#
   namespace :admin do

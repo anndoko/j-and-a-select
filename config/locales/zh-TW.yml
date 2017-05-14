@@ -2,6 +2,13 @@ zh-TW:
 #--=== J&A SELECT ===--#
   j-and-a-select: J & A SELECT
 
+#--=== 提示訊息 ===--#
+  message-add-to-cart-success: 成功加入購物車！
+
+#--=== 產品 ===--#
+  btn-add-to-cart: 加入購物車
+
+
 #--=== 選單介面 ===--#
   # Navbar #
   signup: 註冊

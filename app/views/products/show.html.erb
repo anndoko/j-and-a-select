@@ -30,3 +30,6 @@
 <p>
   <%= @product.quantity %>
 </p>
+
+<!-- 加入購物車 -->
+<%= link_to(t('btn-add-to-cart'), add_to_cart_product_path(@product), :method => :post, :class => 'btn btn-lg btn-default') %>
