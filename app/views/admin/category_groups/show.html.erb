@@ -1,0 +1,9 @@
+<!--=== 類型資訊 ===-->
+<h1> <%= @category_group.name %> </h1>
+
+<!-- 該類型下的分類一覽 -->
+<h3><%= t('f-category-group-categories') %></h3>
+
+<% @category_group.categories.each do |category| %>
+  <li><%= link_to(category.name, admin_category_path(category)) %></li>
+<% end %>

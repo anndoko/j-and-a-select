@@ -1,4 +1,42 @@
 <!--=== 頁面標題 ===-->
+<h2><%= t('category-group-index') %></h2>
+
+<!--=== 新增類型 ===-->
+<div class="pull-right">
+  <%= link_to(t('btn-category-group-new'), new_admin_category_group_path, :class => 'btn btn-sm btn-default')%>
+</div>
+
+<!--=== 類型列表 ===-->
+<table class="table">
+  <!--=== 類型列表標題 ===-->
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= t('f-category-group') %></th>
+      <th><%= t('f-options') %></th>
+    </tr>
+  </thead>
+  <!--=== 類型列表內容 ===-->
+  <% @category_groups.each do |category_group| %>
+    <tr>
+      <td><%= render_category_group_status(category_group) %></td>
+      <td><%= category_group.name %></td>
+      <!--=== 操作選項 ===-->
+      <td>
+        <!-- 編輯 -->
+        <%= link_to(t('btn-edit'), edit_admin_category_group_path(category_group), :class => 'btn btn-sm btn-default') %>
+        <!-- 發佈 / 隱藏 -->
+        <%= render_category_group_publish_or_hide(category_group) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+
+<hr/>
+
+
+<!--=== 頁面標題 ===-->
 <h2><%= t('category-index') %></h2>
 
 <!--=== 新增分類 ===-->
