@@ -4,6 +4,7 @@ zh-TW:
 
 #--=== 提示訊息 ===--#
   message-add-to-cart-success: 成功加入購物車！
+  message-already-added: 您的購物車已有此商品
 
 #--=== 產品 ===--#
   btn-add-to-cart: 加入購物車
