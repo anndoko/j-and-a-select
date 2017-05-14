@@ -29,6 +29,15 @@ Rails.application.routes.draw do
       end
     end
 
+
+    # 類型 #
+    resources :category_groups do
+      member do
+        post :publish
+        post :hide
+      end
+    end
+
     # 分類 #
     resources :categories do
       member do

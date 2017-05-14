@@ -56,6 +56,16 @@ zh-TW:
 
   btn-brand-new: 新增品牌
 
+  # 類型管理 #
+  category-group-index: 類型一覽
+  category-group-new: 新增類型
+  category-group-edit: 編輯類型
+
+  f-category-group-name: 類型名稱
+  f-category-group-categories: 類型分類一覽
+
+  btn-category-group-new: 新增類型
+
   # 分類管理 #
   category-index: 分類一覽
   category-new: 新增分類
