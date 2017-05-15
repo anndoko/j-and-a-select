@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.where(:is_hidden => false)
+    @category_groups = CategoryGroup.all
+    @brands = Brand.all
   end
 
   def show

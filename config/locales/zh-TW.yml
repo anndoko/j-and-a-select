@@ -6,7 +6,10 @@ zh-TW:
   message-add-to-cart-success: 成功加入購物車！
   message-already-added: 您的購物車已有此商品
 
-#--=== 商品 ===--#
+#--=== 商品列表 ===--#
+  nav-brand: 嚴選品牌
+
+#--=== 商品資訊頁 ===--#
   btn-add-to-cart: 加入購物車
 
 #--=== 購物車 ===--#
