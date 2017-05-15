@@ -10,7 +10,7 @@
 
     <!--=== 類型 ===-->
     <% @category_groups.each do |category_group| %>
-      <div class="dropdown btn-group clearfix">
+      <div class='dropdown btn-group clearfix'>
         <button class='btn btn-default dropdown-toggle' type='button' data-toggle='dropdown'>
         <%= category_group.name %>
         </button>
@@ -27,7 +27,7 @@
     <% end %>
 
     <!--=== 品牌 ===-->
-    <div class="dropdown btn-group clearfix">
+    <div class='dropdown btn-group clearfix'>
       <button class='btn btn-default dropdown-toggle' type='button' data-toggle='dropdown'>
         <%= t('nav-brand') %>
       </button>
@@ -41,8 +41,29 @@
         <% end %>
       </ul>
     </div>
+
 <hr/>
 </div>
 
-
 <!--=== 商品列表 ===-->
+<div class='row'>
+  <% @products.each_with_index do |product, index| %>
+    <div class='col-xs-12 col-md-3'>
+      <%= link_to product_path(product) do %>
+        <!-- 商品圖片 -->
+        <% if product.product_images.present? %>
+          <!-- 顯示第一張圖片 -->
+          <%= image_tag(product.product_images[0].image.thumb.url, class: 'thumbnail')%>
+        <% else %>
+          <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
+        <% end %>
+          <% end %>
+
+        <!-- 商品名稱 -->
+        <%= product.name %><br/>
+        <!-- 商品價錢-->
+        $ <%= product.price %>
+
+    </div>
+  <% end %>
+</div>
