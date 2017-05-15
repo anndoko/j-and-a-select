@@ -11,6 +11,9 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     # 商品圖片
     @product_images = @product.product_images.all
+    # 商品所屬的品牌/分類
+    @category_groups = CategoryGroup.all
+    @brands = Brand.all
   end
 
   # 加入購物車
