@@ -9,6 +9,10 @@ zh-TW:
 #--=== 商品列表 ===--#
   nav-brand: 嚴選品牌
 
+  will_paginate:
+    previous_label: <span class="fa fa-angle-double-left"></span>
+    next_label: <span class="fa fa-angle-double-right"></span>
+
 #--=== 商品資訊頁 ===--#
   btn-add-to-cart: 加入購物車
 

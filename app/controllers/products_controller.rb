@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.where(:is_hidden => false)
+    @products = Product.where(:is_hidden => false).all.paginate(:page => params[:page], :per_page => 12)
     # 商品所屬的品牌/分類
     @category_groups = CategoryGroup.all
     @brands = Brand.all
