@@ -1,1 +1,161 @@
-<h1><%= t('j-and-a-select') %></h1>
+<div class="welcome-box">
+  <!--===== 网站介紹 =====-->
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <!--===== 网站介紹-Covers =====-->
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <!--===== 下方按钮 =====-->
+          <!-- <ol class="carousel-indicators">
+            <li data-target="#intro" data-slide-to="0" class="active"></li>
+            <li data-target="#intro" data-slide-to="1"></li>
+            <li data-target="#intro" data-slide-to="2"></li>
+          </ol> -->
+
+          <!--===== 轮播内容 =====-->
+          <!--===== 图片尺寸 1280x550 =====-->
+          <div class="carousel-inner" role="listbox">
+            <div class="item active">
+              <%= image_tag("intro_1.jpg") %>
+              <div class="carousel-caption">
+                <h3>最新潮流</h3>
+                <p>全球第一手流行资讯</p>
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag("intro_2.jpg") %>
+              <div class="carousel-caption">
+                <h3>品味生活</h3>
+                <p>与好友一同享受美好的生活时光</p>
+              </div>
+            </div>
+            <div class="item">
+              <%= image_tag("intro_3.jpg") %>
+              <div class="carousel-caption">
+                <h3>精选单品</h3>
+                <p>创造独一无二的个人风格</p>
+              </div>
+            </div>
+          </div>
+
+          <!--===== 换页按钮 =====-->
+          <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#intro" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 品牌故事 =====-->
+  <section class="story-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h2>品牌故事</h2>
+          <h1>J&A</h1>
+          <div class="short-line"></div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-1">
+              <%= image_tag("jimmy.jpg") %>
+            </div>
+            <div class="col-md-7">
+              <h3>Jimmy 王品睿</h3>
+              <p>
+                提供的選品想傳遞一個概念：沒有浮誇設計與機能、注重物品的本質。因此所挑選的每一款物品都是從眾多物品當中親自使用過後，覺得能夠推薦給各位才放上J&A Select。由於是精挑細選之故，商品種類或許無法琳琅滿目，但每一項文具都有它特別值得一提的地方。
+              </p>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-md-7 col-md-offset-1">
+              <h3>Anndo 柯禹安</h3>
+              <p>
+                除了還會陸續引進更多國外文具之外，我們也會推出台灣設計的原創文具：本日印章及試色章、手作紙鉛筆，提供更多樣化的選擇。
+              </p>
+            </div>
+            <div class="col-md-3">
+              <%= image_tag("anndo.jpg") %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 商品分类 =====-->
+  <section class="categories-box">
+    <div class="row">
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_1" do %>
+          <div class="category-box">
+            <%= image_tag("category_1.jpg") %>
+          </div>
+          <div>
+            <h3>文具</h3>
+            <p>輕量化的鋁質鉛筆筆蓋、裝在筆尾還可稍微延伸筆的長度，作為簡易輔助軸使用。</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_2" do %>
+          <div class="category-box">
+            <%= image_tag("category_2.jpg") %>
+          </div>
+          <div>
+            <h3>生活用品</h3>
+            <p>幾乎不會有增加重量感覺的金屬筆蓋，不只可以作為筆蓋，如果鉛筆太短還可以充當輔助軸使用。</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_3" do %>
+          <div class="category-box">
+            <%= image_tag("category_3.jpg") %>
+          </div>
+          <div>
+            <h3>特色小物</h3>
+            <p>能夠蓋印在紙張及大多數的表面上，包括金屬、塑膠、陶器、玻璃、銅版紙等材質，乾燥後即防水。</p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 合作品牌 =====-->
+  <section class="brand-box">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+          <h2>合作品牌</h2>
+          <div class="short-line"></div>
+          <%= image_tag("brand_1.png") %>
+          <%= image_tag("brand_2.png") %>
+          <%= image_tag("brand_3.png") %>
+          <%= image_tag("brand_4.png") %>
+          <%= image_tag("brand_5.png") %>
+          <%= image_tag("brand_6.png") %>
+          <%= image_tag("brand_7.png") %>
+          <%= image_tag("brand_8.png") %>
+          <%= image_tag("brand_9.png") %>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 立即购买 =====-->
+  <section class="push-box">
+    <%= link_to("立即选购", '#', class:'btn btn-push' ) %>
+  </section>
+
+  <!--===== Go top（回到顶端） =====-->
+  <div class="goTop">
+    <a href="#"><span class="fa fa-chevron-up"></span></a>
+  </div>
+
+</div>

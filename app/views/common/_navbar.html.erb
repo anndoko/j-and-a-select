@@ -1,55 +1,70 @@
-<nav class='navbar navbar-default' role='navigation'>
-  <div class='container-fluid'>
-
-    <!--=== navbar 品牌名稱 ===-->
-    <div class='navbar-header'>
-      <a class='navbar-brand' href='/'><%= t('j-and-a-select') %></a>
-    </div>
-
-    <!--=== navbar 按鈕 ===-->
-    <div class='collapse navbar-collapse' id='bs-example-navbar-collapse-1'>
-
-      <!--=== 左側按鈕：商品 ===-->
-      <ul class='nav navbar-nav'>
-        <li class='active'>
-          <%= link_to(t('product-access'), products_path) %>
-        </li>
-      </ul>
-
-      <!--=== 右側按鈕： ===-->
-      <ul class='nav navbar-nav  navbar-right'>
-        <!-- 購物車 -->
-        <li>
-          <%= link_to carts_path do %>
-            <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
+<div class="row">
+  <div class="col-md-12">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <!--=== 右侧下拉选单（移动端时显示） ===-->
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!--=== 网站Logo ===-->
+          <%= link_to root_path, class: "navbar-brand logo-box scroll" do %>
+            <%= image_tag("logo.png") %> J&A Select
           <% end %>
-        </li>
-
-        <% if !current_user %>
-          <!-- 訪客註冊 / 登入 -->
-          <li><%= link_to(t('signup'), new_user_registration_path) %> </li>
-          <li><%= link_to(t('login'), new_user_session_path) %></li>
-        <% else %>
-          <!-- 使用者下拉式選單 -->
-          <li class='dropdown'>
-            <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
-              <%= t('greeting') %>
-              <%= current_user.email %>
-              <b class='caret'></b>
-            </a>
-            <!-- 選單選項 -->
-            <ul class='dropdown-menu'>
-
-              <!-- admin 後台 -->
-              <% if current_user.admin? %>
-                <li> <%= link_to(t('admin-access'), admin_products_path) %> </li>
+        </div>
+        <div class="collapse navbar-collapse top-nav" id="menu-4">
+          <!--=== 网站连结 ===-->
+          <ul class="nav navbar-nav navbar-left">
+            <li><%= link_to(t('product-access'), products_path) %></li>
+            <li><%= link_to("品牌故事", '#', class: "scroll") %></li>
+            <li><%= link_to("热门推荐", '#', class: "scroll") %></li>
+          </ul>
+          <!--=== 帐号操作 ===-->
+          <ul class='nav navbar-nav  navbar-right'>
+            <!-- 購物車 -->
+            <li class="divider" role="separator"></li>
+            <li>
+              <%= link_to carts_path do %>
+                购物车 <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
               <% end %>
-              <!-- user 選項 -->
-              <li> <%= link_to(t('logout'), destroy_user_session_path, method: :delete) %> </li>
-            </ul>
-          </li>
-        <% end %>
-      </ul>
+            </li>
+            <li>
+              <%= link_to('#') do %>
+                切換語系 <i class="fa fa-globe"></i>
+              <% end %>
+            </li>
+            <% if !current_user %>
+              <!-- 訪客註冊 / 登入 -->
+              <li><%= link_to(t('signup'), new_user_registration_path) %> </li>
+              <li><%= link_to(t('login'), new_user_session_path) %></li>
+            <% else %>
+              <!-- 使用者下拉式選單 -->
+              <li class='dropdown'>
+                <a href='#' class='dropdown-toggle' data-toggle='dropdown'>
+                  <%= t('greeting') %>
+                  <%= current_user.email %>
+                  <b class='caret'></b>
+                </a>
+                <!-- 選單選項 -->
+                <ul class='dropdown-menu'>
+
+                  <!-- admin 後台 -->
+                  <% if current_user.admin? %>
+                    <li> <%= link_to(t('admin-access'), admin_products_path) %> </li>
+                  <% end %>
+                  <!-- user 選項 -->
+                  <li> <%= link_to(t('logout'), destroy_user_session_path, method: :delete) %> </li>
+                </ul>
+              </li>
+            <% end %>
+          </ul>
+          <!--=== 搜索栏 ===-->
+
+        </div>
+      </div>
     </div>
   </div>
-</nav>
+</div>
