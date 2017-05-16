@@ -19,4 +19,8 @@ class Category < ApplicationRecord
 
   # 上傳分類 Logo 圖 #
   mount_uploader :logo, ImageUploader
+
+  # Scope #
+  scope :published, -> { where(is_hidden: false) }
+
 end

@@ -1,10 +1,10 @@
 class ProductsController < ApplicationController
 
   def index
-    @products = Product.where(:is_hidden => false).all.paginate(:page => params[:page], :per_page => 12)
+    @products = Product.published.paginate(:page => params[:page], :per_page => 12)
     # 商品所屬的品牌/分類
-    @category_groups = CategoryGroup.all
-    @brands = Brand.all
+    @category_groups = CategoryGroup.published
+    @brands = Brand.published
   end
 
   def show
@@ -12,8 +12,8 @@ class ProductsController < ApplicationController
     # 商品圖片
     @product_images = @product.product_images.all
     # 商品所屬的品牌/分類
-    @category_groups = CategoryGroup.all
-    @brands = Brand.all
+    @category_groups = CategoryGroup.published
+    @brands = Brand.published
   end
 
   # 加入購物車
