@@ -16,4 +16,7 @@ class Category < ApplicationRecord
     self.is_hidden = true
     self.save
   end
+
+  # 上傳分類 Logo 圖 #
+  mount_uploader :logo, ImageUploader
 end
