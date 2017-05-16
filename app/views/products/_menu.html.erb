@@ -19,7 +19,7 @@
           <!-- 選單列出該類型所有分類 -->
           <% category_group.categories.each do |category| %>
             <li>
-              <%= link_to(category.name, products_path) %>
+              <%= link_to(category.name, products_path(:category => category.name)) %>
             </li>
           <% end %>
         </ul>
@@ -36,7 +36,7 @@
         <!-- 選單列出所有品牌 -->
         <% @brands.each do|brand| %>
           <li>
-            <%= link_to(brand.name, products_path) %>
+            <%= link_to(brand.name, products_path(:brand => brand.name)) %>
           </li>
         <% end %>
       </ul>
