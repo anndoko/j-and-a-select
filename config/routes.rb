@@ -15,7 +15,11 @@ Rails.application.routes.draw do
   end
 
   # 購物車 #
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clear # 清空購物車
+    end
+  end
   resources :cart_items
 
   #--=== 後台 ===--#

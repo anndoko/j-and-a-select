@@ -4,7 +4,9 @@ zh-TW:
 
 #--=== 提示訊息 ===--#
   message-add-to-cart-success: 成功加入購物車！
-  message-already-added: 您的購物車已有此商品
+  message-already-added: 您的購物車已有此商品。
+  message-confirm-clear-cart: 您確定要清空整個購物車嗎？
+  message-clear-cart-success: 已清空購物車。
 
 #--=== 商品列表 ===--#
   nav-brand: 嚴選品牌
@@ -18,6 +20,7 @@ zh-TW:
 
 #--=== 購物車 ===--#
   cart-index: 購物車
+  cart-clear: 清空購物車
 
   f-cart-product-info: 商品資訊
   f-cart-product-price: 商品單價

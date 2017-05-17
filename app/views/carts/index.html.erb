@@ -1,10 +1,12 @@
-<div class="row">
-  <div class="col-md-12">
+<div class='row'>
+  <div class='col-md-12'>
     <!--=== 頁面標題 ===-->
     <h2><%= t('cart-index') %></h2>
 
+    <%=link_to(t('cart-clear'), clear_carts_path, method: :delete, class: 'pull-right', style: 'text-decoration: underline;', data: { confirm: t('message-confirm-clear-cart') } ) %>
+
     <!--=== 購物車資訊 ===-->
-    <table class="table">
+    <table class='table'>
       <!-- 購物車列表標題 -->
       <thead>
         <tr>
@@ -29,7 +31,7 @@
             </td>
             <td>
               <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-                <i class="fa fa-close"></i>
+                <i class='fa fa-close'></i>
               <% end %>
             </td>
           </tr>
