@@ -8,5 +8,6 @@ class Order < ApplicationRecord
 
   # 關聯 #
   belongs_to :user
+  has_many :order_items
 
 end
