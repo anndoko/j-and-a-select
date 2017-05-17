@@ -63,3 +63,10 @@ $(window).scroll(function () {
 		$('#navbar').removeClass('show_bgcolor')
 	}
 })
+
+
+$(function(){
+    $('#intro').on('slide.bs.click', function () {
+        alert("当调用 slide 实例方法时立即触发该事件。");
+    });
+});

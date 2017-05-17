@@ -54,6 +54,14 @@ Rails.application.routes.draw do
       end
     end
 
+    # 首页Covers #
+    resources :intros do
+      member do
+        post :publish
+        post :hide
+      end
+    end
+
   end
 
 end
