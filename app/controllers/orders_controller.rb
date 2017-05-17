@@ -31,6 +31,17 @@ class OrdersController < ApplicationController
     @order_items = @order.order_items
   end
 
+  # 付款（暫）
+  def pay
+    @order = Order.find_by_token(params[:id])
+    @order.set_payment_with!("pay")
+    @order.pay!
+
+    redirect_to order_path(@order.token)
+
+    flash[:notice] = t('message-payment-success')
+  end
+
   private
 
   def order_params

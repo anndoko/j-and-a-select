@@ -6,6 +6,18 @@ class Order < ApplicationRecord
     self.token = SecureRandom.uuid # Ruby 內建亂序生成器
   end
 
+  # 付款 #
+  # 更新付款方式
+  def set_payment_with!(method)
+    self.update_columns(payment_method: method)
+  end
+
+  # 更新狀態為：已付款
+  def pay!
+    self.update_columns(is_paid: true)
+  end
+
+
   # 新增/修改欄位限制與提示 #
   validates :billing_name, presence: true
   validates :billing_address, presence: true

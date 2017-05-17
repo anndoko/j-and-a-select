@@ -70,5 +70,16 @@
         </tr>
       </tbody>
     </table>
+
+    <!--=== 付款（暫） ===-->
+    <% if !@order.is_paid? %>
+      <div class='group pull-right'>
+        <%= link_to(t('btn-pay'), pay_order_path(@order.token), :method => :post, class: 'btn btn-lg btn-default') %>
+      </div>
+    <% else %>
+      <p class='text-center'>
+        <%= t('order-paid') %>
+      </p>
+    <% end %>
   </div>
 </div>

@@ -21,7 +21,14 @@ Rails.application.routes.draw do
       post :checkout # 下訂
     end
   end
-  resources :orders
+
+  # 訂單 #
+  resources :orders do
+    member do
+      post :pay # 付款（暫）
+    end
+  end
+
   resources :cart_items
 
   #--=== 使用者專區 ===--#
