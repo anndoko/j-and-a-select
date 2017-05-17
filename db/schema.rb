@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170514123558) do
+ActiveRecord::Schema.define(version: 20170517131513) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -40,13 +40,43 @@ ActiveRecord::Schema.define(version: 20170514123558) do
     t.boolean  "is_hidden",         default: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.string   "logo"
+    t.text     "description"
   end
 
   create_table "category_groups", force: :cascade do |t|
     t.string   "name"
-    t.boolean  "is_hidden",  default: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "is_hidden",   default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "logo"
+    t.text     "description"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer  "order_id"
+    t.string   "product_name"
+    t.integer  "product_price"
+    t.integer  "quantity"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "billing_name"
+    t.string   "billing_address"
+    t.string   "shipping_name"
+    t.string   "shipping_address"
+    t.string   "shipping_phone"
+    t.integer  "total",            default: 0
+    t.boolean  "is_paid",          default: false
+    t.string   "payment_method"
+    t.string   "token"
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "aasm_state",       default: "order_placed"
+    t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
   create_table "product_images", force: :cascade do |t|

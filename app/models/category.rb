@@ -16,4 +16,11 @@ class Category < ApplicationRecord
     self.is_hidden = true
     self.save
   end
+
+  # 上傳分類 Logo 圖 #
+  mount_uploader :logo, ImageUploader
+
+  # Scope #
+  scope :published, -> { where(is_hidden: false) }
+
 end

@@ -39,12 +39,15 @@
             </a>
             <!-- 選單選項 -->
             <ul class='dropdown-menu'>
-
-              <!-- admin 後台 -->
+              <!-- 使用者專區 -->
+              <li>
+                <%= link_to(t('account-order-access'), account_orders_path) %>
+              </li>
+              <!-- 管理員專區 -->
               <% if current_user.admin? %>
                 <li> <%= link_to(t('admin-access'), admin_products_path) %> </li>
               <% end %>
-              <!-- user 選項 -->
+              <!-- 登出 -->
               <li> <%= link_to(t('logout'), destroy_user_session_path, method: :delete) %> </li>
             </ul>
           </li>
