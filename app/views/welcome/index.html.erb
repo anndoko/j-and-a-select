@@ -54,34 +54,32 @@
 
   <!--===== 品牌故事 =====-->
   <section class="story-box">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h2>品牌故事</h2>
-          <h1>J&A</h1>
-          <div class="short-line"></div>
-          <div class="row">
-            <div class="col-md-3 col-md-offset-1">
-              <%= image_tag("jimmy.jpg") %>
-            </div>
-            <div class="col-md-7">
-              <h3>Jimmy 王品睿</h3>
-              <p>
-                提供的選品想傳遞一個概念：沒有浮誇設計與機能、注重物品的本質。因此所挑選的每一款物品都是從眾多物品當中親自使用過後，覺得能夠推薦給各位才放上J&A Select。由於是精挑細選之故，商品種類或許無法琳琅滿目，但每一項文具都有它特別值得一提的地方。
-              </p>
-            </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>品牌故事</h2>
+        <h1>J&A</h1>
+        <div class="short-line"></div>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-1">
+            <%= image_tag("jimmy.jpg") %>
           </div>
-          <hr />
-          <div class="row">
-            <div class="col-md-7 col-md-offset-1">
-              <h3>Anndo 柯禹安</h3>
-              <p>
-                除了還會陸續引進更多國外文具之外，我們也會推出台灣設計的原創文具：本日印章及試色章、手作紙鉛筆，提供更多樣化的選擇。
-              </p>
-            </div>
-            <div class="col-md-3">
-              <%= image_tag("anndo.jpg") %>
-            </div>
+          <div class="col-md-7">
+            <h3>Jimmy 王品睿</h3>
+            <p>
+              提供的選品想傳遞一個概念：沒有浮誇設計與機能、注重物品的本質。因此所挑選的每一款物品都是從眾多物品當中親自使用過後，覺得能夠推薦給各位才放上J&A Select。由於是精挑細選之故，商品種類或許無法琳琅滿目，但每一項文具都有它特別值得一提的地方。
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-7 col-md-offset-1">
+            <h3>Anndo 柯禹安</h3>
+            <p>
+              除了還會陸續引進更多國外文具之外，我們也會推出台灣設計的原創文具：本日印章及試色章、手作紙鉛筆，提供更多樣化的選擇。
+            </p>
+          </div>
+          <div class="col-md-3">
+            <%= image_tag("anndo.jpg") %>
           </div>
         </div>
       </div>
@@ -127,23 +125,78 @@
     </div>
   </section>
 
+  <!--===== 推荐商品 =====-->
+  <section class="show-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>推荐商品</h2>
+        <div class="short-line"></div>
+        <div id="pins" class="transitions-enabled">
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_1.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_2.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_3.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_4.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_5.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_6.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_7.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_8.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_9.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_10.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_11.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_12.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_13.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_14.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_15.jpg") %><% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!--===== 合作品牌 =====-->
   <section class="brand-box">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h2>合作品牌</h2>
-          <div class="short-line"></div>
-          <%= image_tag("brand_1.png") %>
-          <%= image_tag("brand_2.png") %>
-          <%= image_tag("brand_3.png") %>
-          <%= image_tag("brand_4.png") %>
-          <%= image_tag("brand_5.png") %>
-          <%= image_tag("brand_6.png") %>
-          <%= image_tag("brand_7.png") %>
-          <%= image_tag("brand_8.png") %>
-          <%= image_tag("brand_9.png") %>
-        </div>
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>合作品牌</h2>
+        <div class="short-line"></div>
+        <%= image_tag("brand_1.png") %>
+        <%= image_tag("brand_2.png") %>
+        <%= image_tag("brand_3.png") %>
+        <%= image_tag("brand_4.png") %>
+        <%= image_tag("brand_5.png") %>
+        <%= image_tag("brand_6.png") %>
+        <%= image_tag("brand_7.png") %>
+        <%= image_tag("brand_8.png") %>
+        <%= image_tag("brand_9.png") %>
       </div>
     </div>
   </section>

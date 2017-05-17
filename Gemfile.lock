@@ -94,6 +94,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.5)
       mime-types (>= 1.16, < 4)
+    masonry-rails (0.2.4)
+      railties
     method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -210,6 +212,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  masonry-rails
   mini_magick
   puma (~> 3.0)
   rails (~> 5.0.2)

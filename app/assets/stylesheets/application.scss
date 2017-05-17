@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require 'masonry/transitions'
  */
 
 @import "bootstrap-sprockets";
@@ -27,11 +28,12 @@
 
 /*===== 网站通用设置 ======*/
 body {
+  overflow-x: hidden; //裁剪内容 - 不提供滚动机制。
   letter-spacing: 1px;
   margin-top: 55px;
   font-size: 14px;
+  position: relative;
 }
-
 
 /*===== Navbar 导览列 ======*/
 .navbar.navbar-default {
@@ -229,7 +231,11 @@ body {
       font-style: italic;
     }
 
+  }
 
+  .carousel{
+    // margin-left: -15px;
+    // margin-right: -15px;
   }
 
   /*===== 换页按钮 =====*/
@@ -301,9 +307,26 @@ body {
   }
 }
 
+/*===== Show 首页-推荐商品 =====*/
+.show-box {
+  background-color: #F2F2F2;
+  text-align: center;
+  padding: 50px 0 50px 0;
+
+  #pins {
+    .box {
+  	  margin: 10px;
+  	  box-shadow: 1px 1px 1px #ccc;
+
+  	  img {
+  	  	max-width: 245px;
+  	  }
+  	}
+  }
+}
+
 /*===== Brands 首页-合作伙伴 =====*/
 .brand-box {
-  background-color: #F2F2F2;
   text-align: center;
   padding: 50px 0 50px 0;
 
