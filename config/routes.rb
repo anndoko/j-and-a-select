@@ -21,11 +21,17 @@ Rails.application.routes.draw do
       post :checkout # 下訂
     end
   end
-  resources :orders 
+  resources :orders
   resources :cart_items
 
+  #--=== 使用者專區 ===--#
+  namespace :account do
+    # 訂單歷程 #
+    resources :orders
+  end
 
-  #--=== 後台 ===--#
+
+  #--=== 管理員專區 ===--#
   namespace :admin do
 
     # 品牌 #

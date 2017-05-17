@@ -54,14 +54,20 @@ zh-TW:
   logout: 登出
   greeting: 您好，
   product-access: 選物
-  admin-access: 後台專區
+  admin-access: 管理員專區
+  account-order-access: 歷史訂單
 
   # 後台操作面板 #
   admin-product: 商品管理
   admin-brand: 品牌管理
   admin-category: 分類管理
 
-#--=== 後台 ===--#
+#--=== 使用者專區 ===--#
+  # 歷史訂單 #
+  account-order-index: 歷史訂單
+  f-order-created-at: 下訂日期 / 年 /時間
+
+#--=== 管理員專區 ===--#
   # 共用元素 #
   f-hide: 是否隱藏
   f-submit: 確認送交
