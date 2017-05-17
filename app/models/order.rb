@@ -1,4 +1,10 @@
 class Order < ApplicationRecord
+  # 生成亂序號碼 #
+  before_create :generate_token
+
+  def generate_token
+    self.token = SecureRandom.uuid # Ruby 內建亂序生成器
+  end
 
   # 新增/修改欄位限制與提示 #
   validates :billing_name, presence: true
