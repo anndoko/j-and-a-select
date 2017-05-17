@@ -55,13 +55,12 @@ gem 'ransack'
 gem 'carrierwave'
 gem 'mini_magick'
 
-# Rails Console 排版
-gem 'awesome_rails_console'
-
-
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Debug 工具
   gem 'byebug', platform: :mri
+  gem 'pry'
+  # Rails Console 排版
+  gem 'awesome_rails_console'
 end
 
 group :development do
