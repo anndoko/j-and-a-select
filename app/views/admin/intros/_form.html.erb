@@ -1,0 +1,31 @@
+<!--=== 新增廣告 ===-->
+<%= simple_form_for [:admin, @intro] do |f| %>
+  <!-- 廣告標題 -->
+  <div class='group'>
+    <%= f.input :title, :label => t('f-intro-title') %>
+  </div>
+
+  <!-- 廣告內容 -->
+  <div class='group'>
+    <%= f.input :content, :label => t('f-intro-content') %>
+  </div>
+
+  <!-- 廣告連結 -->
+  <div class='group'>
+    <%= f.input :link, :label => t('f-intro-link') %>
+  </div>
+
+  <!-- 上傳圖片 -->
+  <div class='group'>
+    <%= f.label t('f-intro-image') %><br>
+    <%= f.file_field :image %>
+  </div>
+
+  <!-- 廣告隱藏與否 -->
+  <div class='group'>
+    <%= f.input :is_hidden, :label => t('f-hide') %>
+  </div>
+
+  <%= f.submit t('f-submit'), class: 'btn btn-lg btn-default' %>
+
+<% end %>

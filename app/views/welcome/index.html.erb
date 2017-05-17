@@ -1,1 +1,213 @@
-<h1><%= t('j-and-a-select') %></h1>
+<div class="welcome-box">
+  <!--===== 网站介紹 =====-->
+  <section class="intro-box">
+    <div class="row">
+      <div class="col-md-12">
+        <!--===== 网站介紹-Covers =====-->
+        <div id="intro" class="carousel slide" data-ride="carousel">
+          <!--===== 下方按钮 =====-->
+          <!-- <ol class="carousel-indicators">
+            <li data-target="#intro" data-slide-to="0" class="active"></li>
+            <li data-target="#intro" data-slide-to="1"></li>
+            <li data-target="#intro" data-slide-to="2"></li>
+          </ol> -->
+
+          <!--===== 轮播内容 =====-->
+          <!--===== 图片尺寸 1280x600 =====-->
+          <div class="carousel-inner" role="listbox">
+            <% i = 1 %>
+            <% @intros.each do |intro| %>
+              <% if i == 1 %>
+              <div class="item active">
+              <% else %>
+              <div class="item">
+              <% end %>
+                <%= link_to intro.link, target: "_blank" do %>
+                  <%= image_tag(intro.image) %>
+                  <div class="carousel-caption">
+                    <h3><%= intro.title %></h3>
+                    <p><%= intro.content %></p>
+                  </div>
+                <% end %>
+              </div>
+              <% i += 1 %>
+            <% end %>
+          </div>
+
+          <!--===== 换页按钮 =====-->
+          <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
+            <span class="fa fa-angle-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#intro" role="button" data-slide="next">
+            <span class="fa fa-angle-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 品牌故事 =====-->
+  <section class="story-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>品牌故事</h2>
+        <h1>J&A</h1>
+        <div class="short-line"></div>
+        <div class="row">
+          <div class="col-md-3 col-md-offset-1">
+            <%= image_tag("jimmy.jpg") %>
+          </div>
+          <div class="col-md-7">
+            <h3>Jimmy 王品睿</h3>
+            <p>
+              理工直男程序猿，穿衣不脫黑白灰，卻時刻關注能提升生活質量的單品。<br />
+              提供的選物沒有浮誇的設計與機能，注重物品的本質與材料，每一項推薦的單品都親身試用，雖種類不多，但必屬精品。
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-7 col-md-offset-1">
+            <h3>Anndo 柯禹安</h3>
+            <p>
+              J&A選物的挑選法則是「有愛才會賣」，因為唯有用這樣的標準挑選達到最好平衡、符合心中完美且合理 CP 值的商品，才能娓娓訴說對它們的了解與熱誠。
+            </p>
+          </div>
+          <div class="col-md-3">
+            <%= image_tag("anndo.jpg") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 商品分类 =====-->
+  <section class="categories-box">
+    <div class="row">
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_1" do %>
+          <div class="category-box">
+            <%= image_tag("category_1.jpg") %>
+          </div>
+          <div>
+            <h3>文具</h3>
+            <p>
+              現代人的日常頻繁地使用文具，但你是否對毫無鑑別度的工具產生厭倦，覺得在茫茫人海中毫無亮點？J&A Select精選全球知名品牌，又在其中推薦最有特色的文具單品，不論是想充滿異國風情、還是跟上時尚潮流、甚至只想畫龍點睛，文具館裡都能滿你的需求。
+            </p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_2" do %>
+          <div class="category-box">
+            <%= image_tag("category_2.jpg") %>
+          </div>
+          <div>
+            <h3>生活用品</h3>
+            <p>辛勤工作不外乎就是為了享受更好的生活，那些分享於臉書和 Instagram 擺盤很美的餐桌、讓人眼睛為之一亮的家具單品，還是舒服的居家一角，都是你我心所嚮往的美好日常。但那些堆疊出質感生活的器物要從何找起呢？現在風靡全球的生活選物店，透過專業人士幫您精心挑選品質與外型兼備的生活用品，從衣著鞋包、杯具食器、收納櫃體、書籍文具、甚至是醬料食材等等食、衣、住、行、育、樂會觸及到的範圍，提升日常就從生活選物開始吧！ </p>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-md-4 category-content">
+        <%= link_to '#' , class: "category_3" do %>
+          <div class="category-box">
+            <%= image_tag("category_3.jpg") %>
+          </div>
+          <div>
+            <h3>特色小物</h3>
+            <p>辛勤工作不外乎就是為了享受更好的生活，那些分享於臉書和 Instagram 擺盤很美的餐桌、讓人眼睛為之一亮的家具單品，還是舒服的居家一角，都是你我心所嚮往的美好日常。但那些堆疊出質感生活的器物要從何找起呢？現在風靡全球的生活選物店，透過專業人士幫您精心挑選品質與外型兼備的生活用品，從衣著鞋包、杯具食器、收納櫃體、書籍文具、甚至是醬料食材等等食、衣、住、行、育、樂會觸及到的範圍，提升日常就從生活選物開始吧！ </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 推荐商品 =====-->
+  <section class="show-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>推荐商品</h2>
+        <div class="short-line"></div>
+        <div id="pins" class="transitions-enabled">
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_1.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_2.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_3.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_4.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_5.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_6.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_7.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_8.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_9.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_10.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_11.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_12.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_13.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_14.jpg") %><% end %>
+          </div>
+          <div class="box">
+            <%= link_to '#' do %><%= image_tag("show_15.jpg") %><% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 合作品牌 =====-->
+  <section class="brand-box">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <h2>合作品牌</h2>
+        <div class="short-line"></div>
+        <%= image_tag("brand_1.png") %>
+        <%= image_tag("brand_2.png") %>
+        <%= image_tag("brand_3.png") %>
+        <%= image_tag("brand_4.png") %>
+        <%= image_tag("brand_5.png") %>
+        <%= image_tag("brand_6.png") %>
+        <%= image_tag("brand_7.png") %>
+        <%= image_tag("brand_8.png") %>
+        <%= image_tag("brand_9.png") %>
+      </div>
+    </div>
+  </section>
+
+  <!--===== 立即购买 =====-->
+  <section class="push-box">
+    <%= link_to("立即选购", '#', class:'btn btn-push' ) %>
+  </section>
+
+  <!--===== Go top（回到顶端） =====-->
+  <div class="goTop">
+    <a href="#"><span class="fa fa-chevron-up"></span></a>
+  </div>
+
+</div>

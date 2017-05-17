@@ -25,13 +25,18 @@ zh-TW:
   login: 登入
   logout: 登出
   greeting: 您好，
+  cart: 購物車
+  language: 切換語系
   product-access: 選物
+  brand-access: 品牌故事
+  recommend-access: 熱門推薦
   admin-access: 後台專區
 
   # 後台操作面板 #
   admin-product: 商品管理
   admin-brand: 品牌管理
   admin-category: 分類管理
+  admin-homepage: 首頁廣告管理
 
 #--=== 後台 ===--#
   # 共用元素 #
@@ -41,6 +46,7 @@ zh-TW:
   notice-no-image: 尚無圖片
 
   btn-edit: 編輯
+  btn-delete: 刪除
   btn-hide: 隱藏
   btn-publish: 公開
 
@@ -91,3 +97,15 @@ zh-TW:
   f-product-brand: 商品品牌
 
   btn-product-new: 新增商品
+
+  # 商品管理 #
+  intro-index: 廣告一覽
+  intro-new: 新增廣告
+  intro-edit: 編輯廣告
+
+  f-intro-title: 廣告名稱
+  f-intro-content: 廣告介紹
+  f-intro-link: 廣告連結
+  f-intro-image: 廣告圖片
+
+  btn-intro-new: 新增廣告
