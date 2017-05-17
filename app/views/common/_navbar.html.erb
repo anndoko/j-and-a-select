@@ -1,6 +1,10 @@
 <div class="row">
   <div class="col-md-12">
-    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <% if current_page?('/') %>
+      <div class="navbar navbar-default navbar-fixed-top" role="navigation" id="navbar">
+    <% else %>
+      <div class="navbar navbar-default navbar-fixed-top show_bgcolor" role="navigation">
+    <% end %>
       <div class="container">
         <div class="navbar-header">
           <!--=== 右侧下拉选单（移动端时显示） ===-->
