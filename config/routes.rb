@@ -18,9 +18,12 @@ Rails.application.routes.draw do
   resources :carts do
     collection do
       delete :clear # 清空購物車
+      post :checkout # 下訂
     end
   end
+  resources :orders 
   resources :cart_items
+
 
   #--=== 後台 ===--#
   namespace :admin do

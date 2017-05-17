@@ -19,6 +19,7 @@ zh-TW:
   btn-add-to-cart: 加入購物車
 
 #--=== 購物車 ===--#
+  # 購物車 #
   cart-index: 購物車
   cart-clear: 清空購物車
 
@@ -28,6 +29,19 @@ zh-TW:
   f-cart-total: 總計：
 
   btn-checkout: 確認結帳
+
+  # 訂單 #
+  checkout-index: 訂單資訊
+
+  f-billing-info: 聯絡資訊
+  f-billing-name: 聯絡人 - 姓名
+  f-billing-address: 聯絡人 - 帳單地址
+  f-shipping-info: 寄送資訊
+  f-shipping-name: 收件人 - 姓名
+  f-shipping-phone: 收件人 - 電話（選填）
+  f-shipping-address: 收件人 - 收貨地址
+
+  btn-order-create: 生成訂單
 
 #--=== 選單介面 ===--#
   # Navbar #

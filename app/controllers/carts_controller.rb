@@ -11,4 +11,9 @@ class CartsController < ApplicationController
     redirect_to carts_path
   end
 
+  # 下訂
+  def checkout
+    @order = Order.new
+  end
+
 end
