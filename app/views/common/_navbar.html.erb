@@ -23,8 +23,8 @@
           <!--=== 网站连结 ===-->
           <ul class="nav navbar-nav navbar-left">
             <li><%= link_to(t('product-access'), products_path) %></li>
-            <li><%= link_to("品牌故事", '#', class: "scroll") %></li>
-            <li><%= link_to("热门推荐", '#', class: "scroll") %></li>
+            <li><%= link_to(t('brand-access'), '#', class: "scroll") %></li>
+            <li><%= link_to(t('recommend-access'), '#', class: "scroll") %></li>
           </ul>
           <!--=== 帐号操作 ===-->
           <ul class='nav navbar-nav  navbar-right'>
@@ -32,12 +32,12 @@
             <li class="divider" role="separator"></li>
             <li>
               <%= link_to carts_path do %>
-                购物车 <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
+                <%= t('cart') %> <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
               <% end %>
             </li>
             <li>
               <%= link_to('#') do %>
-                切換語系 <i class="fa fa-globe"></i>
+                <%= t('language') %> <i class="fa fa-globe"></i>
               <% end %>
             </li>
             <% if !current_user %>
@@ -54,7 +54,6 @@
                 </a>
                 <!-- 選單選項 -->
                 <ul class='dropdown-menu'>
-
                   <!-- admin 後台 -->
                   <% if current_user.admin? %>
                     <li> <%= link_to(t('admin-access'), admin_products_path) %> </li>
@@ -66,7 +65,6 @@
             <% end %>
           </ul>
           <!--=== 搜索栏 ===-->
-
         </div>
       </div>
     </div>

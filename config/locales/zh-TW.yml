@@ -25,7 +25,11 @@ zh-TW:
   login: 登入
   logout: 登出
   greeting: 您好，
+  cart: 購物車
+  language: 切換語系
   product-access: 選物
+  brand-access: 品牌故事
+  recommend-access: 熱門推薦
   admin-access: 後台專區
 
   # 後台操作面板 #
