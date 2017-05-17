@@ -11,6 +11,11 @@ class Cart < ApplicationRecord
     ci.save
   end
 
+  # 清空購物車 #
+  def clear!
+    cart_items.destroy_all
+  end
+
   # 購物車總價 #
   def total_price
     sum = 0

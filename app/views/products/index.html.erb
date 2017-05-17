@@ -1,29 +1,29 @@
-<!--=== 頁面標題 ===-->
-<h2><%= t('product-index') %></h2>
+<!--=== 商品類型 & 品牌選單 ===-->
+<%= render "products/menu" %>
 
 <!--=== 商品列表 ===-->
-<table class="table">
-  <!--=== 商品列表標題 ===-->
-  <thead>
-    <tr>
-      <th><%= t('f-product-name') %></th>
-      <th><%= t('f-product-brand') %></th>
-      <th><%= t('f-product-category') %></th>
-      <th><%= t('f-category-group') %></th>
-      <th><%= t('f-product-price') %></th>
-      <th><%= t('f-product-quantity') %></th>
-    </tr>
-  </thead>
+<div class='row'>
+  <% @products.each_with_index do |product, index| %>
+    <div class='col-xs-12 col-md-3'>
+      <%= link_to product_path(product) do %>
+        <!-- 商品圖片 -->
+        <% if product.product_images.present? %>
+          <!-- 顯示第一張圖片 -->
+          <%= image_tag(product.product_images[0].image.thumb.url, class: 'thumbnail')%>
+        <% else %>
+          <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
+        <% end %>
+          <% end %>
 
-  <!--=== 商品列表內容 ===-->
-  <% @products.each do |product| %>
-    <tr>
-      <td><%= link_to(product.name, product_path(product)) %></td>
-      <td><%= product.brand.name %></td>
-      <td><%= product.category.name %></td>
-      <td><%= product.category.category_group.name %></td>
-      <td><%= product.price %></td>
-      <td><%= product.quantity %></td>
-    </tr>
+        <!-- 商品名稱 -->
+        <%= product.name %><br/>
+        <!-- 商品價錢-->
+        $ <%= product.price %>
+
+    </div>
   <% end %>
-</table>
+</div>
+
+<div class="text-center">
+  <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+</div>

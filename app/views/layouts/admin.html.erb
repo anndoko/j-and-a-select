@@ -17,10 +17,18 @@
       <!--=== 後台操作面板 ===-->
       <div class="col-md-2">
         <ul class="nav nav-pills nav-stacked control-box">
+          <!-- 訂單管理 -->
+          <li>
+            <%= link_to(t('admin-order'), admin_orders_path, :class => 'btn btn-md btn-default') %>
+          </li>
           <!-- 商品管理 -->
-          <li> <%= link_to(t('admin-product'), admin_products_path, :class => 'btn btn-md btn-default') %> </li>
+          <li>
+            <%= link_to(t('admin-product'), admin_products_path, :class => 'btn btn-md btn-default') %>
+          </li>
           <!-- 品牌管理 -->
-          <li> <%= link_to(t('admin-brand'), admin_brands_path, :class => 'btn btn-md btn-default') %> </li>
+          <li>
+            <%= link_to(t('admin-brand'), admin_brands_path, :class => 'btn btn-md btn-default') %>
+          </li>
           <!-- 分類管理 -->
           <li> <%= link_to(t('admin-category'), admin_categories_path, :class => 'btn btn-md btn-default') %> </li>
           <!-- 首页管理 -->

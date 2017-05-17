@@ -49,11 +49,41 @@
     </div>
 
     <hr/>
-    <!-- 購物車結帳 -->
-    <div class='checkout clearfix'>
-      <span class='pull-right'>
-        <%= link_to(t('btn-checkout'), checkout_carts_path, method: :post, class: 'btn btn-lg btn-default') %>
-      </span>
+    <!--=== 頁面標題 ===-->
+    <h2><%= t('checkout-index') %></h2>
+
+    <!--=== 下訂表單 ===-->
+    <div class='order-form'>
+      <%= simple_form_for @order do |f| %>
+        <!-- 訂購人 -->
+        <legend><%= t('f-billing-info') %></legend>
+
+        <div class='form-group'>
+          <%= f.input :billing_name, :label => t('f-billing-name')%>
+        </div>
+        <div class='form-group'>
+          <%= f.input :billing_address, :label => t('f-billing-address') %>
+        </div>
+
+        <!-- 收貨人 -->
+        <legend><%= t('f-shipping-info') %></legend>
+
+        <div class='form-group'>
+          <%= f.input :shipping_name, :label => t('f-shipping-name') %>
+        </div>
+        <div class='form-group'>
+          <%= f.input :shipping_phone, :label => t('f-shipping-phone') %>
+        </div>
+        <div class='form-group'>
+          <%= f.input :shipping_address, :label => t('f-shipping-address') %>
+        </div>
+
+        <!-- 下訂，產生訂單 -->
+        <div class='checkout'>
+          <%= f.submit t('btn-order-create'), class: 'btn btn-lg btn-default pull-right' %>
+        </div>
+
+      <% end %>
     </div>
   </div>
 </div>

@@ -49,7 +49,7 @@ class Admin::CategoryGroupsController < ApplicationController
   private
 
   def category_group_params
-    params.require(:category_group).permit(:name, :is_hidden)
+    params.require(:category_group).permit(:name, :is_hidden, :description, :logo)
   end
 
 end

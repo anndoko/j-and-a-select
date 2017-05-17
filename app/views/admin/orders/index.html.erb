@@ -1,0 +1,31 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <!--=== 頁面標題 ===-->
+    <h2><%= t('order-index') %></h2>
+    <br/>
+    <br/>
+    <!--=== 訂單列表 ===-->
+    <table class='table'>
+      <!--=== 訂單列表標題 ===-->
+      <thead>
+        <tr>
+          <th>#</th>
+          <th><%= t('f-order-created-at') %></th>
+          <th><%= t('f-order-user') %></th>
+          <th><%= t('f-order-status') %></th>
+        </tr>
+      </thead>
+      <!--=== 訂單列表內容 ===-->
+      <tbody>
+        <% @orders.each do |order| %>
+        <tr>
+          <td><%= link_to(order.id, admin_order_path(order)) %></td>
+          <td><%= order.created_at.to_s(:long) %></td>
+          <td><%= order.user.email %></td>
+          <td><%= order.aasm_state %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

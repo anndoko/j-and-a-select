@@ -19,4 +19,7 @@ class Brand < ApplicationRecord
   # 上傳品牌 Logo 圖 #
   mount_uploader :logo, ImageUploader
 
+  # Scope #
+  scope :published, -> { where(is_hidden: false) }
+
 end

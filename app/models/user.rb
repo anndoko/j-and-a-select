@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # 關聯 #
+  has_many :orders
+
 
   # 檢查 is_admin 的 boolean 值
   def admin?

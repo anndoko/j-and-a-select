@@ -4,13 +4,26 @@ zh-TW:
 
 #--=== 提示訊息 ===--#
   message-add-to-cart-success: 成功加入購物車！
-  message-already-added: 您的購物車已有此商品
+  message-already-added: 您的購物車已有此商品。
+  message-confirm-clear-cart: 您確定要清空整個購物車嗎？
+  message-clear-cart-success: 已清空購物車。
+  message-payment-success: 已完成付款。
+  message-cancel-request-sent: 已提交申請，J&A SELECT 會儘速與您聯繫。
 
-#--=== 商品 ===--#
+#--=== 商品列表 ===--#
+  nav-brand: 嚴選品牌
+
+  will_paginate:
+    previous_label: <span class="fa fa-angle-double-left"></span>
+    next_label: <span class="fa fa-angle-double-right"></span>
+
+#--=== 商品資訊頁 ===--#
   btn-add-to-cart: 加入購物車
 
 #--=== 購物車 ===--#
+  # 購物車 #
   cart-index: 購物車
+  cart-clear: 清空購物車
 
   f-cart-product-info: 商品資訊
   f-cart-product-price: 商品單價
@@ -18,6 +31,28 @@ zh-TW:
   f-cart-total: 總計：
 
   btn-checkout: 確認結帳
+
+  # 生成訂單 #
+  checkout-index: 訂單資訊
+
+  f-billing-info: 聯絡資訊
+  f-billing-name: 聯絡人 - 姓名
+  f-billing-address: 聯絡人 - 帳單地址
+  f-shipping-info: 寄送資訊
+  f-shipping-name: 收件人 - 姓名
+  f-shipping-phone: 收件人 - 電話（選填）
+  f-shipping-address: 收件人 - 收貨地址
+
+  btn-order-create: 生成訂單
+
+  # 訂單 #
+  order-show: 訂單明細
+
+  btn-pay: 線上結帳
+  btn-apply-to-cancel: 申請取消訂單
+
+  order-payment-method: 線上支付
+  order-paid: < 此筆訂單已完成結帳，感謝您的購買。 >
 
 #--=== 選單介面 ===--#
   # Navbar #
@@ -31,14 +66,21 @@ zh-TW:
   brand-access: 品牌故事
   recommend-access: 熱門推薦
   admin-access: 後台專區
+  account-order-access: 歷史訂單
 
   # 後台操作面板 #
+  admin-order: 訂單管理
   admin-product: 商品管理
   admin-brand: 品牌管理
   admin-category: 分類管理
   admin-homepage: 首頁廣告管理
 
-#--=== 後台 ===--#
+#--=== 使用者專區 ===--#
+  # 歷史訂單 #
+  account-order-index: 歷史訂單
+  f-order-created-at: 下訂日期 / 年 /時間
+
+#--=== 管理員專區 ===--#
   # 共用元素 #
   f-hide: 是否隱藏
   f-submit: 確認送交
@@ -49,6 +91,26 @@ zh-TW:
   btn-delete: 刪除
   btn-hide: 隱藏
   btn-publish: 公開
+
+  # 訂單管理 #
+  order-index: 訂單一覽
+
+  f-order-user: 訂購人
+  f-order-status: 訂單狀態
+
+  order-state-paid: 已付款
+  order-state-unpaid: 未付款
+
+  btn-cancel-order: 取消訂單
+  btn-set-cancel: 取消訂單
+  btn-set-shipping: 出貨
+  btn-set-shipped: 設為「已出貨」
+  btn-set-return: 退貨
+
+  cancelled: 此筆訂單已取消
+  returned: 此筆購買已退貨
+
+
 
   # 品牌管理 #
   brand-index: 品牌一覽

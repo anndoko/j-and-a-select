@@ -15,11 +15,42 @@ Rails.application.routes.draw do
   end
 
   # 購物車 #
-  resources :carts
+  resources :carts do
+    collection do
+      delete :clear # 清空購物車
+      post :checkout # 下訂
+    end
+  end
+
+  # 訂單 #
+  resources :orders do
+    member do
+      post :pay # 付款（暫）
+      post :apply_to_cancel # 申請取消訂單
+    end
+  end
+
   resources :cart_items
 
-  #--=== 後台 ===--#
+  #--=== 使用者專區 ===--#
+  namespace :account do
+    # 訂單歷程 #
+    resources :orders
+  end
+
+
+  #--=== 管理員專區 ===--#
   namespace :admin do
+
+    # 訂單管理 #
+    resources :orders do
+      member do
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
+      end
+    end
 
     # 品牌 #
     resources :brands do
