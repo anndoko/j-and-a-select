@@ -26,7 +26,7 @@ function goTop(min_height) {
           scrollTop: 0
       }, 700);
     });
-  min_height=min_height?min_height:2000; //按钮出现高度（画面下移）
+  min_height=min_height?min_height:2500; //按钮出现高度（画面下移）
   $(window).scroll(function() {
     var s = $(window).scrollTop();
     if (s > min_height) {

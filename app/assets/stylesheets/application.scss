@@ -301,8 +301,11 @@ body {
     }
 
     p {
-      padding: 0 50px 0 50px;
+      text-align: left;
+      letter-spacing: 1.5px;
+      padding: 0 62.5px 0 62.5px;
       color: #666;
+      line-height: 26px;
     }
   }
 }
