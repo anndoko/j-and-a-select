@@ -93,6 +93,17 @@ zh-TW:
   order-state-paid: 已付款
   order-state-unpaid: 未付款
 
+  btn-cancel-order: 取消訂單
+  btn-set-cancel: 取消訂單
+  btn-set-shipping: 出貨
+  btn-set-shipped: 設為「已出貨」
+  btn-set-return: 退貨
+
+  cancelled: 此筆訂單已取消
+  returned: 此筆購買已退貨
+
+
+
   # 品牌管理 #
   brand-index: 品牌一覽
   brand-new: 新增品牌
