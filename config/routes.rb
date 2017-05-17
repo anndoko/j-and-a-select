@@ -41,6 +41,9 @@ Rails.application.routes.draw do
   #--=== 管理員專區 ===--#
   namespace :admin do
 
+    # 訂單管理 #
+    resources :orders
+
     # 品牌 #
     resources :brands do
       member do

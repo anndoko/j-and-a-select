@@ -63,6 +63,7 @@ zh-TW:
   account-order-access: 歷史訂單
 
   # 後台操作面板 #
+  admin-order: 訂單管理
   admin-product: 商品管理
   admin-brand: 品牌管理
   admin-category: 分類管理
@@ -82,6 +83,15 @@ zh-TW:
   btn-edit: 編輯
   btn-hide: 隱藏
   btn-publish: 公開
+
+  # 訂單管理 #
+  order-index: 訂單一覽
+
+  f-order-user: 訂購人
+  f-order-status: 訂單狀態
+
+  order-state-paid: 已付款
+  order-state-unpaid: 未付款
 
   # 品牌管理 #
   brand-index: 品牌一覽
