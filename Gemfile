@@ -45,6 +45,7 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
+gem 'masonry-rails'
 
 # 搜尋
 gem 'ransack'

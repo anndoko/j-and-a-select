@@ -3,26 +3,19 @@
   <head>
     <title><%= t('j-and-a-select') %></title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
-
   <body>
     <div class="container-fluid">
       <!--=== navbar ===-->
-      <div class="row">
         <%= render "common/navbar" %>
-      </div>
-
       <!--=== 提示訊息 ===-->
       <%= render "common/flashes" %>
-
       <!--=== 網站內容 ===-->
       <%= yield %>
     </div>
-
     <%= render "common/footer" %>
-
   </body>
 </html>

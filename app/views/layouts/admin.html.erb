@@ -16,7 +16,7 @@
 
       <!--=== 後台操作面板 ===-->
       <div class="col-md-2">
-        <ul class="nav nav-pills nav-stacked" style="max-width: 300px;">
+        <ul class="nav nav-pills nav-stacked control-box">
           <!-- 訂單管理 -->
           <li>
             <%= link_to(t('admin-order'), admin_orders_path, :class => 'btn btn-md btn-default') %>
@@ -30,9 +30,9 @@
             <%= link_to(t('admin-brand'), admin_brands_path, :class => 'btn btn-md btn-default') %>
           </li>
           <!-- 分類管理 -->
-          <li>
-            <%= link_to(t('admin-category'), admin_categories_path, :class => 'btn btn-md btn-default') %>
-          </li>
+          <li> <%= link_to(t('admin-category'), admin_categories_path, :class => 'btn btn-md btn-default') %> </li>
+          <!-- 首页管理 -->
+          <li> <%= link_to(t('admin-homepage'), admin_intros_path, :class => 'btn btn-md btn-default') %> </li>
         </ul>
       </div>
 

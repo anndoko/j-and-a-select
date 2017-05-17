@@ -1,0 +1,39 @@
+<!--=== 頁面標題 ===-->
+<h2><%= t('intro-index') %></h2>
+
+<!--=== 新增廣告 ===-->
+<div class='pull-right'>
+  <%= link_to(t('btn-intro-new'), new_admin_intro_path, :class => 'btn btn-sm btn-default')%>
+</div>
+
+<!--=== 廣告列表 ===-->
+<table class='table'>
+  <!--=== 廣告列表標題 ===-->
+  <thead>
+    <tr>
+      <th></th>
+      <th><%= t('f-intro-title') %></th>
+      <th><%= t('f-intro-content') %></th>
+      <th><%= t('f-intro-link') %></th>
+      <th><%= t('f-options') %></th>
+    </tr>
+  </thead>
+
+  <!--=== 廣告列表內容 ===-->
+  <% @intros.each do |intro| %>
+    <tr>
+      <td><%= render_intro_status(intro) %></td>
+      <td><%= intro.title %></td>
+      <td><%= intro.content %></td>
+      <td><%= intro.link %></td>
+      <!--=== 操作選項 ===-->
+      <td>
+        <!-- 編輯 -->
+        <%= link_to(t('btn-edit'), edit_admin_intro_path(intro), :class => 'btn btn-sm btn-default') %>
+        <%= link_to(t('btn-delete'), admin_intro_path(intro), data: { confirm: "Are you sure?" }, method: :delete, :class => 'btn btn-sm btn-default') %>
+        <!-- 發佈 / 隱藏 -->
+        <%= render_intro_publish_or_hide(intro) %>
+      </td>
+    </tr>
+  <% end %>
+</table>
