@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :orders do
     member do
       post :pay # 付款（暫）
+      post :apply_to_cancel # 申請取消訂單
     end
   end
 

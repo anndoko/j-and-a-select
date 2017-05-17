@@ -45,6 +45,13 @@ class OrdersController < ApplicationController
     flash[:notice] = t('message-payment-success')
   end
 
+  # 申請取消訂單
+  def apply_to_cancel
+    @order = Order.find(params[:id])
+    flash[:notice] = t('message-cancel-request-sent')
+    redirect_to :back
+  end
+
   private
 
   def order_params

@@ -8,6 +8,7 @@ zh-TW:
   message-confirm-clear-cart: 您確定要清空整個購物車嗎？
   message-clear-cart-success: 已清空購物車。
   message-payment-success: 已完成付款。
+  message-cancel-request-sent: 已提交申請，J&A SELECT 會儘速與您聯繫。
 
 #--=== 商品列表 ===--#
   nav-brand: 嚴選品牌
@@ -48,6 +49,7 @@ zh-TW:
   order-show: 訂單明細
 
   btn-pay: 線上結帳
+  btn-apply-to-cancel: 申請取消訂單
 
   order-payment-method: 線上支付
   order-paid: < 此筆訂單已完成結帳，感謝您的購買。 >

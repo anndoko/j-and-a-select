@@ -71,6 +71,14 @@
       </tbody>
     </table>
 
+    <!--=== 申請取消訂單 ===-->
+    <div class='pull-left'>
+      <% if @order.order_placed? || @order.paid? %>
+        <%= link_to(t('btn-apply-to-cancel'), apply_to_cancel_order_path(@order), method: :post, class: 'btn btn-lg btn-default') %>
+      <% end %>
+    </div>
+
+
     <!--=== 付款（暫） ===-->
     <% if !@order.is_paid? %>
       <div class='group pull-right'>
