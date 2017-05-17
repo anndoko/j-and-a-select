@@ -44,6 +44,20 @@ class Admin::IntrosController < ApplicationController
       redirect_to admin_intros_path, notice: '廣告刪除成功'
   end
 
+  # 發佈
+  def publish
+    @intro = Intro.find(params[:id])
+    @intro.publish!
+    redirect_to :back
+  end
+
+  # 隱藏
+  def hide
+    @intro = Intro.find(params[:id])
+    @intro.hide!
+    redirect_to :back
+  end
+
 private
 
   def intro_params

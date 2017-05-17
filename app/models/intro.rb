@@ -7,4 +7,15 @@ class Intro < ApplicationRecord
   mount_uploader :image, IntroUploader
 
   scope :published, -> { where(is_hidden: false) }
+
+  # 發佈 / 隱藏 #
+  def publish!
+    self.is_hidden = false
+    self.save
+  end
+
+  def hide!
+    self.is_hidden = true
+    self.save
+  end
 end
