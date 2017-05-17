@@ -55,6 +55,9 @@ gem 'ransack'
 gem 'carrierwave'
 gem 'mini_magick'
 
+# 訂單狀態
+gem 'aasm'
+
 group :development, :test do
   # Debug 工具
   gem 'byebug', platform: :mri

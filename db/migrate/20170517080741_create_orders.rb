@@ -11,8 +11,7 @@ class CreateOrders < ActiveRecord::Migration[5.0]
       t.boolean :is_paid, default: false
       t.string :payment_method
       t.string :token
-      t.string :assm_state, default: 'order_placed'
-
+      
       t.timestamps
     end
   end

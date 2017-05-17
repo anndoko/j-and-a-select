@@ -37,8 +37,8 @@ class OrdersController < ApplicationController
   # 付款（暫）
   def pay
     @order = Order.find_by_token(params[:id])
-    @order.set_payment_with!("pay")
-    @order.pay!
+    @order.set_payment_with!(t('order-payment-method'))
+    @order.make_payment! # AASM 機制
 
     redirect_to order_path(@order.token)
 
