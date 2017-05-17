@@ -30,7 +30,7 @@ zh-TW:
 
   btn-checkout: 確認結帳
 
-  # 訂單 #
+  # 生成訂單 #
   checkout-index: 訂單資訊
 
   f-billing-info: 聯絡資訊
@@ -42,6 +42,10 @@ zh-TW:
   f-shipping-address: 收件人 - 收貨地址
 
   btn-order-create: 生成訂單
+
+  # 訂單 #
+  order-show: 訂單明細
+
 
 #--=== 選單介面 ===--#
   # Navbar #
