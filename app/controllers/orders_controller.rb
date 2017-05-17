@@ -19,6 +19,9 @@ class OrdersController < ApplicationController
         order_item.save
       end
 
+      # 訂單成立後清空購物車
+      current_cart.clear!
+
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
