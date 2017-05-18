@@ -41,11 +41,15 @@
 
   <br/>
 
-  <!-- 加入願望清單 -->
+  <!-- 願望清單 -->
   <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
-    <label>已收藏</label>
+    <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
+      <label><i class="fa fa-check  fa-fw"> </i><%= t('wish-list-remove') %></label>
+    <% end %>
   <% else %>
-    <label>未收藏</label>
+    <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
+      <label><i class="fa fa-plus  fa-fw"> </i><%= t('wish-list-add') %></label>
+    <% end %>
   <% end %>
 
   <br/>

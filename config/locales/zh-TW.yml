@@ -19,6 +19,8 @@ zh-TW:
 
 #--=== 商品資訊頁 ===--#
   btn-add-to-cart: 加入購物車
+  wish-list-add: 收藏至願望清單
+  wish-list-remove: 已收藏至願望清單
 
 #--=== 購物車 ===--#
   # 購物車 #

@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:add, :remove]
 
   def index
     # 商品類型 / 品牌
@@ -49,5 +50,26 @@ class ProductsController < ApplicationController
 
     redirect_to :back
   end
+
+  # 將該商品加入願望清單
+  def add_to_wish_list
+    @product = Product.find(params[:id])
+    if !current_user.is_wish_list_owner_of?(@product)
+      current_user.add_to_wish_list!(@product)
+    end
+
+    redirect_to :back
+  end
+
+  # 從願望清單上刪除該商品
+  def remove_from_wish_list
+    @product = Product.find(params[:id])
+    if current_user.is_wish_list_owner_of?(@product)
+      current_user.remove_from_wish_list!(@product)
+    end
+
+    redirect_to :back
+  end
+
 
 end
