@@ -9,9 +9,9 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
+            <!-- 商品圖片 -->
             <td>
               <%= link_to product_path(product) do %>
-                <!-- 商品圖片 -->
                 <% if product.product_images.present? %>
                   <!-- 顯示第一張圖片 -->
                   <%= image_tag(product.product_images[0].image.mini.url, class: 'thumbnail')%>
@@ -20,17 +20,25 @@
                 <% end %>
               <% end %>
             </td>
+            <!-- 商品名稱 -->
             <td>
               <%= link_to(product.name, product_path(product)) %>
             </td>
+            <!-- 商品價錢 -->
             <td>
               <%= product.price %>
             </td>
+            <!-- 移動至購物車 -->
             <td>
-              <%= t('btn-move-to-cart') %>
+              <%= link_to add_to_cart_account_product_path(product), method: :post do %>
+                <%= t('btn-move-to-cart') %>
+              <% end %>
             </td>
+            <!-- 從願望清單上刪除該商品 -->
             <td>
-              <i class='fa fa-close'></i>
+              <%= link_to remove_from_wish_list_account_product_path(product), method: :post do %>
+                <i class='fa fa-close'></i>
+              <% end %>
             </td>
           </tr>
         <% end %>

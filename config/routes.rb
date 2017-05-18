@@ -39,7 +39,12 @@ Rails.application.routes.draw do
     # 訂單歷程 #
     resources :orders
     # 收藏清單 #
-    resources :products
+    resources :products do
+      member do
+        post :add_to_cart
+        post :remove_from_wish_list
+      end
+    end
   end
 
 
