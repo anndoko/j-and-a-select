@@ -38,6 +38,8 @@ Rails.application.routes.draw do
   namespace :account do
     # 訂單歷程 #
     resources :orders
+    # 收藏清單 #
+    resources :products
   end
 
 
@@ -87,7 +89,7 @@ Rails.application.routes.draw do
       end
     end
 
-    # 首页Covers #
+    # 首頁 Covers #
     resources :intros do
       member do
         post :publish

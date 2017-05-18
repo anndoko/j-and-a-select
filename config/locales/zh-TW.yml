@@ -62,6 +62,7 @@ zh-TW:
   login: 登入
   logout: 登出
   greeting: 您好，
+  wish-list: 願望清單
   cart: 購物車
   language: 切換語系
   product-access: 選物
@@ -78,6 +79,11 @@ zh-TW:
   admin-homepage: 首頁廣告管理
 
 #--=== 使用者專區 ===--#
+  # 願望清單 #
+  account-wish-list-index: 願望清單
+
+  btn-move-to-cart: 移動至購物車
+
   # 歷史訂單 #
   account-order-index: 歷史訂單
   f-order-created-at: 下訂日期 / 年 /時間
