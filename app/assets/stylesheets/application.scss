@@ -236,6 +236,10 @@ body {
       font-size: 22px;
       font-style: italic;
     }
+
+    img {
+      width: 100%;
+    }
   }
 
   /*===== 换页按钮 =====*/
@@ -249,7 +253,6 @@ body {
 
 /*===== Story 首页-品牌故事 =====*/
 .story-box {
-  background-color: #F2F2F2;
   text-align: center;
   padding: 25px 0 50px 0;
 
@@ -278,6 +281,7 @@ body {
 
 /*===== Categories 首页-商品分类 =====*/
 .categories-box {
+  background-color: #F5F5F5;
   text-align: center;
 
   a {
@@ -293,7 +297,7 @@ body {
   .category-content {
     padding: 50px 0 50px 0;
 
-    border-right: 2.5px solid #ccc;
+    border-right: 2.5px dashed #ccc;
     /*===== Box 分类图片 =====*/
     h3 {
       font-weight: 700;
@@ -306,34 +310,37 @@ body {
       padding: 0 62.5px 0 62.5px;
       color: #666;
       line-height: 26px;
+      min-height: 300px;
     }
   }
 }
 
 /*===== Show 首页-推荐商品 =====*/
 .show-box {
-  background-color: #F2F2F2;
   text-align: center;
   padding: 50px 0 50px 0;
 
-  #pins {
-    .box {
-  	  margin: 10px;
-  	  box-shadow: 1px 1px 1.5px #999;
+  img {
+    width: 100%;
+  }
 
-  	  img {
-  	  	max-width: 245px;
-  	  }
-  	}
+  .box {
+	  margin-top: 15px;
+	  box-shadow: 1px 1px 1.5px #ccc;
+	}
 
-    .box:hover {
-      opacity: 0.85;
-    }
+  .three {
+    margin-top: 12px;
+  }
+
+  .box:hover {
+    opacity: 0.85;
   }
 }
 
 /*===== Brands 首页-合作伙伴 =====*/
 .brand-box {
+  background-color: #F5F5F5;
   text-align: center;
   padding: 50px 0 50px 0;
 
