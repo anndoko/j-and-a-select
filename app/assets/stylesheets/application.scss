@@ -36,6 +36,7 @@ body {
 
 .container-fluid {
   margin-top: 55px;
+  min-height: 550px;
 }
 
 /*===== Navbar 导览列 ======*/
@@ -75,7 +76,6 @@ body {
     a {
       color: #000;
       padding: 8px 17px;
-      font-size: 14px;
     }
 
     a:hover {
@@ -392,4 +392,65 @@ body {
 .control-box{
   margin-top: 30px;
   max-width: 300px;
+}
+
+
+
+
+/*===== Users 用戶中心 =====*/
+.user_setup{
+  height: 750px;
+  background: image_url("user_background.jpg") no-repeat scroll top center/ cover;
+}
+
+.user_setup_content{
+  background: #fff;
+  margin-top: 135px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-shadow: 1px 3px 5px #333;
+  border: 5px solid #666;
+  border-radius: 25px;
+
+  opacity:0.95;
+  filter:alpha(opacity=95);
+
+  h2{
+    text-align: center;
+  }
+
+  .psw{
+    float: right;
+    margin-top: -33px;
+    position: relative;
+  }
+
+  .account{
+    text-align: center;
+  }
+
+  .form-inputs{
+    margin-top: 25px;
+  }
+
+  .form-actions{
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+
+    .button{
+      color: #fff;
+      background-color: #4A6BB5;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .button:hover{
+        background-color: #4A99B5;
+        border-color: #4A99B5;
+        color: #fff;
+    }
+  }
 }
