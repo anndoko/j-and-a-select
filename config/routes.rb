@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      post :add_to_wish_list
+      post :remove_from_wish_list
     end
   end
 
@@ -36,6 +38,13 @@ Rails.application.routes.draw do
   namespace :account do
     # 訂單歷程 #
     resources :orders
+    # 收藏清單 #
+    resources :products do
+      member do
+        post :add_to_cart
+        post :remove_from_wish_list
+      end
+    end
   end
 
 
@@ -85,7 +94,7 @@ Rails.application.routes.draw do
       end
     end
 
-    # 首页Covers #
+    # 首頁 Covers #
     resources :intros do
       member do
         post :publish

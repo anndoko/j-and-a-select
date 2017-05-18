@@ -7,29 +7,35 @@
     <% end %>
       <div class="container">
         <div class="navbar-header">
-          <!--=== 右侧下拉选单（移动端时显示） ===-->
+          <!--=== 右側下拉選單（移動端顯示） ===-->
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-4" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <!--=== 网站Logo ===-->
+          <!--=== 網站 Logo ===-->
           <%= link_to root_path, class: "navbar-brand logo-box scroll" do %>
             <%= image_tag("logo.png") %> J&A Select
           <% end %>
         </div>
         <div class="collapse navbar-collapse top-nav" id="menu-4">
-          <!--=== 网站连结 ===-->
+          <!--=== 網站連結 ===-->
           <ul class="nav navbar-nav navbar-left">
             <li><%= link_to(t('product-access'), products_path) %></li>
             <li><%= link_to(t('brand-access'), '#', class: "scroll") %></li>
             <li><%= link_to(t('recommend-access'), '#', class: "scroll") %></li>
           </ul>
-          <!--=== 帐号操作 ===-->
+          <!--=== 帳號操作 ===-->
           <ul class='nav navbar-nav  navbar-right'>
-            <!-- 購物車 -->
             <li class="divider" role="separator"></li>
+            <!-- 願望清單 -->
+            <li>
+              <%= link_to account_products_path do %>
+                <%= t('wish-list') %> <i class='fa fa-smile-o'></i>
+              <% end %>
+            </li>
+            <!-- 購物車 -->
             <li>
               <%= link_to carts_path do %>
                 <%= t('cart') %> <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )

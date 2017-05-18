@@ -41,6 +41,20 @@
 
   <br/>
 
+  <!-- 願望清單 -->
+  <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
+    <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
+      <label><i class="fa fa-check  fa-fw"> </i><%= t('wish-list-remove') %></label>
+    <% end %>
+  <% else %>
+    <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
+      <label><i class="fa fa-plus  fa-fw"> </i><%= t('wish-list-add') %></label>
+    <% end %>
+  <% end %>
+
+  <br/>
+  <br/>
+
   <!-- 加入購物車 -->
   <%= link_to(t('btn-add-to-cart'), add_to_cart_product_path(@product), :method => :post, :class => 'btn btn-lg btn-default') %>
 
