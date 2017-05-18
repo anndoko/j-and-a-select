@@ -12,6 +12,7 @@ if User.find_by(email: "admin@rails.com").nil?
   u = User.new
   u.name = "測試管理員"
   u.email = "admin@rails.com"
+  u.nickname = "測試管理員"
   u.password = "111111"
   u.password_confirmation = "111111"
   u.is_admin = true
@@ -26,6 +27,7 @@ if User.find_by(email: "user@rails.com").nil?
   u = User.new
   u.name = "測試管理員"
   u.email = "user@rails.com"
+  u.nickname = "測試管理員"
   u.password = "111111"
   u.password_confirmation = "111111"
   u.is_admin = true

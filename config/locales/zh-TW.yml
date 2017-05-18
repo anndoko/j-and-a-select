@@ -76,6 +76,14 @@ zh-TW:
   admin-homepage: 首頁廣告管理
 
 #--=== 使用者專區 ===--#
+  # 帳號相關 #
+  user-sign-up: 帳號註冊
+  user-log-in: 帳號登入
+  user-had-account: 已有帳號，立即登入
+  user-have-not-account: 沒有帳號，立即註冊
+  user-forget-psw: 忘記密碼？
+  user-find-psw: 找回密碼
+
   # 歷史訂單 #
   account-order-index: 歷史訂單
   f-order-created-at: 下訂日期 / 年 /時間
