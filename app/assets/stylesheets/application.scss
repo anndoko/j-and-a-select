@@ -490,7 +490,10 @@ body {
 
     .list-image {
       width: 100%;
-      // margin: 10px 0 10px 0;
+    }
+
+    .list-image-active {
+      box-shadow: 1.5px 1.5px 1.5px #666;
     }
   }
 

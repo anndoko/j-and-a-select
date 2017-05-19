@@ -58,13 +58,8 @@ $(document).on('mouseover', '.list-image', function () {
   var src_other = $(this).attr('src')
   var src_main = src_other.toString().replace("other", "main")
 
-  $('.main-image').attr('src', src_main)
+  $('.main-image').attr('src', src_main) //變更大圖圖片路徑
 
-  // $('#thumb-lens').css('background-image', 'url(' + src + ')')
-  // $(this).addClass('intro-preview-activeItem').siblings().removeClass('intro-preview-activeItem')
-  // m.attach({
-  //       thumb: '#thumb',
-  //       large: src,
-  //       largeWrapper: 'preview'
-  // })
+  $('.list-image').removeClass('list-image-active') //其他圖片移除鎖定狀態
+  $(this).addClass('list-image-active') //當前圖片新增鎖定狀態
 })
