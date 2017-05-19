@@ -1,9 +1,9 @@
-<div class="product-box product-show">
-  <div class="container">
+<div class='product-box product-show'>
+  <div class='container'>
     <!--=== 商品類型 & 品牌選單 ===-->
-    <%= render "products/menu" %>
+    <%= render 'products/menu' %>
 
-    <!-- 商品圖片 -->
+    <!--=== 商品圖片 ===-->
     <div class='col-xs-12 col-md-7'>
       <p>
         <% if @product_images.present? %>
@@ -22,29 +22,36 @@
       </p>
     </div>
 
-    <!--=== 商品資訊 ===-->
     <div class='col-xs-12 col-md-5 product-detail'>
-      <h1> <%= @product.name %> </h1>
-      <h3> $ <%= @product.price %></h3>
+      <!--=== 商品資訊 ===-->
+      <!-- 商品名稱 -->
+      <h1><%= @product.name %></h1>
+
+      <!-- 商品價錢 -->
+      <h3><%= @currency.symbol %> <%= @product.price %></h3>
+
+      <!-- 幣值轉換 -->
+      <%= render 'products/currency' %>
+
+      <!-- 商品敘述 -->
       <p><%= simple_format(@product.description) %></p>
 
-  <!-- 願望清單 -->
-  <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
-    <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
-      <label><i class="fa fa-check  fa-fw"> </i><%= t('wish-list-remove') %></label>
-    <% end %>
-  <% else %>
-    <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
-      <label><i class="fa fa-plus  fa-fw"> </i><%= t('wish-list-add') %></label>
-    <% end %>
-  <% end %>
+      <!--=== 願望清單 ===-->
+      <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
+        <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
+          <label><i class='fa fa-check  fa-fw'> </i><%= t('wish-list-remove') %></label>
+        <% end %>
+      <% else %>
+        <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
+          <label><i class='fa fa-plus  fa-fw'> </i><%= t('wish-list-add') %></label>
+        <% end %>
+      <% end %>
 
-  <br/>
-  <br/>
+      <br/>
+      <br/>
 
-  <!-- 加入購物車 -->
-  <%= link_to(t('btn-add-to-cart'), add_to_cart_product_path(@product), :method => :post, :class => 'btn btn-lg btn-default') %>
-
+      <!--=== 加入購物車 ===-->
+      <%= link_to(t('btn-add-to-cart'), add_to_cart_product_path(@product), :method => :post, :class => 'btn btn-lg btn-default') %>
 
     </div>
   </div>
