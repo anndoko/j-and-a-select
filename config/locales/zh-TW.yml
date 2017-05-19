@@ -12,6 +12,7 @@ zh-TW:
 
 #--=== 商品列表 ===--#
   nav-brand: 嚴選品牌
+  no-product-data: 此分類暫時沒有商品哦
 
   will_paginate:
     previous_label: <span class="fa fa-angle-double-left"></span>
@@ -79,10 +80,20 @@ zh-TW:
   admin-homepage: 首頁廣告管理
 
 #--=== 使用者專區 ===--#
+
+  # 帳號相關 #
+  user-sign-up: 帳號註冊
+  user-log-in: 帳號登入
+  user-had-account: 已有帳號，立即登入
+  user-have-not-account: 沒有帳號，立即註冊
+  user-forget-psw: 忘記密碼？
+  user-find-psw: 找回密碼
+  user-remember-me: 記住我
+
   # 願望清單 #
   account-wish-list-index: 願望清單
-
   btn-move-to-cart: 移動至購物車
+
 
   # 歷史訂單 #
   account-order-index: 歷史訂單

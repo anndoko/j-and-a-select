@@ -12,6 +12,7 @@ if User.find_by(email: "admin@rails.com").nil?
   u = User.new
   u.name = "測試管理員"
   u.email = "admin@rails.com"
+  u.nickname = "測試管理員"
   u.password = "111111"
   u.password_confirmation = "111111"
   u.is_admin = true
@@ -26,6 +27,7 @@ if User.find_by(email: "user@rails.com").nil?
   u = User.new
   u.name = "測試管理員"
   u.email = "user@rails.com"
+  u.nickname = "測試管理員"
   u.password = "111111"
   u.password_confirmation = "111111"
   u.is_admin = true
@@ -257,3 +259,42 @@ end
   )
 
   puts "創建商品*7"
+
+  # 新增廣告 - Intro #
+
+    # 1
+    Intro.create!(
+      title: "精選生活",
+      content: "挑選日常好物，讓生活充滿新奇",
+      link: "#"
+    )
+
+    # 2
+    Intro.create!(
+      title: "妝點日常",
+      content: "用木製廚具提升烹飪樂趣",
+      link: "#"
+    )
+
+    # 3
+    Intro.create!(
+      title: "創意單品",
+      content: "打造獨一無二的個人品味",
+      link: "#"
+    )
+
+    # 4
+    Intro.create!(
+      title: "時尚風格",
+      content: "充滿特色的隨身用品",
+      link: "#"
+    )
+
+    # 5
+    Intro.create!(
+      title: "多漾家居",
+      content: "讓死板的辦公桌充滿生氣",
+      link: "#"
+    )
+
+    puts "創建廣告*5"

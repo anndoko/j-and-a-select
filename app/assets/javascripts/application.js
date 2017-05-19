@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-/*===== Go Top 回到顶端 =====*/
+/*===== 回到頁面頂端 =====*/
 function goTop(min_height) {
   $(".goTop").click(
     function() {
@@ -42,19 +42,7 @@ $(function() {
 });
 
 
-/*===== 图片随机排列 =====*/
-$(function(){
-  var $pins = $('#pins');
-  $pins.imagesLoaded(function(){
-    $pins.masonry({
-      itemSelector : '.box',
-      isFitWidth: true,
-    });
-  });
-});
-
-
-// navbar
+/*===== 首頁導航列變化 =====*/
 $(window).scroll(function () {
 	var $navbar = $('#navbar')
 	if ($(this).scrollTop() > 125) {
@@ -63,10 +51,3 @@ $(window).scroll(function () {
 		$('#navbar').removeClass('show_bgcolor')
 	}
 })
-
-
-$(function(){
-    $('#intro').on('slide.bs.click', function () {
-        alert("当调用 slide 实例方法时立即触发该事件。");
-    });
-});
