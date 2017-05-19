@@ -51,3 +51,20 @@ $(window).scroll(function () {
 		$('#navbar').removeClass('show_bgcolor')
 	}
 })
+
+
+/*===== 變更顯示圖片 =====*/
+$(document).on('mouseover', '.list-image', function () {
+  var src_other = $(this).attr('src')
+  var src_main = src_other.toString().replace("other", "main")
+
+  $('.main-image').attr('src', src_main)
+
+  // $('#thumb-lens').css('background-image', 'url(' + src + ')')
+  // $(this).addClass('intro-preview-activeItem').siblings().removeClass('intro-preview-activeItem')
+  // m.attach({
+  //       thumb: '#thumb',
+  //       large: src,
+  //       largeWrapper: 'preview'
+  // })
+})

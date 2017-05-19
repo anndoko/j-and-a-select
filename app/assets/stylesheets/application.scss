@@ -413,7 +413,7 @@ body {
   text-align: center;
   padding: 0 0 100px 0;
 
-  .main-image {
+  .background-image {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -478,20 +478,33 @@ body {
 .product-show {
   margin: 0 0 100px 0;
 
-  img {
-    width: 100%;
+  .product-image {
+    .image-box {
+      padding: 7.5px;
+    }
+
+    .main-image {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .list-image {
+      width: 100%;
+      // margin: 10px 0 10px 0;
+    }
   }
 
   .product-detail {
-    padding: 0 20px 0 15px;
+    padding-left: 50px;
     text-align: left;
 
     h1 {
-      font-size: 30px;
+      margin-top: 5px;
+      font-size: 24px;
     }
 
     h3 {
-      font-size: 24px;
+      font-size: 20px;
     }
 
     .btn-default {
