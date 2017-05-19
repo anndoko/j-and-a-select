@@ -61,6 +61,9 @@ gem 'aasm'
 gem 'fog-aws'
 gem 'figaro'
 
+# Intercom 客服系統
+gem 'intercom-rails'
+
 group :development, :test do
   # Debug 工具
   gem 'byebug', platform: :mri
