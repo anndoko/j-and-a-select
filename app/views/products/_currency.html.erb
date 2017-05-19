@@ -1,0 +1,17 @@
+<!--=== 幣值切換 ===-->
+<div class='dropdown btn-group clearfix'>
+  <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
+    <%= t('nav-currency') %><i class="fa fa-angle-down"></i>
+  </button>
+  <!-- 下拉式選單 -->
+  <ul class='dropdown-menu'>
+    <!-- 選單列出所有幣值 -->
+    <% @currencies.each do |currency| %>
+      <li>
+        <%= link_to product_path(:currency => currency.name) do %>
+          <%= currency.symbol %> - <%= currency.name %>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>

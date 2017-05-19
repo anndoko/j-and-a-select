@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 20170519143646) do
 
   create_table "currencies", force: :cascade do |t|
     t.string   "name"
+    t.string   "symbol"
     t.float    "rate"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

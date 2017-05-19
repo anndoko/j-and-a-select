@@ -1,7 +1,7 @@
-<div class="product-box product-show">
-  <div class="container">
+<div class='product-box product-show'>
+  <div class='container'>
     <!--=== 商品類型 & 品牌選單 ===-->
-    <%= render "products/menu" %>
+    <%= render 'products/menu' %>
 
     <!--=== 商品圖片 ===-->
     <div class='col-xs-12 col-md-7'>
@@ -25,24 +25,13 @@
     <div class='col-xs-12 col-md-5 product-detail'>
       <!--=== 商品資訊 ===-->
       <!-- 商品名稱 -->
-      <h1> <%= @product.name %> </h1>
+      <h1><%= @product.name %></h1>
 
       <!-- 商品價錢 -->
-      <%= @product.price %>
+      <h3><%= @currency.symbol %> <%= @product.price %></h3>
 
       <!-- 幣值轉換 -->
-      <div class='dropdown btn-group clearfix'>
-        <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
-          <%= t('nav-currency') %><i class="fa fa-angle-down"></i>
-        </button>
-        <ul class='dropdown-menu'>
-          <% @currencies.each do |currency| %>
-            <li>
-              <%= link_to(currency.name, product_path(:currency => currency.name)) %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+      <%= render 'products/currency' %>
 
       <!-- 商品敘述 -->
       <p><%= simple_format(@product.description) %></p>
@@ -50,11 +39,11 @@
       <!--=== 願望清單 ===-->
       <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
         <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
-          <label><i class="fa fa-check  fa-fw"> </i><%= t('wish-list-remove') %></label>
+          <label><i class='fa fa-check  fa-fw'> </i><%= t('wish-list-remove') %></label>
         <% end %>
       <% else %>
         <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
-          <label><i class="fa fa-plus  fa-fw"> </i><%= t('wish-list-add') %></label>
+          <label><i class='fa fa-plus  fa-fw'> </i><%= t('wish-list-add') %></label>
         <% end %>
       <% end %>
 
