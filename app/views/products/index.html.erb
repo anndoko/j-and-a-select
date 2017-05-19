@@ -1,7 +1,15 @@
 <div class="product-box">
   <div class="container">
   <!--=== 商品類型 & 品牌選單 ===-->
-  <%= image_tag("product_bg.jpg", class: "main-image") %>
+  <% if params[:id].present? %>
+    <%= image_tag(@product.category.category_group.image, class: "background-image") %>
+  <% elsif params[:category].present? %>
+    <%= image_tag(@category.category_group.image, class: "background-image") %>
+  <% elsif params[:group].present? %>
+    <%= image_tag(@group.image, class: "background-image") %>
+  <% else %>
+    <%= image_tag("product_bg.jpg", class: "background-image") %>
+  <% end %>
   <%= render "products/menu" %>
 
   <% if @products.length > 0 %>

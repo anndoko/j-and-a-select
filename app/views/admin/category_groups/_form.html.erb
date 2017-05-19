@@ -1,0 +1,10 @@
+<% if @category_group.image.present? %>
+  <%= image_tag(@category_group.image.url) %>
+<% end %>
+<%= simple_form_for [:admin, @category_group] do |f| %>
+  <%= f.input :name, :label => t('f-category-group-name') %>
+  <%= f.input :image, :label => t('f-image-upload') %>
+  <%= f.input :is_hidden, :label => t('f-hide') %>
+
+  <%= f.submit t('f-submit'), class: 'btn btn-lg btn-default' %>
+<% end %>

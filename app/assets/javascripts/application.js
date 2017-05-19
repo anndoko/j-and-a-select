@@ -51,3 +51,15 @@ $(window).scroll(function () {
 		$('#navbar').removeClass('show_bgcolor')
 	}
 })
+
+
+/*===== 變更顯示圖片 =====*/
+$(document).on('mouseover', '.list-image', function () {
+  var src_other = $(this).attr('src') //抓取小圖圖片路徑
+  var src_main = src_other.toString().replace("other", "main") //更改圖片路徑
+
+  $('.main-image').attr('src', src_main) //變更大圖圖片路徑
+
+  $('.list-image').removeClass('list-image-active') //其他圖片移除鎖定狀態
+  $(this).addClass('list-image-active') //當前圖片新增鎖定狀態
+})

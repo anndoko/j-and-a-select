@@ -23,9 +23,9 @@ class ProductsController < ApplicationController
     # 判斷是否篩選品牌
     elsif params[:brand].present?
       @brand_s = params[:brand]
-      @brand_id = Brand.find_by(name: @brand_s)
+      @brand = Brand.find_by(name: @brand_s)
 
-      @products = Product.where(:brand => @brand_id).published.recent.paginate(:page => params[:page], :per_page => 12)
+      @products = Product.where(:brand => @brand.id).published.recent.paginate(:page => params[:page], :per_page => 12)
 
     # 預設顯示所有公開商品
     else

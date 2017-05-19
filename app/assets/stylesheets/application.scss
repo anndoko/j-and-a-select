@@ -64,7 +64,9 @@ body {
   background: rgba(0,0,0,0.3);
   color: #000 !important;
 
-  a:hover {
+  a:hover,
+  a:active,
+  a:focus {
     color: #eb5424 !important;
   }
 
@@ -143,6 +145,7 @@ body {
     text-decoration:none;
     color: #ccc;
   }
+
   a:hover,
   a:active,
   a:focus {
@@ -225,11 +228,9 @@ body {
 
   .btn-push:hover,
   .btn-intro:hover {
-    // background-color: rgba(255, 255, 255, 0.75);
     background-color: rgba(235, 84, 36, 0.5);
     border-color: #eb5424;
     color: rgba(255, 255, 255, 0.9);
-    // color: #eb5424;
   }
 
   .btn-push,
@@ -416,7 +417,7 @@ body {
   text-align: center;
   padding: 0 0 100px 0;
 
-  .main-image {
+  .background-image {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -479,26 +480,68 @@ body {
 }
 
 .product-show {
-  margin: 50px 0 100px 0;
-  text-align: left;
+  margin: 0 0 100px 0;
 
-  img {
-    width: 100%;
+  .product-image {
+    .image-box {
+      padding: 7.5px;
+    }
+
+    .main-image {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .list-image {
+      width: 100%;
+    }
+
+    .list-image-active {
+      box-shadow: 1.5px 1.5px 1.5px #666;
+    }
   }
 
   .product-detail {
-    padding: 0 20px 0 15px;
+    padding: 0 25px 0 25px;
+    text-align: left;
 
     h1 {
-      font-size: 30px;
-    }
-
-    h3 {
+      margin-top: 5px;
       font-size: 24px;
     }
 
+    h3 {
+      font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1.5px dashed #aaa;
+      margin: 30px 0 10px 0;
+    }
+
+    img {
+      width: 17.5px;
+    }
+
+    div {
+      display: block;
+    }
+
+    .left-box {
+      float: left;
+      margin-left: 15px;
+    }
+
+    .right-box {
+      float: right;
+      margin-right: 15px;
+    }
+
     .btn-default {
-      margin-top: 125px;
+      margin-top: 25px;
+      width: 100%;
     }
 
     .btn-default:hover {
@@ -544,6 +587,63 @@ body {
 
   .account{
     text-align: center;
+  }
+
+  .form-inputs{
+    margin-top: 25px;
+  }
+
+  .form-actions{
+    text-align: center;
+    margin-top: 35px;
+    margin-bottom: 25px;
+
+    .button{
+      color: #fff;
+      background-color: #4A6BB5;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+      width: 100%;
+    }
+
+    .button:hover{
+      background-color: #4A99B5;
+      border-color: #4A99B5;
+      color: #fff;
+    }
+  }
+}
+
+.account-box{
+  background: image_url("account_background.jpg") no-repeat scroll top center/ cover;
+}
+
+.account-content{
+  background: #fff;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 20px;
+  box-shadow: 1px 3px 5px #333;
+  border: 5px solid #555;
+  border-radius: 25px;
+
+  opacity:0.95;
+  filter:alpha(opacity=95);
+
+  h2{
+    text-align: center;
+  }
+
+  .gender-box {
+    span {
+      display: inline-block;
+      margin-right: 15px;
+    }
+  }
+
+  .phone {
+    width: 65%;
   }
 
   .form-inputs{

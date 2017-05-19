@@ -73,6 +73,8 @@
                     <li class="divider"> </li>
                   <% end %>
                   <!-- user 選項 -->
+                  <li> <%= link_to(t('user-center'), edit_account_user_path(current_user)) %> </li>
+                  <li class="divider"> </li>
                   <li> <%= link_to(t('logout'), destroy_user_session_path, method: :delete) %> </li>
                 </ul>
               </li>

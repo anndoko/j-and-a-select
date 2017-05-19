@@ -5,6 +5,9 @@ class CategoryGroup < ApplicationRecord
   # 關聯 #
   has_many :categories
 
+  # 檔案上傳 #
+  mount_uploader :image, GroupUploader
+
   # 發佈 / 隱藏 #
   def publish!
     self.is_hidden = false

@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519143646) do
+
+ActiveRecord::Schema.define(version: 20170519184437) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name"
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170519143646) do
     t.datetime "updated_at",                  null: false
     t.string   "logo"
     t.text     "description"
+    t.string   "image"
   end
 
   create_table "currencies", force: :cascade do |t|
@@ -134,7 +136,7 @@ ActiveRecord::Schema.define(version: 20170519143646) do
     t.string   "nickname"
     t.string   "address"
     t.string   "phone"
-    t.string   "birthday"
+    t.date     "birthday"
     t.string   "gender"
     t.boolean  "is_admin",               default: false
     t.index ["email"], name: "index_users_on_email", unique: true

@@ -1,17 +1,3 @@
 <!--=== 新增類型 ===-->
 <h2><%= t('category-group-new') %></h2>
-
-<!--=== 新增類型表單 ===-->
-<%= simple_form_for [:admin, @category_group] do |f| %>
-
-  <div class="group">
-    <%= f.input :name, :label => t('f-category-group-name') %>
-  </div>
-
-  <div class="group">
-    <%= f.input :is_hidden, :label => t('f-hide') %>
-  </div>
-
-  <%= f.submit t('f-submit'), class: 'btn btn-lg btn-default' %>
-
-<% end %>
+<%= render('form') %>

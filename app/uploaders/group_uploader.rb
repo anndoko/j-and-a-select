@@ -1,4 +1,4 @@
-class IntroUploader < CarrierWave::Uploader::Base
+class GroupUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -19,8 +19,8 @@ class IntroUploader < CarrierWave::Uploader::Base
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
-  
-  process resize_to_fill: [1280, 600]
+
+  process resize_to_fill: [1280, 300]
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
