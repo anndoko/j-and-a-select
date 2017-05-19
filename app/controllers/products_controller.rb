@@ -48,6 +48,8 @@ class ProductsController < ApplicationController
       @currency = Currency.find_by(name: @currency_s)
       @product.price = @product.price * @currency.rate
     else
+      # 預設幣值為新台幣
+      @currency = Currency.find_by(name: '新台幣')
       @product.price = @product.price * 1
     end
   end
