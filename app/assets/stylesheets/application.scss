@@ -62,7 +62,9 @@ body {
 .navbar.navbar-default {
   background: rgba(0,0,0,0.3);
 
-  a:hover {
+  a:hover,
+  a:active,
+  a:focus {
     color: #eb5424 !important;
   }
 
@@ -139,6 +141,7 @@ body {
     text-decoration:none;
     color: #ccc;
   }
+
   a:hover,
   a:active,
   a:focus {
@@ -221,11 +224,9 @@ body {
 
   .btn-push:hover,
   .btn-intro:hover {
-    // background-color: rgba(255, 255, 255, 0.75);
     background-color: rgba(235, 84, 36, 0.5);
     border-color: #eb5424;
     color: rgba(255, 255, 255, 0.9);
-    // color: #eb5424;
   }
 
   .btn-push,
@@ -475,8 +476,7 @@ body {
 }
 
 .product-show {
-  margin: 50px 0 100px 0;
-  text-align: left;
+  margin: 0 0 100px 0;
 
   img {
     width: 100%;
@@ -484,6 +484,7 @@ body {
 
   .product-detail {
     padding: 0 20px 0 15px;
+    text-align: left;
 
     h1 {
       font-size: 30px;

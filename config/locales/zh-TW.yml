@@ -101,10 +101,11 @@ zh-TW:
 
 #--=== 管理員專區 ===--#
   # 共用元素 #
-  f-hide: 是否隱藏
+  f-hide: 隱藏
   f-submit: 確認送交
   f-options: 操作選項
   notice-no-image: 尚無圖片
+  f-image-upload: 圖片上傳
 
   btn-edit: 編輯
   btn-delete: 刪除
