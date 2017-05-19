@@ -22,8 +22,8 @@ class ProductsController < ApplicationController
 
     # 判斷是否篩選品牌
     elsif params[:brand].present?
-      @brand = params[:brand]
-      @brand_id = Brand.find_by(name: @brand)
+      @brand_s = params[:brand]
+      @brand_id = Brand.find_by(name: @brand_s)
 
       @products = Product.where(:brand => @brand_id).published.recent.paginate(:page => params[:page], :per_page => 12)
 
@@ -36,11 +36,20 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    # 商品圖片
     @product_images = @product.product_images.all
-    # 商品所屬的品牌/分類
+    # 類型 / 品牌 / 幣值
     @category_groups = CategoryGroup.published
     @brands = Brand.published
+    @currencies = Currency.all
+
+    # 幣值切換
+    if params[:currency].present?
+      @currency_s = params[:currency]
+      @currency = Currency.find_by(name: @currency_s)
+      @product.price = @product.price * @currency.rate
+    else
+      @product.price = @product.price * 1
+    end
   end
 
   # 加入購物車

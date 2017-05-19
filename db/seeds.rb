@@ -6,6 +6,16 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+Currency.create!(
+  name: 'USD',
+  rate: 0.03
+)
+
+Currency.create!(
+  name: 'JPY',
+  rate: 3.69
+)
+
 
 # 新增 admin 帳號 - User #
 if User.find_by(email: "admin@rails.com").nil?
