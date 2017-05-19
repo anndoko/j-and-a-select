@@ -7,7 +7,7 @@
         <div class="form-inputs">
           <%= f.input :email, :label => false, placeholder: '邮箱', required: false, autofocus: true %>
           <%= f.input :password, :label => false, placeholder: '密码', required: false %>
-          <%= f.input :remember_me, :label => "记住我", as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, :label => t('user-remember-me'), as: :boolean if devise_mapping.rememberable? %>
           <%= link_to t('user-forget-psw'), new_password_path(resource_name), class: "psw" %>
         </div>
 

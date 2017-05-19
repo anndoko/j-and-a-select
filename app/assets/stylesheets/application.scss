@@ -32,11 +32,30 @@ body {
   letter-spacing: 1px;
   font-size: 14px;
   position: relative;
-}
 
-.container-fluid {
-  margin-top: 55px;
-  min-height: 550px;
+  a {
+    text-decoration:none !important;
+  }
+
+    /*===== 頁面內容區塊設定 ======*/
+  .container-fluid {
+    margin-top: 55px;
+    min-height: 550px;
+  }
+
+    /*===== 換頁按鈕區塊設定 ======*/
+  .page-box {
+    margin-top: 75px;
+
+    a {
+      background-color: #eee;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: #666 !important;
+    }
+  }
 }
 
 /*===== Navbar 导览列 ======*/
@@ -84,7 +103,7 @@ body {
     }
   }
 
-  /* 下拉选单三角箭头 */
+  /* 下拉選單三角箭頭 */
   .dropdown-menu:before {
     content: "";
     border-bottom: 10px solid #fff;
@@ -388,14 +407,75 @@ body {
   background: image_url("start.jpg") no-repeat scroll top center/ cover;
 }
 
+/*===== Product 產品 =====*/
+.product-box {
+  text-align: center;
+  padding: 0 0 100px 0;
+
+  .main-image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: #666 !important;
+  }
+
+  .btn {
+    background-color: #fff;
+    margin: 0 10px 0 10px;
+  }
+
+  .btn:hover,
+  .btn:focus {
+    color: #eb5424;
+  }
+
+  .dropdown-menu {
+    li {
+      min-width: 200px;
+      padding: 2.5px 0 2.5px 0;
+    }
+
+    li:hover {
+      a {
+        background-color: #f0f0f0 !important;
+      }
+    }
+  }
+
+  a:hover {
+    color: #eb5424 !important;
+
+    img {
+      opacity: 0.75;
+    }
+  }
+
+  .product-content {
+    img {
+      width: 100%;
+      margin: 7.5px auto 7.5px auto;
+    }
+  }
+
+  .product-info {
+    text-align: left;
+    margin-bottom: 25px;
+    line-height: 14px;
+  }
+
+  .path-box {
+    text-align: left;
+  }
+}
+
+
 /*===== Control 後台-控制選單 =====*/
 .control-box{
   margin-top: 30px;
   max-width: 300px;
 }
-
-
-
 
 /*===== Users 用戶中心 =====*/
 .user_setup{
@@ -409,7 +489,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   box-shadow: 1px 3px 5px #333;
-  border: 5px solid #666;
+  border: 5px solid #555;
   border-radius: 25px;
 
   opacity:0.95;

@@ -1,29 +1,36 @@
-<!--=== 商品類型 & 品牌選單 ===-->
-<%= render "products/menu" %>
+<div class="product-box">
+  <div class="container">
+  <!--=== 商品類型 & 品牌選單 ===-->
+  <%= image_tag("product_bg.jpg", class: "main-image") %>
+  <%= render "products/menu" %>
 
-<!--=== 商品列表 ===-->
-<div class='row'>
-  <% @products.each_with_index do |product, index| %>
-    <div class='col-xs-12 col-md-3'>
-      <%= link_to product_path(product) do %>
-        <!-- 商品圖片 -->
-        <% if product.product_images.present? %>
-          <!-- 顯示第一張圖片 -->
-          <%= image_tag(product.product_images[0].image.thumb.url, class: 'thumbnail')%>
-        <% else %>
-          <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
-        <% end %>
+  <% if @products.length > 0 %>
+    <!--=== 商品列表 ===-->
+    <div class='row'>
+      <% @products.each_with_index do |product, index| %>
+        <div class='col-xs-12 col-sm-4 col-md-3 product-content'>
+          <%= link_to product_path(product) do %>
+            <!-- 商品圖片 -->
+            <% if product.product_images.present? %>
+              <!-- 顯示第一張圖片 -->
+              <%= image_tag(product.product_images[0].image.thumb.url, class: 'thumbnail')%>
+            <% else %>
+              <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
+            <% end %>
           <% end %>
-
-        <!-- 商品名稱 -->
-        <%= product.name %><br/>
-        <!-- 商品價錢-->
-        $ <%= product.price %>
-
+          <div class="product-info">
+            <p><%= link_to(product.name , product_path(product)) %></p>
+            <p>$ <%= product.price %></p>
+          </div>
+        </div>
+      <% end %>
     </div>
+  <% else %>
+    <h2>此分類暫時沒有商品哦</h2>
   <% end %>
-</div>
 
-<div class="text-center">
-  <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+    <div class="page-box">
+      <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+    </div>
+  </div>
 </div>
