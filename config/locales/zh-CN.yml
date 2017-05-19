@@ -1,1 +1,263 @@
 zh-CN:
+#--=== J&A SELECT ===--#
+  j-and-a-select: J & A SELECT
+
+#--=== Devise 相关 ===--#
+  devise:
+    failure:
+      unauthenticated: 您必须是 J&A SELECT 用户才能进行操作。
+      not_found_in_database: 此帐号不存在。
+      invalid: 帐号或密码输入错误。
+    sessions:
+      signed_in: 登入成功，欢迎回来！
+      signed_out: 登出成功。
+
+  dv-warn-email: 请输入您的电子信箱。
+  dv-warn-name: 请输入用户名称。
+  dv-warn-pwd: 密码不相符，请再次确认。
+  dv-warn-pwd-characters: 请输入 6 到 16 字元的密码。
+
+  dv-login: 登入
+  dv-signup: 注册
+  dv-email: 电子信箱
+  dv-pwd: 密码
+  dv-remember-me: 记住我
+  dv-forgot-pwd: 忘记密码？
+  dv-check-email: you@example.com
+  dv-name: 用户名称
+  dv-find-pwd: 取得密码
+  dv-account-signin: 已经是 J&A SELECT 用户了吗？按此登入。
+  dv-no-account-signup: 现在就加入 J&A SELECT。
+  dv-user: 人才
+  dv-admin: 企业
+  dv-set-pwd: 设定 6 到 16 字位密码
+  dv-confirm-pwd: 确认密码
+
+#--=== 提示讯息 ===--#
+  message-add-to-cart-success: 成功加入购物车！
+  message-already-added: 您的购物车已有此商品。
+  message-confirm-clear-cart: 您确定要清空整个购物车吗？
+  message-clear-cart-success: 已清空购物车。
+  message-payment-success: 已完成付款。
+  message-cancel-request-sent: 已提交申请，J&A SELECT 会尽速与您联系。
+
+#--=== 首页 ===--#
+  # 品牌故事 #
+  th-jimmy: Jimmy 王品睿
+  about-jimmy: 理工直男程序猿，穿衣不脱黑白灰，却时刻关注能提升生活质量的单品。提供的选物没有浮夸的设计与机能，注重物品的本质与材料，每一项推荐的单品都亲身试用，虽种类不多，但必属精品。
+
+  th-anndo: Anndo 柯禹安
+  about-anndo: J&A选物的挑选法则是「有爱才会卖」，因为唯有用这样的标准挑选达到最好平衡、符合心中完美且合理CP 值的商品，才能娓娓诉说对它们的了解与热诚。
+
+  # 商品分类 #
+  th-desk: 日常文具
+  slogan-desk: 现代人的日常频繁地使用文具，但你是否对毫无鉴别度的工具产生厌倦，觉得在茫茫人海中毫无亮点？ J&A Select精选全球知名品牌，又在其中推荐最有特色的文具单品，不论是想充满异国风情、还是跟上时尚潮流、甚至只想画龙点睛，文具馆里都能满你的需求。
+
+  th-home: 生活用品
+  slogan-home: 辛勤工作不外乎就是为了享受更好的生活，那些分享于脸书和Instagram 摆盘很美的餐桌、让人眼睛为之一亮的家具单品，还是舒服的居家一角，都是你我心所向往的美好日常。但那些堆叠出质感生活的器物要从何找起呢？现在风靡全球的生活选物店，透过专业人士帮您精心挑选品质与外型兼备的生活用品，从衣着鞋包、杯具食器、收纳柜体、书籍文具、甚至是酱料食材等等食、衣、住、行、育、乐会触及到的范围，提升日常就从生活选物开始吧！
+
+  th-accessories: 特色小物
+  slogan-accessories: 辛勤工作不外乎就是为了享受更好的生活，那些分享于脸书和Instagram 摆盘很美的餐桌、让人眼睛为之一亮的家具单品，还是舒服的居家一角，都是你我心所向往的美好日常。但那些堆叠出质感生活的器物要从何找起呢？现在风靡全球的生活选物店，透过专业人士帮您精心挑选品质与外型兼备的生活用品，从衣着鞋包、杯具食器、收纳柜体、书籍文具、甚至是酱料食材等等食、衣、住、行、育、乐会触及到的范围，提升日常就从生活选物开始吧！
+
+
+  # 推荐商品 #
+  th-featured-products: 精选商品
+
+  # 合作品牌 #
+  th-brands: 严选品牌
+
+  # 立即购买 #
+  btn-buy-now: 立即选购
+
+#--=== Footer ===--#
+
+  # 商品资讯 #
+  th-products: 商品资讯
+  link-latest: 最新商品
+  link-exclusive: 独家推荐
+  link-brands: 品牌分类
+
+  # 购物须知 #
+  th-service-info: 购物须知
+  link-shipping: 关于运送
+  link-return: 退货方式
+  link-faq: 常见问题
+
+  # 关于我们 #
+  th-about-us: 关于我们
+  link-story: 品牌故事
+  link-media: 媒体报导
+  link-contact: 联络我们
+
+
+#--=== 商品列表 ===--#
+  nav-brand: 严选品牌
+  no-product-data: 此分类暂时没有商品哦
+
+  will-paginate:
+    previous-label: <span class=fa fa-angle-double-left></span>
+    next-label: <span class=fa fa-angle-double-right></span>
+
+#--=== 商品资讯页 ===--#
+  btn-add-to-cart: 加入购物车
+  wish-list-add: 收藏至愿望清单
+  wish-list-remove: 已收藏至愿望清单
+
+#--=== 购物车 ===--#
+  # 购物车 #
+  cart-index: 购物车
+  cart-clear: 清空购物车
+
+  f-cart-product-info: 商品资讯
+  f-cart-product-price: 商品单价
+  f-cart-product-quantity: 商品数量
+  f-cart-total: 总计：
+
+  btn-checkout: 确认结帐
+
+  # 生成订单 #
+  checkout-index: 订单资讯
+
+  f-billing-info: 联络资讯
+  f-billing-name: 联络人 - 姓名
+  f-billing-address: 联络人 - 帐单地址
+  f-shipping-info: 寄送资讯
+  f-shipping-name: 收件人 - 姓名
+  f-shipping-phone: 收件人 - 电话（选填）
+  f-shipping-address: 收件人 - 收货地址
+
+  btn-order-create: 生成订单
+
+  # 订单 #
+  order-show: 订单明细
+
+  btn-pay: 线上结帐
+  btn-apply-to-cancel: 申请取消订单
+
+  order-payment-method: 线上支付
+  order-paid: < 此笔订单已完成结帐，感谢您的购买。 >
+
+#--=== 选单介面 ===--#
+  # Navbar #
+  signup: 注册
+  login: 登入
+  logout: 登出
+  greeting: 您好，
+  wish-list: 愿望清单
+  cart: 购物车
+  language: 语系
+  product-access: 选物
+  brand-access: 品牌故事
+  recommend-access: 热门推荐
+  admin-access: 后台专区
+  account-order-access: 历史订单
+
+  # 后台操作面板 #
+  admin-order: 订单管理
+  admin-product: 商品管理
+  admin-brand: 品牌管理
+  admin-category: 分类管理
+  admin-homepage: 首页广告管理
+
+#--=== 使用者专区 ===--#
+
+  # 愿望清单 #
+  account-wish-list-index: 愿望清单
+  btn-move-to-cart: 移动至购物车
+
+
+  # 历史订单 #
+  account-order-index: 历史订单
+  f-order-created-at: 下订日期 / 年 /时间
+
+#--=== 管理员专区 ===--#
+  # 共用元素 #
+  f-hide: 是否隐藏
+  f-submit: 确认送交
+  f-options: 操作选项
+  notice-no-image: 尚无图片
+
+  btn-edit: 编辑
+  btn-delete: 删除
+  btn-hide: 隐藏
+  btn-publish: 公开
+
+  # 订单管理 #
+  order-index: 订单一览
+
+  f-order-user: 订购人
+  f-order-status: 订单状态
+
+  order-state-paid: 已付款
+  order-state-unpaid: 未付款
+
+  btn-cancel-order: 取消订单
+  btn-set-cancel: 取消订单
+  btn-set-shipping: 出货
+  btn-set-shipped: 设为「已出货」
+  btn-set-return: 退货
+
+  cancelled: 此笔订单已取消
+  returned: 此笔购买已退货
+
+
+
+  # 品牌管理 #
+  brand-index: 品牌一览
+  brand-new: 新增品牌
+  brand-edit: 编辑品牌
+
+  f-brand-name: 品牌名称
+  f-brand-logo: 品牌标志
+  f-brand-description: 品牌故事
+  f-brand-products: 品牌商品一览
+
+  btn-brand-new: 新增品牌
+
+  # 类型管理 #
+  category-group-index: 类型一览
+  category-group-new: 新增类型
+  category-group-edit: 编辑类型
+
+  f-category-group-name: 类型名称
+  f-category-group-categories: 类型分类一览
+
+  btn-category-group-new: 新增类型
+
+  # 分类管理 #
+  category-index: 分类一览
+  category-new: 新增分类
+  category-edit: 编辑分类
+
+  f-category-name: 分类名称
+  f-category-group: 类型
+  f-category-products: 分类商品一览
+
+  btn-category-new: 新增分类
+
+  # 商品管理 #
+  product-index: 商品一览
+  product-new: 新增商品
+  product-edit: 编辑商品
+
+  f-product-images: 商品图片
+  f-product-name: 商品名称
+  f-product-description: 商品介绍
+  f-product-price: 商品售价
+  f-product-quantity: 库存数量
+  f-product-category: 商品分类
+  f-product-brand: 商品品牌
+
+  btn-product-new: 新增商品
+
+  # 商品管理 #
+  intro-index: 广告一览
+  intro-new: 新增广告
+  intro-edit: 编辑广告
+
+  f-intro-title: 广告名称
+  f-intro-content: 广告介绍
+  f-intro-link: 广告连结
+  f-intro-image: 广告图片
+
+  btn-intro-new: 新增广告

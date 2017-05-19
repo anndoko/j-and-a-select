@@ -18,6 +18,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css?family=Oswald');
 
 /*===== Fonts =====*/
 // @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300);
@@ -61,28 +62,31 @@ body {
 /*===== Navbar 导览列 ======*/
 .navbar.navbar-default {
   background: rgba(0,0,0,0.3);
+  color: #000 !important;
 
   a:hover {
     color: #eb5424 !important;
   }
 
   &.show_bgcolor {
-    background-color: #151D3E;
+    background-color: #02061A;
   }
 
   /*===== Logo ======*/
   .logo-box {
     margin-right: 15px;
-    font-family: Acme;
-    font-size: 24px;
+    font-family: 'Oswald', sans-serif; /* Google字型 */
+    font-size: 20px;
 
     img {
       display: inline-block;
-      margin-right: 10px;
+      margin-top: -6px;
+      margin-right: 8px;
       margin-left: 30px;
-      width: 35px;
-      height: 35px;
-      margin-top: -6px
+      width: 30px;
+      height: 30px;
+      border: 2px solid #ffffff; /* Logo 外框 */
+      border-radius: 25px; /* Logo 切成圓形 */
     }
   }
 
@@ -98,8 +102,8 @@ body {
     }
 
     a:hover {
-      background-color: rgba(235, 84, 36, 0.5);
-      color: #000 !important;
+      background-color: #f0f0f0;
+      color: #eb5424 !important;
     }
   }
 
@@ -120,7 +124,7 @@ body {
 .footer{
   text-align: center;
   min-height: 250px;
-  background-color: #002E2E;
+  background-color: #02061A;
   padding: 15px 0;
   color: #fff;
   font-size: 14px;
@@ -142,7 +146,7 @@ body {
   a:hover,
   a:active,
   a:focus {
-    color: #4A6BB5;
+    color: #eb5424;
   }
 
   img {
@@ -156,10 +160,10 @@ body {
 
   p {
     a {
-      color: #4A6BB5;
+      color: #ddd;
     }
     a:hover {
-      color: #35CCC6;
+      color: #eb5424;
     }
   }
 
@@ -243,25 +247,25 @@ body {
     background-color: #fff;
     border-radius: 5px;
     position: fixed;
-    top: 90%;
-    right: 3%;
+    top: 80%;
+    right: 35px;
     // display: none;
     box-shadow: 1px 1px 3px #666;
 
     span {
       color: #000;
       position: absolute;
-      top: 8px;
+      top: 7px;
       left: 8px;
       font-size: 20px;
     }
   }
 
   .goTop:hover {
-    background-color: #4A6BB5;
+    background-color: #f0f0f0;
 
     span{
-      color: #fff;
+      color: #eb5424;
     }
   }
 }
