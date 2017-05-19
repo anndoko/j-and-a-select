@@ -2,13 +2,13 @@
   <div class="col-md-4 col-md-offset-4 user_setup_content">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
-      <h2><span class="fa fa-sign-in"></span> <%= t('user-log-in') %></h2>
+      <h2><span class="fa fa-sign-in"></span> <%= t('dv-login') %></h2>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
-          <%= f.input :email, :label => false, placeholder: '邮箱', required: false, autofocus: true %>
-          <%= f.input :password, :label => false, placeholder: '密码', required: false %>
-          <%= f.input :remember_me, :label => t('user-remember-me'), as: :boolean if devise_mapping.rememberable? %>
-          <%= link_to t('user-forget-psw'), new_password_path(resource_name), class: "psw" %>
+          <%= f.input :email, :label => false, placeholder: t('dv-check-email'), required: false, autofocus: true %>
+          <%= f.input :password, :label => false, placeholder: t('dv-pwd'), required: false %>
+          <%= f.input :remember_me, :label => t('dv-remember-me'), as: :boolean if devise_mapping.rememberable? %>
+          <%= link_to t('dv-forgot-pwd'), new_password_path(resource_name), class: "psw" %>
         </div>
 
         <div class="form-actions">
@@ -17,7 +17,7 @@
       <% end %>
       <hr />
         <div class="account">
-          <%= link_to t('user-have-not-account'), new_registration_path(resource_name) %>
+          <%= link_to t('dv-no-account-signup'), new_registration_path(resource_name) %>
         </div>
       </div>
     </div>
