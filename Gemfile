@@ -58,7 +58,7 @@ gem 'mini_magick'
 gem 'aasm'
 
 # AWS
-gem 'fog-aws'
+gem 'fog'
 gem 'figaro'
 
 group :development, :test do
