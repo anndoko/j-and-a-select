@@ -1,0 +1,22 @@
+<div class="row account-box">
+  <div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2 account-content">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+      <h2><span class="fa fa-user-circle-o"></span> <%= t('user-account') %></h2>
+      <%= simple_form_for [:account, @user] do |f| %>
+        <div class="form-inputs">
+          <%= f.input :name, :label => false, placeholder: t('name'), error: '请输入用戶名', required: true %>
+          <%= f.input :nickname, :label => false, placeholder: t('nickname'), error: '请输入用戶名', required: true %>
+          <div class="gender-box"><%= f.input :gender, :label => false, as: :radio_buttons, collection:  ['男', '女'], error: '请输入用戶名', required: true %></div>
+          <%= f.input :birthday, :label => t('birthday'), as: :date, html5: true, required: true %>
+          <%= f.input :phone, :label => false, placeholder: t('phone'), error: '请输入用戶名', required: true, input_html: { class: 'phone' } %>
+          <%= f.input :address, :label => false, placeholder: t('address'), error: '请输入用戶名', required: true %>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, t('save'),class: "button" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

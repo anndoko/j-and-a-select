@@ -71,6 +71,7 @@ zh-TW:
   recommend-access: 熱門推薦
   admin-access: 後台專區
   account-order-access: 歷史訂單
+  user-center: 我的帳戶
 
   # 後台操作面板 #
   admin-order: 訂單管理
@@ -89,6 +90,15 @@ zh-TW:
   user-forget-psw: 忘記密碼？
   user-find-psw: 找回密碼
   user-remember-me: 記住我
+
+  user-account: 資料修改
+  name: 真實姓名
+  nickname: 用戶名
+  address: 住址
+  phone: 電話
+  birthday: 生日
+  gender: 性別
+  save: 儲存
 
   # 願望清單 #
   account-wish-list-index: 願望清單

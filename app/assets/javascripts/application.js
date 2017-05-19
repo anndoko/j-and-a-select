@@ -55,8 +55,8 @@ $(window).scroll(function () {
 
 /*===== 變更顯示圖片 =====*/
 $(document).on('mouseover', '.list-image', function () {
-  var src_other = $(this).attr('src')
-  var src_main = src_other.toString().replace("other", "main")
+  var src_other = $(this).attr('src') //抓取小圖圖片路徑
+  var src_main = src_other.toString().replace("other", "main") //更改圖片路徑
 
   $('.main-image').attr('src', src_main) //變更大圖圖片路徑
 

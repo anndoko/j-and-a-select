@@ -14,7 +14,7 @@
         </div>
           <% @product_images.each_with_index do |p| %>
             <!-- 顯示所有商品圖片 - thumb 尺寸小圖 -->
-            <div class="col-md-3 col-sm-4 col-xs-6 image-box">
+            <div class="col-md-2 col-sm-4 col-xs-6 image-box">
               <%= image_tag(p.image.other.url, class: 'list-image') %>
             </div>
           <% end %>
@@ -32,7 +32,7 @@
         <p><%= simple_format(@product.description) %></p>
       </div>
         <hr />
-      <div class="btn-group">
+      <div>
         <p>商品品牌：<%= link_to(@product.brand.name, products_path(:brand => @product.brand.name)) %></p>
         <p>庫存數量：<%= @product.quantity %></p>
       </div>

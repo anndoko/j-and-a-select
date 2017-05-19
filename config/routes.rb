@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
   #--=== 使用者專區 ===--#
   namespace :account do
+    # 用戶中心 #
+    resources :users
     # 訂單歷程 #
     resources :orders
     # 收藏清單 #
