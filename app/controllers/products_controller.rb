@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:add, :remove]
+  before_action :authenticate_user!, only: [:add_to_wish_list, :remove_from_wish_list]
 
   def index
     # 商品類型 / 品牌
