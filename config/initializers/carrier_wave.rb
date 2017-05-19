@@ -2,8 +2,9 @@ require 'carrierwave/storage/abstract'
 require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
-CarrierWave.configure do |config|
-  if Rails.env.production?
+
+if Rails.env.production?
+  CarrierWave.configure do |config|
     config.fog_credentials = {
       provider:              'AWS',
       aws_access_key_id:     ENV['S3_key_id'], # Access Key Id
@@ -11,7 +12,5 @@ CarrierWave.configure do |config|
       region:                'ap-northeast-1'
     }
     config.fog_directory  = 'j-and-a-select-bucket' # bucket name
-  else
-    config.storage :file
   end
 end
