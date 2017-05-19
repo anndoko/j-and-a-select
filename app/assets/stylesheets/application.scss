@@ -498,7 +498,7 @@ body {
   }
 
   .product-detail {
-    padding-left: 50px;
+    padding: 0 25px 0 25px;
     text-align: left;
 
     h1 {
@@ -508,10 +508,36 @@ body {
 
     h3 {
       font-size: 20px;
+      margin-bottom: 25px;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1.5px dashed #aaa;
+      margin: 30px 0 10px 0;
+    }
+
+    img {
+      width: 17.5px;
+    }
+
+    div {
+      display: block;
+    }
+
+    .left-box {
+      float: left;
+      margin-left: 15px;
+    }
+
+    .right-box {
+      float: right;
+      margin-right: 15px;
     }
 
     .btn-default {
-      margin-top: 125px;
+      margin-top: 25px;
+      width: 100%;
     }
 
     .btn-default:hover {

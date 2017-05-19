@@ -26,21 +26,36 @@
 
     <!--=== 商品資訊 ===-->
     <div class='col-xs-12 col-md-4 product-detail'>
-      <h1> <%= @product.name %> </h1>
-      <h3> $ <%= @product.price %></h3>
-      <p><%= simple_format(@product.description) %></p>
-
-      <!-- 願望清單 -->
-      <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
-        <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
-          <label><i class="fa fa-check  fa-fw"> </i><%= t('wish-list-remove') %></label>
-        <% end %>
-      <% else %>
-        <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
-          <label><i class="fa fa-plus  fa-fw"> </i><%= t('wish-list-add') %></label>
-        <% end %>
-      <% end %>
-
+      <div>
+        <h1> <%= @product.name %> </h1>
+        <h3> $ <%= @product.price %></h3>
+        <p><%= simple_format(@product.description) %></p>
+      </div>
+        <hr />
+      <div class="btn-group">
+        <p>商品品牌：<%= link_to(@product.brand.name, products_path(:brand => @product.brand.name)) %></p>
+        <p>庫存數量：<%= @product.quantity %></p>
+      </div>
+        <hr />
+      <div class="row">
+          <!-- 願望清單 -->
+        <div class='left-box'>
+          <% if current_user && current_user.is_wish_list_owner_of?(@product) %>
+            <%= link_to remove_from_wish_list_product_path(@product), method: :post do %>
+              <label><i class="fa fa-check  fa-fw"> </i><%= t('wish-list-remove') %></label>
+            <% end %>
+          <% else %>
+            <%= link_to add_to_wish_list_product_path(@product), method: :post do %>
+              <label><i class="fa fa-plus  fa-fw"> </i><%= t('wish-list-add') %></label>
+            <% end %>
+          <% end %>
+        </div>
+        <div class='right-box'>
+          <a href="#s"><%= image_tag("link_facebook.png") %></a>
+          <a href="#s"><%= image_tag("link_twitter.png") %></a>
+          <a href="#s"><%= image_tag("link_google-plus.png") %></a>
+        </div>
+      </div>
       <!-- 加入購物車 -->
       <%= link_to(t('btn-add-to-cart'), add_to_cart_product_path(@product), :method => :post, :class => 'btn btn-md btn-default') %>
     </div>
