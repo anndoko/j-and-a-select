@@ -57,6 +57,10 @@ gem 'mini_magick'
 # 訂單狀態
 gem 'aasm'
 
+# AWS
+gem 'fog-aws'
+gem 'figaro'
+
 group :development, :test do
   # Debug 工具
   gem 'byebug', platform: :mri

@@ -20,6 +20,8 @@ zh-TW:
 
 #--=== 商品資訊頁 ===--#
   btn-add-to-cart: 加入購物車
+  wish-list-add: 收藏至願望清單
+  wish-list-remove: 已收藏至願望清單
 
 #--=== 購物車 ===--#
   # 購物車 #
@@ -61,6 +63,7 @@ zh-TW:
   login: 登入
   logout: 登出
   greeting: 您好，
+  wish-list: 願望清單
   cart: 購物車
   language: 切換語系
   product-access: 選物
@@ -77,6 +80,7 @@ zh-TW:
   admin-homepage: 首頁廣告管理
 
 #--=== 使用者專區 ===--#
+
   # 帳號相關 #
   user-sign-up: 帳號註冊
   user-log-in: 帳號登入
@@ -85,6 +89,11 @@ zh-TW:
   user-forget-psw: 忘記密碼？
   user-find-psw: 找回密碼
   user-remember-me: 記住我
+
+  # 願望清單 #
+  account-wish-list-index: 願望清單
+  btn-move-to-cart: 移動至購物車
+
 
   # 歷史訂單 #
   account-order-index: 歷史訂單

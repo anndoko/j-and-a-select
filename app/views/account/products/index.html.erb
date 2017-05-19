@@ -1,0 +1,48 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <!--=== 頁面標題 ===-->
+    <h2><%= t('account-wish-list-index') %></h2>
+
+    <!--=== 使用者願望清單===-->
+    <table class='table'>
+      <!-- 歷程訂單列表內容 -->
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <!-- 商品圖片 -->
+            <td>
+              <%= link_to product_path(product) do %>
+                <% if product.product_images.present? %>
+                  <!-- 顯示第一張圖片 -->
+                  <%= image_tag(product.product_images[0].image.mini.url, class: 'thumbnail')%>
+                <% else %>
+                  <%= image_tag('http://placehold.it/100x100&text=No Pic', class: 'thumbnail') %>
+                <% end %>
+              <% end %>
+            </td>
+            <!-- 商品名稱 -->
+            <td>
+              <%= link_to(product.name, product_path(product)) %>
+            </td>
+            <!-- 商品價錢 -->
+            <td>
+              <%= product.price %>
+            </td>
+            <!-- 移動至購物車 -->
+            <td>
+              <%= link_to add_to_cart_account_product_path(product), method: :post do %>
+                <%= t('btn-move-to-cart') %>
+              <% end %>
+            </td>
+            <!-- 從願望清單上刪除該商品 -->
+            <td>
+              <%= link_to remove_from_wish_list_account_product_path(product), method: :post do %>
+                <i class='fa fa-close'></i>
+              <% end %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
