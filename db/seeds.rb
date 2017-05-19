@@ -42,14 +42,14 @@ end
   見藐小微物，必細察其紋理，故時有物外之趣。
 
   物外設計是入世的品牌，一心一意認定東西之所以設計製作，無非是為了被好好使用；透過生活看見這座島嶼的人文與風景，用雙手栽植、日常生長、生命中茁壯。在喫飯、瞌睡、散步、閒談之間領略器物的良善與生活的況味。",
-  remote_logo_url: ("http://i.imgur.com/Vo6mi0z.jpg")
+  # remote_logo_url: ("http://i.imgur.com/Vo6mi0z.jpg")
   )
 
   Brand.create!(
   name: "CLASSICO",
   description: "
   CLASSICO 向復古經典致敬，使用有溫度的手工版料與機器半手工製作，極簡線條內外兼俱的完美姿態。更能展現自我獨特、風格的生活態度。每隻框板經過匠師潤飾後，氛圍更顯圓融，用料極為講究，炭黑的質感更是不在話下。",
-  remote_logo_url: ("http://i.imgur.com/WXsooaC.jpg")
+  # remote_logo_url: ("http://i.imgur.com/WXsooaC.jpg")
   )
 
   Brand.create!(
@@ -58,7 +58,7 @@ end
   在平凡中,發現不平凡的美
 
   禮拜文房具設計簡單美好的文書工具，期待改變大家桌上的風景，讓每天工作的好心情就從隨手使用的文具開始。",
-  remote_logo_url: ("http://i.imgur.com/FtAAr9R.jpg")
+  # remote_logo_url: ("http://i.imgur.com/FtAAr9R.jpg")
   )
 
   Brand.create!(
@@ -69,7 +69,7 @@ end
   EVERYDAY OBJECT認為 ，好的東西不用多，幾個設計出眾、容易搭配的物品，便可以陪伴我們很久，帶給我們滿足與自信。我們可以天天使用也不會感到厭煩，因為它總是跟我們搭配的很好。如果可以在每一個分類，都找到一兩個這樣的物品，我們便能在風格上找到了真正的自我。
 
   好品味無法定義，而 EVERYDAY 最重要使命，就是要幫大家設計出這樣的 EVERYDAY OBJECT。",
-  remote_logo_url: ("http://i.imgur.com/bklYTrP.png")
+  # remote_logo_url: ("http://i.imgur.com/bklYTrP.png")
   )
 
 
@@ -79,7 +79,7 @@ end
   阿原經營理念，是以「台灣原鄉品牌」概念，結合「土地倫理」及勞動力美學，從社區出發，強調對於土地自然環境的關懷。
 
   阿原以植物為師，遵依土地倫理，並徹底將青草藥的療瘉特性融入，研製出高比例天然的產品，經營品牌的同時也同樣經營人身健康、土地環保、社會公益，因為：共生才能永續，「做」才是力量。",
-  remote_logo_url: ("http://i.imgur.com/7bq58j6.jpg")
+  # remote_logo_url: ("http://i.imgur.com/7bq58j6.jpg")
   )
 
   puts "創建品牌*5"
