@@ -43,7 +43,9 @@
     <%= (t('j-and-a-select')) %>
   <% end %>
 
-  <% if params[:category].present? %>
+  <% if params[:id].present? %>
+  / <a href="../products?group=<%= @product.category.category_group.name %>"><%= @product.category.category_group.name %></a> / <a href="../products?category=<%= @product.category.name %>"><%= @product.category.name %></a> / <a href="<%= @product.id %>"><%= @product.name %></a>
+  <% elsif params[:category].present? %>
   / <a href="products?group=<%= @category.category_group.name %>"><%= @category.category_group.name %></a> / <a href="products?category=<%= @category.name %>"><%= @category.name %></a>
   <% elsif params[:group].present? %>
   / <a href="products?group=<%= @group.name %>"><%= @group.name %></a>

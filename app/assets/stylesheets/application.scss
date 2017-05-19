@@ -474,6 +474,35 @@ body {
   }
 }
 
+.product-show {
+  margin: 50px 0 100px 0;
+  text-align: left;
+
+  img {
+    width: 100%;
+  }
+
+  .product-detail {
+    padding: 0 20px 0 15px;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    .btn-default {
+      margin-top: 125px;
+    }
+
+    .btn-default:hover {
+      background-color: #fff;
+      border-color: #eb5424;
+    }
+  }
+}
 
 /*===== Control 後台-控制選單 =====*/
 .control-box{
