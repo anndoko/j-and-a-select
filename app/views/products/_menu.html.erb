@@ -49,6 +49,8 @@
   / <a href="products?group=<%= @category.category_group.name %>"><%= @category.category_group.name %></a> / <a href="products?category=<%= @category.name %>"><%= @category.name %></a>
   <% elsif params[:group].present? %>
   / <a href="products?group=<%= @group.name %>"><%= @group.name %></a>
+  <% elsif params[:brand].present? %>
+  / <a href="products?brand=<%= @brand.name %>"><%= @brand.name %></a>
   <% end %>
 <hr/>
 </div>
