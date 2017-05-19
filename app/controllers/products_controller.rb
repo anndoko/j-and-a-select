@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, only: [:add, :remove]
+  before_action :authenticate_user!, only: [:add_to_wish_list, :remove_from_wish_list]
 
   def index
     # 商品類型 / 品牌
@@ -36,11 +36,22 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
-    # 商品圖片
     @product_images = @product.product_images.all
-    # 商品所屬的品牌/分類
+    # 類型 / 品牌 / 幣值
     @category_groups = CategoryGroup.published
     @brands = Brand.published
+    @currencies = Currency.all
+
+    # 幣值切換
+    if params[:currency].present?
+      @currency_s = params[:currency]
+      @currency = Currency.find_by(name: @currency_s)
+      @product.price = @product.price * @currency.rate
+    else
+      # 預設幣值為新台幣
+      @currency = Currency.find_by(name: '新台幣')
+      @product.price = @product.price * 1
+    end
   end
 
   # 加入購物車

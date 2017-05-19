@@ -1,5 +1,5 @@
-<div class="product-box product-show">
-  <div class="container">
+<div class='product-box product-show'>
+  <div class='container'>
     <!--=== 商品類型 & 品牌選單 ===-->
     <%= image_tag(@product.category.category_group.image, class: "background-image") %>
     <%= render "products/menu" %>
@@ -23,12 +23,13 @@
         <% end %>
       </div>
     </div>
-
     <!--=== 商品資訊 ===-->
     <div class='col-xs-12 col-md-4 product-detail'>
       <div>
         <h1> <%= @product.name %> </h1>
-        <h3> $ <%= @product.price %></h3>
+        <h3><%= @currency.symbol %> <%= @product.price %></h3>
+        <!-- 幣值轉換 -->
+        <%= render 'products/currency' %>
         <p><%= simple_format(@product.description) %></p>
       </div>
         <hr />

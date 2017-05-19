@@ -2,6 +2,37 @@ zh-TW:
 #--=== J&A SELECT ===--#
   j-and-a-select: J & A SELECT
 
+#--=== Devise 相關 ===--#
+  devise:
+    failure:
+      unauthenticated: 您必須是 J&A SELECT 用戶才能進行操作。
+      not_found_in_database: 此帳號不存在。
+      invalid: 帳號或密碼輸入錯誤。
+    sessions:
+      signed_in: 登入成功，歡迎回來！
+      signed_out: 登出成功。
+
+  dv-warn-email: 請輸入您的電子信箱。
+  dv-warn-name: 請輸入用戶名稱。
+  dv-warn-pwd: 密碼不相符，請再次確認。
+  dv-warn-pwd-characters: 請輸入 6 到 16 字元的密碼。
+
+  dv-login:  登入
+  dv-signup:  註冊
+  dv-email:  電子信箱
+  dv-pwd:  密碼
+  dv-remember-me:  記住我
+  dv-forgot-pwd:  忘記密碼？
+  dv-check-email:  you@example.com
+  dv-name:  用戶名稱
+  dv-find-pwd:  取得密碼
+  dv-account-signin:  已經是 J&A SELECT 用戶了嗎？按此登入。
+  dv-no-account-signup:  現在就加入 J&A SELECT。
+  dv-user:  人才
+  dv-admin:  企業
+  dv-set-pwd:  設定 6 到 16 字位密碼
+  dv-confirm-pwd:  確認密碼
+
 #--=== 提示訊息 ===--#
   message-add-to-cart-success: 成功加入購物車！
   message-already-added: 您的購物車已有此商品。
@@ -10,18 +41,71 @@ zh-TW:
   message-payment-success: 已完成付款。
   message-cancel-request-sent: 已提交申請，J&A SELECT 會儘速與您聯繫。
 
+#--=== 首頁 ===--#
+  # 品牌故事 #
+  th-jimmy: Jimmy 王品睿
+  about-jimmy: 理工直男程序猿，穿衣不脫黑白灰，卻時刻關注能提升生活質量的單品。提供的選物沒有浮誇的設計與機能，注重物品的本質與材料，每一項推薦的單品都親身試用，雖種類不多，但必屬精品。
+
+  th-anndo: Anndo 柯禹安
+  about-anndo: J&A選物的挑選法則是「有愛才會賣」，因為唯有用這樣的標準挑選達到最好平衡、符合心中完美且合理 CP 值的商品，才能娓娓訴說對它們的了解與熱誠。
+
+  # 商品分類 #
+  th-desk: 日常文具
+  slogan-desk: 現代人的日常頻繁地使用文具，但你是否對毫無鑑別度的工具產生厭倦，覺得在茫茫人海中毫無亮點？J&A Select精選全球知名品牌，又在其中推薦最有特色的文具單品，不論是想充滿異國風情、還是跟上時尚潮流、甚至只想畫龍點睛，文具館裡都能滿你的需求。
+
+  th-home: 生活用品
+  slogan-home: 辛勤工作不外乎就是為了享受更好的生活，那些分享於臉書和 Instagram 擺盤很美的餐桌、讓人眼睛為之一亮的家具單品，還是舒服的居家一角，都是你我心所嚮往的美好日常。但那些堆疊出質感生活的器物要從何找起呢？現在風靡全球的生活選物店，透過專業人士幫您精心挑選品質與外型兼備的生活用品，從衣著鞋包、杯具食器、收納櫃體、書籍文具、甚至是醬料食材等等食、衣、住、行、育、樂會觸及到的範圍，提升日常就從生活選物開始吧！
+
+  th-accessories: 特色小物
+  slogan-accessories: 辛勤工作不外乎就是為了享受更好的生活，那些分享於臉書和 Instagram 擺盤很美的餐桌、讓人眼睛為之一亮的家具單品，還是舒服的居家一角，都是你我心所嚮往的美好日常。但那些堆疊出質感生活的器物要從何找起呢？現在風靡全球的生活選物店，透過專業人士幫您精心挑選品質與外型兼備的生活用品，從衣著鞋包、杯具食器、收納櫃體、書籍文具、甚至是醬料食材等等食、衣、住、行、育、樂會觸及到的範圍，提升日常就從生活選物開始吧！
+
+
+  # 推薦商品 #
+  th-featured-products: 精選商品
+
+  # 合作品牌 #
+  th-brands: 嚴選品牌
+
+  # 立即購買 #
+  btn-buy-now: 立即選購
+
+#--=== Footer ===--#
+
+  # 商品資訊 #
+  th-products: 商品資訊
+  link-latest: 最新商品
+  link-exclusive: 獨家推薦
+  link-brands: 品牌分類
+
+  # 購物須知 #
+  th-service-info: 購物須知
+  link-shipping: 關於運送
+  link-return: 退貨方式
+  link-faq: 常見問題
+
+  # 關於我們 #
+  th-about-us: 關於我們
+  link-story: 品牌故事
+  link-media: 媒體報導
+  link-contact: 聯絡我們
+
+
 #--=== 商品列表 ===--#
   nav-brand: 嚴選品牌
   no-product-data: 此分類暫時沒有商品哦
 
-  will_paginate:
-    previous_label: <span class="fa fa-angle-double-left"></span>
-    next_label: <span class="fa fa-angle-double-right"></span>
+  will-paginate:
+    previous-label: <span class=fa fa-angle-double-left></span>
+    next-label: <span class=fa fa-angle-double-right></span>
 
 #--=== 商品資訊頁 ===--#
   btn-add-to-cart: 加入購物車
   wish-list-add: 加入收藏
+    nav-currency: 切換幣值
+
   wish-list-remove: 已收藏至願望清單
+
+  btn-add-to-cart: 加入購物車
 
 #--=== 購物車 ===--#
   # 購物車 #
@@ -65,7 +149,7 @@ zh-TW:
   greeting: 您好，
   wish-list: 願望清單
   cart: 購物車
-  language: 切換語系
+  language: 語系
   product-access: 選物
   brand-access: 品牌故事
   recommend-access: 熱門推薦
@@ -99,7 +183,7 @@ zh-TW:
   birthday: 生日
   gender: 性別
   save: 儲存
-
+  
   # 願望清單 #
   account-wish-list-index: 願望清單
   btn-move-to-cart: 移動至購物車
