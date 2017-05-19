@@ -12,6 +12,7 @@ zh-TW:
 
 #--=== 商品列表 ===--#
   nav-brand: 嚴選品牌
+  no-product-data: 此分類暫時沒有商品哦
 
   will_paginate:
     previous_label: <span class="fa fa-angle-double-left"></span>

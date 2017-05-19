@@ -42,11 +42,11 @@
   <%= link_to products_path do %>
     <%= (t('j-and-a-select')) %>
   <% end %>
-  <%
-    @category = params[:category]
-    if @category.present?
-  %>
-  / <a href="products?category=<%= @category %>"><%= @category %></a>
+
+  <% if params[:category].present? %>
+  / <a href="products?group=<%= @category.category_group.name %>"><%= @category.category_group.name %></a> / <a href="products?category=<%= @category.name %>"><%= @category.name %></a>
+  <% elsif params[:group].present? %>
+  / <a href="products?group=<%= @group.name %>"><%= @group.name %></a>
   <% end %>
 <hr/>
 </div>
