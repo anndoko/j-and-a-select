@@ -8,7 +8,7 @@
 
 
 # 新增 admin 帳號 - User #
-if User.find_by(email: "admin@rails.com").nil?
+if User.find_by(email: "admin@rails.com").nil?ｍ
   u = User.new
   u.name = "測試管理員"
   u.email = "admin@rails.com"
