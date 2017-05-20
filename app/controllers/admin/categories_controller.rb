@@ -18,14 +18,15 @@ class Admin::CategoriesController < ApplicationController
   def new
     @category = Category.new
     # 所屬的大分類
-    @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
+    @category_groups = CategoryGroup.all
+    # @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
   end
 
   def create
     @category = Category.new(category_params)
     # 所屬的大分類
-    @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
-    @category.category_group_id = params[:category_group_id]
+    # @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
+    # @category.category_group_id = params[:category_group_id]
 
     if @category.save
       redirect_to admin_categories_path

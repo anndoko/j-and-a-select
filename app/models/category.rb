@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
   # 新增/修改欄位限制與提示 #
-  validates :name, presence: true
+  validates :name, presence: { message: "請輸入分類名稱" }
+  validates :category_group_id, presence: { message: "請選擇分類類型" }
 
   # 關聯 #
   belongs_to :category_group
