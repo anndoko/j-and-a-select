@@ -1,0 +1,15 @@
+<div class="col-md-10 col-md-offset-1 admin-data-box">
+  <hr style="size:2px" />
+  <%= simple_form_for [:admin, @brand] do |f| %>
+    <%= f.input :name, :label => t('f-brand-name'), input_html: { class: 'width-50' } %>
+    <% if @brand.logo.present?%>
+      <%= image_tag(@brand.logo.thumb.url) %>
+    <% end %>
+    <%= f.input :logo, as: :file, :label => t('f-brand-logo') %>
+    <%= f.input :description, :label => t('f-brand-description'), input_html: { class: 'height-200' } %>
+    <span class="hidden-box"><%= f.input :is_hidden, :label => t('f-hide') %></span>
+    <div class="form-actions">
+      <%= f.submit t('f-submit'), class: 'btn btn-md btn-default' %>
+    </div>
+  <% end %>
+</div>
