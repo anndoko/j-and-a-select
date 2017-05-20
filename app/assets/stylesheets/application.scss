@@ -602,7 +602,9 @@ body {
     color: #666;
   }
 
-  a:hover {
+  a:hover,
+  a:active,
+  a:focus {
     color: #44c7f4;
   }
 
