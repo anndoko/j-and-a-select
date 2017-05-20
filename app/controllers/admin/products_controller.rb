@@ -26,7 +26,6 @@ class Admin::ProductsController < ApplicationController
     # 商品所屬的品牌/分類
     @brands = Brand.all.map { |b| [b.name, b.id] }
     @categories = Category.all.map { |c| [c.name, c.id] }
-
   end
 
   def create

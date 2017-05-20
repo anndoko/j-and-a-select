@@ -642,6 +642,13 @@ body {
       color: #666 !important;
     }
   }
+
+  .description-box {
+    max-width: 550px;
+  }
+  .action-box {
+    min-width: 100px;
+  }
 }
 
 /*===== Users 用戶中心 =====*/
