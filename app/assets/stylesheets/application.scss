@@ -523,6 +523,31 @@ body {
   /*===== 產品路徑設置 =====*/
   .path-box {
     text-align: left;
+    height: 20px;
+
+    .left-box {
+      float: left;
+    }
+
+    .right-box {
+      float: right;
+
+      button {
+        margin: -15px 0 -15px 0;
+        padding: 7.5px 10px 7.5px 10px;
+        border: 2px solid #666;
+        color: #333;
+      }
+
+      button:focus {
+        background-color: #fff;
+        color: #333;
+      }
+
+      ul {
+        margin-top: 15px;
+      }
+    }
   }
 }
 

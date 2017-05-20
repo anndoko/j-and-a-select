@@ -39,18 +39,39 @@
 <hr/>
 <!--=== 路徑 ===-->
 <div class="path-box">
-  <%= link_to products_path do %>
-    <%= (t('j-and-a-select')) %>
-  <% end %>
+  <div class="left-box">
+    <%= link_to products_path do %>
+      <%= (t('j-and-a-select')) %>
+    <% end %>
 
-  <% if params[:id].present? %>
-  / <a href="../products?group=<%= @product.category.category_group.name %>"><%= @product.category.category_group.name %></a> / <a href="../products?category=<%= @product.category.name %>"><%= @product.category.name %></a> / <a href="<%= @product.id %>"><%= @product.name %></a>
-  <% elsif params[:category].present? %>
-  / <a href="products?group=<%= @category.category_group.name %>"><%= @category.category_group.name %></a> / <a href="products?category=<%= @category.name %>"><%= @category.name %></a>
-  <% elsif params[:group].present? %>
-  / <a href="products?group=<%= @group.name %>"><%= @group.name %></a>
-  <% elsif params[:brand].present? %>
-  / <a href="products?brand=<%= @brand.name %>"><%= @brand.name %></a>
-  <% end %>
-<hr/>
+    <% if params[:id].present? %>
+    / <a href="../products?group=<%= @product.category.category_group.name %>"><%= @product.category.category_group.name %></a> / <a href="../products?category=<%= @product.category.name %>"><%= @product.category.name %></a> / <a href="<%= @product.id %>"><%= @product.name %></a>
+    <% elsif params[:category].present? %>
+    / <a href="products?group=<%= @category.category_group.name %>"><%= @category.category_group.name %></a> / <a href="products?category=<%= @category.name %>"><%= @category.name %></a>
+    <% elsif params[:group].present? %>
+    / <a href="products?group=<%= @group.name %>"><%= @group.name %></a>
+    <% elsif params[:brand].present? %>
+    / <a href="products?brand=<%= @brand.name %>"><%= @brand.name %></a>
+    <% end %>
+  </div>
+  <div class="right-box">
+    <div class="dropdown btn-group clearfix">
+      <% if params[:order].present? %>
+        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <%= params[:order] %> <span class="caret"></span>
+        </button>
+      <% else %>
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          預設排序 <span class="caret"></span>
+        </button>
+      <% end %>
+      <ul class="dropdown-menu dropdown-menu-right" selection aria-labelledby="dropdownMenuDivider">
+        <li><%= link_to("依熱銷度", '#') %></li>
+        <li><%= link_to("依上架時間", '#') %></li>
+        <li><%= link_to("依價格排序：低至高", '#') %></li>
+        <li><%= link_to("依價格排序：高至低", '#') %></li>
+      </ul>
+    </div>
+  </div>
 </div>
+<hr/>
