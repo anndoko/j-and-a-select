@@ -14,6 +14,10 @@ Rails.application.routes.draw do
       post :add_to_wish_list
       post :remove_from_wish_list
     end
+
+    collection do
+      get :search
+    end
   end
 
   # 購物車 #
