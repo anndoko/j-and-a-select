@@ -553,7 +553,7 @@ body {
 
 /*===== Control 後台-控制選單 =====*/
 .nav-sidebar {
-  margin-top: 50px;
+  margin-top: 65px;
 
   span {
     margin-left: 2.5px;
@@ -572,6 +572,75 @@ body {
 
   a:hover {
     color: #44c7f4;
+  }
+}
+
+/*===== Admin 後台-通用設置 =====*/
+.admin-box {
+  padding: 25px;
+
+  table{
+    box-shadow: 0 0 3px #999;
+  }
+
+  thead{
+    background-color: #02061A;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  a {
+    color: #666;
+  }
+
+  a:hover {
+    color: #44c7f4;
+  }
+
+  .action-box {
+    margin-top: -3.5px;
+    margin-bottom: -3.5px;
+  }
+
+  .show-btn {
+    background-color: #eee !important;
+  }
+
+  .btn-default {
+    padding: 5px 10px 5px 10px;
+    background-color: #fff;
+    border: 1.5px solid #ccc;
+  }
+
+  .btn-info {
+    padding: 10px 15px 10px 15px;
+    border: 1.5px solid #ccc;
+    color: #fff;
+  }
+
+  .btn-default:hover {
+    opacity: 0.85;
+  }
+
+  .btn-info:hover {
+    color: #fff;
+  }
+
+  .admin-page-box {
+    margin-top: 75px;
+
+    a {
+      background-color: #ddd;
+    }
+
+    a:hover {
+      background-color: #ccc;
+      color: #666 !important;
+    }
   }
 }
 
