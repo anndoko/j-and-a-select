@@ -552,9 +552,27 @@ body {
 }
 
 /*===== Control 後台-控制選單 =====*/
-.control-box{
-  margin-top: 30px;
-  max-width: 300px;
+.nav-sidebar {
+  margin-top: 50px;
+
+  span {
+    margin-left: 2.5px;
+  }
+
+  li {
+    max-width: 250px;
+    padding: 12.5px 15px 12.5px 15px;
+    background-color: #546270;
+    border: 1px solid #4a4a4a;
+  }
+
+  a {
+    color: #fff;
+  }
+
+  a:hover {
+    color: #44c7f4;
+  }
 }
 
 /*===== Users 用戶中心 =====*/

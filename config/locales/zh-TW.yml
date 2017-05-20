@@ -101,7 +101,7 @@ zh-TW:
 #--=== 商品資訊頁 ===--#
   btn-add-to-cart: 加入購物車
   wish-list-add: 加入收藏
-    nav-currency: 切換幣值
+  nav-currency: 切換幣值
 
   wish-list-remove: 已收藏至願望清單
 
@@ -183,7 +183,7 @@ zh-TW:
   birthday: 生日
   gender: 性別
   save: 儲存
-  
+
   # 願望清單 #
   account-wish-list-index: 願望清單
   btn-move-to-cart: 移動至購物車
