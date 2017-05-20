@@ -1,10 +1,14 @@
-<% if @category_group.image.present? %>
-  <%= image_tag(@category_group.image.url) %>
-<% end %>
-<%= simple_form_for [:admin, @category_group] do |f| %>
-  <%= f.input :name, :label => t('f-category-group-name') %>
-  <%= f.input :image, :label => t('f-image-upload') %>
-  <%= f.input :is_hidden, :label => t('f-hide') %>
-
-  <%= f.submit t('f-submit'), class: 'btn btn-lg btn-default' %>
-<% end %>
+<div class="col-md-8 col-md-offset-2 admin-data-box">
+  <hr style="size:2px" />
+  <% if @category_group.image.present? %>
+    <%= image_tag(@category_group.image.url, :class => "width-100") %>
+  <% end %>
+  <%= simple_form_for [:admin, @category_group] do |f| %>
+    <%= f.input :name, :label => t('f-category-group-name') %>
+    <%= f.input :image, :label => t('f-image-upload') %>
+    <span class="hidden-box"><%= f.input :is_hidden, :label => t('f-hide') %></span>
+    <div class="form-actions">
+      <%= f.submit t('f-submit'), class: 'btn btn-md btn-default' %>
+    </div>
+  <% end %>
+</div>

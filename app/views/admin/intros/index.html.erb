@@ -1,9 +1,9 @@
 <!--=== 頁面標題 ===-->
-<h2><%= t('intro-index') %></h2>
+<!-- <h2><%= t('intro-index') %></h2> -->
 
 <!--=== 新增廣告 ===-->
 <div class='pull-right'>
-  <%= link_to(t('btn-intro-new'), new_admin_intro_path, :class => 'btn btn-sm btn-default')%>
+  <%= link_to(t('btn-intro-new'), new_admin_intro_path, :class => 'btn btn-md btn-info')%>
 </div>
 
 <!--=== 廣告列表 ===-->
@@ -11,7 +11,6 @@
   <!--=== 廣告列表標題 ===-->
   <thead>
     <tr>
-      <th></th>
       <th><%= t('f-intro-title') %></th>
       <th><%= t('f-intro-content') %></th>
       <th><%= t('f-intro-link') %></th>
@@ -22,17 +21,29 @@
   <!--=== 廣告列表內容 ===-->
   <% @intros.each do |intro| %>
     <tr>
-      <td><%= render_intro_status(intro) %></td>
-      <td><%= intro.title %></td>
+      <td><%= render_intro_status(intro) %> <%= intro.title %></td>
       <td><%= intro.content %></td>
       <td><%= intro.link %></td>
       <!--=== 操作選項 ===-->
-      <td>
-        <!-- 編輯 -->
-        <%= link_to(t('btn-edit'), edit_admin_intro_path(intro), :class => 'btn btn-sm btn-default') %>
-        <%= link_to(t('btn-delete'), admin_intro_path(intro), data: { confirm: "Are you sure?" }, method: :delete, :class => 'btn btn-sm btn-default') %>
+      <td class="action-box">
+        <%= link_to(edit_admin_intro_path(intro), class: "btn btn-md btn-default") do %>
+          <span class="fa fa-pencil"></span>
+        <% end %>
+        <%= link_to(admin_intro_path(intro), method: :delete, data: { confirm: "確定刪除該廣告?" }, class: "btn btn-md btn-default") do %>
+          <span class="fa fa-trash-o"></span>
+        <% end %>
+
         <!-- 發佈 / 隱藏 -->
-        <%= render_intro_publish_or_hide(intro) %>
+        <!-- <%= render_intro_publish_or_hide(intro) %> -->
+        <% if intro.is_hidden %>
+          <%= link_to(publish_admin_intro_path(intro), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+            <span class="fa fa-eye"></span>
+          <% end %>
+        <% else %>
+          <%= link_to(hide_admin_intro_path(intro), :method => :post, data: { confirm: "確定隱藏該廣告？" }, class: "btn btn-md btn-default") do %>
+            <span class="fa fa-eye-slash"></span>
+          <% end %>
+        <% end %>
       </td>
     </tr>
   <% end %>

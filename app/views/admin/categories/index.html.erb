@@ -1,74 +1,92 @@
-<!--=== 頁面標題 ===-->
-<h2><%= t('category-group-index') %></h2>
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <!--=== 頁面標題 ===-->
+    <h2><%= t('category-group-index') %></h2>
 
-<!--=== 新增類型 ===-->
-<div class="pull-right">
-  <%= link_to(t('btn-category-group-new'), new_admin_category_group_path, :class => 'btn btn-sm btn-default')%>
+    <!--=== 新增類型 ===-->
+    <div class="pull-right">
+      <%= link_to(t('btn-category-group-new'), new_admin_category_group_path, :class => 'btn btn-md btn-info')%>
+    </div>
+
+    <!--=== 類型列表 ===-->
+    <table class="table">
+      <!--=== 類型列表標題 ===-->
+      <thead>
+        <tr>
+          <th><%= t('f-category-group') %></th>
+          <th class="pull-right"><%= t('f-options') %></th>
+        </tr>
+      </thead>
+      <!--=== 類型列表內容 ===-->
+      <% @category_groups.each do |category_group| %>
+        <tr>
+          <td><%= render_category_group_status(category_group) %> <%= category_group.name %></td>
+          <!--=== 操作選項 ===-->
+          <td class="action-box pull-right">
+            <%= link_to(edit_admin_category_group_path(category_group), class: "btn btn-md btn-default") do %>
+              <span class="fa fa-pencil"></span>
+            <% end %>
+
+            <!-- 發佈 / 隱藏 -->
+            <!-- <%= render_category_group_publish_or_hide(category_group) %> -->
+            <% if category_group.is_hidden %>
+              <%= link_to(publish_admin_category_group_path(category_group), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+                <span class="fa fa-eye"></span>
+              <% end %>
+            <% else %>
+              <%= link_to(hide_admin_category_group_path(category_group), :method => :post, data: { confirm: "確定隱藏該類型？" }, class: "btn btn-md btn-default") do %>
+                <span class="fa fa-eye-slash"></span>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+
+    <!--=== 頁面標題 ===-->
+    <h2><%= t('category-index') %></h2>
+
+    <!--=== 新增分類 ===-->
+    <div class="pull-right">
+      <%= link_to(t('btn-category-new'), new_admin_category_path, :class => 'btn btn-md btn-info')%>
+    </div>
+
+    <!--=== 分類列表 ===-->
+    <table class="table">
+      <!--=== 分類列表標題 ===-->
+      <thead>
+        <tr>
+          <th><%= t('f-category-group') %></th>
+          <th><%= t('f-category-name') %></th>
+          <th class="pull-right"><%= t('f-options') %></th>
+        </tr>
+      </thead>
+
+      <!--=== 分類列表內容 ===-->
+      <% @categories.each do |category| %>
+        <tr>
+          <td><%= render_category_status(category) %> <%= category.category_group.name %></td>
+          <td><%= link_to(category.name, admin_category_path(category)) %></td>
+          <!--=== 操作選項 ===-->
+          <td class="action-box pull-right">
+            <%= link_to(edit_admin_category_path(category), class: "btn btn-md btn-default") do %>
+              <span class="fa fa-pencil"></span>
+            <% end %>
+
+            <!-- 發佈 / 隱藏 -->
+            <!-- <%= render_category_publish_or_hide(category) %> -->
+            <% if category.is_hidden %>
+              <%= link_to(publish_admin_category_path(category), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+                <span class="fa fa-eye"></span>
+              <% end %>
+            <% else %>
+              <%= link_to(hide_admin_category_path(category), :method => :post, data: { confirm: "確定隱藏該分類？" }, class: "btn btn-md btn-default") do %>
+                <span class="fa fa-eye-slash"></span>
+              <% end %>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>
-
-<!--=== 類型列表 ===-->
-<table class="table">
-  <!--=== 類型列表標題 ===-->
-  <thead>
-    <tr>
-      <th></th>
-      <th><%= t('f-category-group') %></th>
-      <th><%= t('f-options') %></th>
-    </tr>
-  </thead>
-  <!--=== 類型列表內容 ===-->
-  <% @category_groups.each do |category_group| %>
-    <tr>
-      <td><%= render_category_group_status(category_group) %></td>
-      <td><%= category_group.name %></td>
-      <!--=== 操作選項 ===-->
-      <td>
-        <!-- 編輯 -->
-        <%= link_to(t('btn-edit'), edit_admin_category_group_path(category_group), :class => 'btn btn-sm btn-default') %>
-        <!-- 發佈 / 隱藏 -->
-        <%= render_category_group_publish_or_hide(category_group) %>
-      </td>
-    </tr>
-  <% end %>
-</table>
-
-
-<hr/>
-
-
-<!--=== 頁面標題 ===-->
-<h2><%= t('category-index') %></h2>
-
-<!--=== 新增分類 ===-->
-<div class="pull-right">
-  <%= link_to(t('btn-category-new'), new_admin_category_path, :class => 'btn btn-sm btn-default')%>
-</div>
-
-<!--=== 分類列表 ===-->
-<table class="table">
-  <!--=== 分類列表標題 ===-->
-  <thead>
-    <tr>
-      <th></th>
-      <th><%= t('f-category-group') %></th>
-      <th><%= t('f-category-name') %></th>
-      <th><%= t('f-options') %></th>
-    </tr>
-  </thead>
-
-  <!--=== 分類列表內容 ===-->
-  <% @categories.each do |category| %>
-    <tr>
-      <td><%= render_category_status(category) %></td>
-      <td><%= category.category_group.name %></td>
-      <td><%= link_to(category.name, admin_category_path(category)) %></td>
-      <!--=== 操作選項 ===-->
-      <td>
-        <!-- 編輯 -->
-        <%= link_to(t('btn-edit'), edit_admin_category_path(category), :class => 'btn btn-sm btn-default') %>
-        <!-- 發佈 / 隱藏 -->
-        <%= render_category_publish_or_hide(category) %>
-      </td>
-    </tr>
-  <% end %>
-</table>

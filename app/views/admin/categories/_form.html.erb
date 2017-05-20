@@ -1,0 +1,11 @@
+<div class="col-md-8 col-md-offset-2 admin-data-box">
+  <hr style="size:2px" />
+  <%= simple_form_for [:admin, @category] do |f| %>
+    <%= f.input :category_group_id, :label => t('f-category-groups'), :collection => @category_groups, input_html: { class: 'width-50' } %>
+    <%= f.input :name, :label => t('f-category-name') %>
+    <span class="hidden-box"><%= f.input :is_hidden, :label => t('f-hide') %></span>
+    <div class="form-actions">
+      <%= f.submit t('f-submit'), class: 'btn btn-md btn-default' %>
+    </div>
+  <% end %>
+</div>

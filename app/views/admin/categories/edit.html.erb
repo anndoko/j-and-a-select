@@ -1,21 +1,3 @@
 <!--=== 修改分類 ===-->
-<h2><%= t('category-edit') %></h2>
-
-<!--=== 修改分類表單 ===-->
-<%= simple_form_for [:admin, @category] do |f| %>
-
-  <div class="group">
-    <%= f.select :category_group_id, @category_groups %>
-  </div>
-
-  <div class="group">
-    <%= f.input :name, :label => t('f-category-name') %>
-  </div>
-
-  <div class="group">
-    <%= f.input :is_hidden, :label => t('f-hide') %>
-  </div>
-
-  <%= f.submit t('f-submit'), class: 'btn btn-lg btn-default' %>
-
-<% end %>
+<h2><span class="fa fa-pencil-square-o"></span> <%= t('category-edit') %></h2>
+<%= render('form') %>

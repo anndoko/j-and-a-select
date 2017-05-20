@@ -1,0 +1,40 @@
+<div class="col-md-10 col-md-offset-1 admin-data-box">
+  <hr style="size:2px" />
+  <%= simple_form_for [:admin, @product] do |f| %>
+    <!-- 判斷是否為new頁面 -->
+    <% if @product.new_record? %>
+    <% else %>
+    <!-- 顯示商品圖片 -->
+    <div class='group'>
+      <% if @product.product_images.present? %>
+        <% @product.product_images.each do |p| %>
+          <%= image_tag p.image.thumb.url %>
+        <% end %>
+      <% end %>
+    </div>
+    <% end %>
+
+    <!-- 上傳圖片 -->
+    <%= f.label t('f-product-images') %><br>
+    <%= f.file_field :product_image, :multiple => true, name: 'product_images[image][]' %>
+    <!-- 商品名稱 -->
+    <%= f.input :name, :label => t('f-product-name'), input_html: { class: 'width-50' } %>
+    <!-- 選擇分類 -->
+    <%= f.input :category_id, :label => t('f-product-category'), :collection => @categories, :checked => @product.category, input_html: { class: 'width-50' } %>
+    <!-- <%= select_tag(:category_id, options_for_select(@categories), :prompt => t('f-product-category')) %> -->
+    <!-- 選擇品牌 -->
+    <%= f.input :brand_id, :label => t('f-product-brand'), :collection => @brands, :checked => @product.brand, input_html: { class: 'width-50' } %>
+    <!-- <%= select_tag(:brand_id, options_for_select(@brands), :prompt => t('f-product-brand')) %> -->
+    <!-- 商品敘述 -->
+    <%= f.input :description, :label => t('f-product-description'), input_html: { class: 'height-200' } %>
+    <!-- 商品售價 -->
+    <%= f.input :price, :label => t('f-product-price'), input_html: { class: 'width-25' } %>
+    <!-- 商品庫存數量 -->
+    <%= f.input :quantity, :label => t('f-product-quantity'), input_html: { class: 'width-25' } %>
+    <!-- 商品隱藏與否 -->
+    <span class="hidden-box"><%= f.input :is_hidden, :label => t('f-hide') %></span>
+    <div class="form-actions">
+      <%= f.submit t('f-submit'), class: 'btn btn-md btn-default' %>
+    </div>
+  <% end %>
+</div>

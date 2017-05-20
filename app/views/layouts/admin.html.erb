@@ -2,43 +2,35 @@
 <html>
   <head>
     <title><%= t('j-and-a-select') %></title>
-
+    <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="shortcut icon" href="/images/favicon.ico">
   </head>
-
   <body>
     <div class="container-fluid">
-      <!--=== navbar ===-->
       <div class="row">
         <%= render "common/navbar" %>
+        <%= render "common/flashes" %>
       </div>
-
-      <!--=== 後台操作面板 ===-->
-      <div class="col-md-2">
-        <ul class="nav nav-pills nav-stacked control-box">
-          <!-- 訂單管理 -->
-          <li>
-            <%= link_to(t('admin-order'), admin_orders_path, :class => 'btn btn-md btn-default') %>
-          </li>
-          <!-- 商品管理 -->
-          <li>
-            <%= link_to(t('admin-product'), admin_products_path, :class => 'btn btn-md btn-default') %>
-          </li>
-          <!-- 品牌管理 -->
-          <li>
-            <%= link_to(t('admin-brand'), admin_brands_path, :class => 'btn btn-md btn-default') %>
-          </li>
-          <!-- 分類管理 -->
-          <li> <%= link_to(t('admin-category'), admin_categories_path, :class => 'btn btn-md btn-default') %> </li>
-          <!-- 首页管理 -->
-          <li> <%= link_to(t('admin-homepage'), admin_intros_path, :class => 'btn btn-md btn-default') %> </li>
-        </ul>
-      </div>
-
-      <!--=== 後台內容 ===-->
-      <div class="col-md-10">
-        <%= yield %>
+      <div class="row">
+        <div class="col-md-2 nav-sidebar">
+          <ul class="list-unstyled">
+             <!-- 商品管理 -->
+             <li><%= link_to admin_products_path do %> <span class="fa fa-cube"></span> <span><%= t('admin-product') %></span><% end %></li>
+             <!-- 品牌管理 -->
+             <li><%= link_to admin_brands_path do %> <span class="fa fa-google-wallet"></span> <span><%= t('admin-brand') %></span><% end %></li>
+             <!-- 分類管理 -->
+             <li><%= link_to admin_categories_path do %> <span class="fa fa-cubes"></span> <span><%= t('admin-category') %></span><% end %></li>
+             <!-- 訂單管理 -->
+             <li><%= link_to admin_orders_path do %> <span class="fa fa-th-list"></span> <span><%= t('admin-order') %></span><% end %></li>
+             <!-- 首頁廣告管理 -->
+             <li><%= link_to admin_intros_path do %> <span class="fa fa-film"></span> <span><%= t('admin-homepage') %></span><% end %></li>
+          </ul>
+        </div>
+        <div class="col-md-10 admin-box">
+          <%= yield %>
+        </div>
       </div>
     </div>
     <%= render "common/footer" %>

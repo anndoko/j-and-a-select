@@ -2,22 +2,24 @@
 <h1> <%= @product.name %> </h1>
 
 <!-- 商品圖片 -->
-<p>
-  <% if @product_images.present? %>
-    <% @product_images.each_with_index do |p, index| %>
-        <% if index == 0 %>
-          <!-- 第一張圖為 medium 尺寸大圖 -->
-          <%= image_tag p.image.medium.url %>
-          <br/>
-        <% else %>
-          <!-- 其他圖為 thumb 尺寸小圖 -->
-          <%= image_tag p.image.thumb.url %>
-        <% end %>
+<div class='col-xs-12 col-md-8 product-image'>
+  <div class="row">
+    <% if @product_images.present? %>
+    <!-- 第一張圖為 medium 尺寸大圖 -->
+    <div class="col-md-12">
+      <%= image_tag(@product_images.first.image.medium.url, class: 'main-image') %>
+    </div>
+      <% @product_images.each_with_index do |p| %>
+        <!-- 顯示所有商品圖片 - thumb 尺寸小圖 -->
+        <div class="col-md-2 col-sm-4 col-xs-6 image-box">
+          <%= image_tag(p.image.other.url, class: 'list-image') %>
+        </div>
       <% end %>
-  <% else %>
-    <%= image_tag('http://placehold.it/400x400&text=No Pic', class: 'thumbnail') %>
-  <% end %>
-</p>
+    <% else %>
+      <%= image_tag('http://placehold.it/400x400&text=No Pic', class: 'thumbnail') %>
+    <% end %>
+  </div>
+</div>
 
 <!-- 所屬主類別 -->
 <h3><%= t('f-category-group') %></h3>

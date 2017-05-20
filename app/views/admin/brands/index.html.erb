@@ -1,9 +1,9 @@
 <!--=== 頁面標題 ===-->
-<h2><%= t('brand-index') %></h2>
+<!-- <h2><%= t('brand-index') %></h2> -->
 
 <!--=== 新增品牌 ===-->
 <div class="pull-right">
-  <%= link_to(t('btn-brand-new'), new_admin_brand_path, :class => 'btn btn-sm btn-default')%>
+  <%= link_to(t('btn-brand-new'), new_admin_brand_path, :class => 'btn btn-md btn-info')%>
 </div>
 
 <!--=== 品牌列表 ===-->
@@ -11,7 +11,6 @@
   <!--=== 品牌列表標題 ===-->
   <thead>
     <tr>
-      <th></th>
       <th><%= t('f-brand-name') %></th>
       <th><%= t('f-brand-logo') %></th>
       <th><%= t('f-brand-description') %></th>
@@ -22,18 +21,33 @@
   <!--=== 品牌列表內容 ===-->
   <% @brands.each do |brand| %>
     <tr>
-      <td><%= render_brand_status(brand) %></td>
-      <td><%= link_to(brand.name, admin_brand_path(brand)) %></td>
+      <td><%= render_brand_status(brand) %> <%= link_to(brand.name, admin_brand_path(brand)) %></td>
       <td><%= render_brand_logo(brand) %></td>
-      <td><%= simple_format(brand.description) %></td>
-
+      <td class="description-box"><%= simple_format(brand.description) %></td>
       <!--=== 操作選項 ===-->
-      <td>
+      <td class="action-box">
         <!-- 編輯 -->
-        <%= link_to(t('btn-edit'), edit_admin_brand_path(brand), :class => 'btn btn-sm btn-default') %>
+        <%= link_to(edit_admin_brand_path(brand), class: "btn btn-md btn-default") do %>
+          <span class="fa fa-pencil"></span>
+        <% end %>
+
         <!-- 發佈 / 隱藏 -->
-        <%= render_brand_publish_or_hide(brand) %>
+        <!-- <%= render_brand_publish_or_hide(brand) %> -->
+        <% if brand.is_hidden %>
+          <%= link_to(publish_admin_brand_path(brand), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+            <span class="fa fa-eye"></span>
+          <% end %>
+        <% else %>
+          <%= link_to(hide_admin_brand_path(brand), :method => :post, data: { confirm: "確定隱藏該品牌？" }, class: "btn btn-md btn-default") do %>
+            <span class="fa fa-eye-slash"></span>
+          <% end %>
+        <% end %>
       </td>
     </tr>
   <% end %>
 </table>
+<div class="col-md-12 admin-page-box">
+  <div class="text-center">
+    <%= will_paginate @brands, renderer: BootstrapPagination::Rails %>
+  </div>
+</div>

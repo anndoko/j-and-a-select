@@ -1,25 +1,3 @@
 <!--=== 新增品牌 ===-->
-<h2><%= t('brand-new') %></h2>
-
-<!--=== 新增品牌表單 ===-->
-<%= simple_form_for [:admin, @brand] do |f| %>
-
-  <div class="group">
-    <%= f.input :name, :label => t('f-brand-name') %>
-  </div>
-
-  <div class="group">
-    <%= f.input :logo, as: :file, :label => t('f-brand-logo') %>
-  </div>
-
-  <div class="group">
-    <%= f.input :description, :label => t('f-brand-description') %>
-  </div>
-
-  <div class="group">
-    <%= f.input :is_hidden, :label => t('f-hide') %>
-  </div>
-
-  <%= f.submit t('f-submit'), class: 'btn btn-lg btn-default' %>
-
-<% end %>
+<h2><span class="fa fa-file-text-o"></span> <%= t('brand-new') %></h2>
+<%= render('form') %>
