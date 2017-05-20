@@ -38,14 +38,15 @@ class Admin::CategoriesController < ApplicationController
   def edit
     @category = Category.find(params[:id])
     # 所屬的大分類
-    @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
+    @category_groups = CategoryGroup.all
+    # @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
   end
 
   def update
     @category = Category.find(params[:id])
     # 所屬的大分類
-    @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
-    @category.category_group_id = params[:category_group_id]
+    # @category_groups = CategoryGroup.all.map { |g| [g.name, g.id] }
+    # @category.category_group_id = params[:category_group_id]
 
     if @category.update(category_params)
       redirect_to admin_categories_path
