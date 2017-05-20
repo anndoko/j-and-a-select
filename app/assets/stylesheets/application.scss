@@ -57,6 +57,23 @@ body {
       color: #666 !important;
     }
   }
+
+  /*===== 基礎欄位設定 ======*/
+  .width-25{
+    width: 25%;
+  }
+
+  .width-50{
+    width: 50%;
+  }
+
+  .width-75{
+    width: 75%;
+  }
+
+  .height-200 {
+    height: 200px;
+  }
 }
 
 /*===== Navbar 导览列 ======*/
@@ -655,6 +672,59 @@ body {
     }
   }
 }
+
+/*===== Admin-Form 後台表單設置 =====*/
+.admin-data-box {
+  hr {
+    height: 1.5px;
+    background-color: #ccc;
+    margin: 30px 0 30px 0;
+  }
+
+  h2{
+    color: #3D537F;
+  }
+
+  input {
+    height: 40px;
+  }
+
+  select {
+    height: 35px;
+    min-width: 175px;
+    margin-bottom: 10px;
+    background-color: #fff;
+  }
+
+  .hidden-box {
+    input {
+      height: 16px !important;
+    }
+    font-size: 16px;
+  }
+
+  .form-actions{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 25px;
+
+    .btn {
+      width: 100%;
+      color: #fff;
+      background-color: #4A6BB5;
+      border-color: #4A6BB5;
+      font-size: 16px;
+      letter-spacing: 1px;
+    }
+
+    .btn:hover {
+      background-color: #4A99B5;
+      border-color: #4A99B5;
+      color: #fff;
+    }
+  }
+}
+
 
 /*===== Users 用戶中心 =====*/
 .user_setup{
