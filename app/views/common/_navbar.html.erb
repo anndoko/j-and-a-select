@@ -24,7 +24,7 @@
           <ul class="nav navbar-nav navbar-left">
             <li><%= link_to(t('product-access'), products_path) %></li>
             <li><%= link_to(t('brand-access'), '#', class: "scroll") %></li>
-            <li><%= link_to(t('recommend-access'), '#', class: "scroll") %></li>
+            <!-- <li><%= link_to(t('recommend-access'), '#', class: "scroll") %></li> -->
           </ul>
           <!--=== 帳號操作 ===-->
           <ul class='nav navbar-nav  navbar-right'>
@@ -65,7 +65,7 @@
                   <%= current_user.nickname %>
                   <b class='caret'></b>
                 </a>
-                <!-- 選單選項 -->
+                <!-- 下拉選單 -->
                 <ul class='dropdown-menu'>
                   <!-- admin 後台 -->
                   <% if current_user.admin? %>
@@ -80,7 +80,17 @@
               </li>
             <% end %>
           </ul>
-          <!--=== 搜索栏 ===-->
+          <!-- 搜索欄 -->
+          <%= form_tag search_products_path, :method => :get, class: "navbar-form pull-right" do %>
+            <div class="input-group search-box">
+              <input type="text" class="form-control" name="keyword" placeholder="<%= t('keywaods')%>" value="<%= params[:keyword] %>">
+              <div class="input-group-btn">
+                <button class="btn btn-default" type="submit">
+                  <span><i class="fa fa-search"></i></span>
+                </button>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>

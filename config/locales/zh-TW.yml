@@ -148,12 +148,13 @@ zh-TW:
   wish-list: 願望清單
   cart: 購物車
   language: 語系
-  product-access: 選物
+  product-access: 精選商品
   brand-access: 品牌故事
   recommend-access: 熱門推薦
   admin-access: 後台專區
   account-order-access: 歷史訂單
   user-center: 我的帳戶
+  keywaods: 搜索商品
 
   # 後台操作面板 #
   admin-order: 訂單管理
@@ -271,9 +272,10 @@ zh-TW:
   f-product-category: 商品分類
   f-product-brand: 商品品牌
 
-  btn-product-new: 新增商品
+  # 商品管理（搜索） #
+  search-no-data: 沒有符合搜索條件的商品哦！
 
-  # 商品管理 #
+  # 品牌管理 #
   intro-index: 廣告一覽
   intro-new: 新增廣告
   intro-edit: 編輯廣告

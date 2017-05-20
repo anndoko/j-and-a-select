@@ -141,6 +141,26 @@ body {
     right: 16px;
     z-index: 10;
   }
+
+  /* 搜索欄 */
+  .search-box {
+    margin-top: 7.5px;
+    input {
+      height: 35px;
+    }
+
+    input:focus {
+      border: 2px solid #ccc;
+    }
+
+    button {
+      background-color: #fff;
+      border: 1.5px solid #fff;
+      padding: 5px 10px 5px 10px;
+      height: 35px;
+      color: #333;
+    }
+  }
 }
 
 /*===== Footer 页脚 ======*/
@@ -478,6 +498,10 @@ body {
     }
   }
 
+  .search-error {
+    margin: 150px 0 150px 0;
+  }
+
   /*===== 產品列表內容設置 =====*/
   .product-content {
     img {
@@ -499,6 +523,31 @@ body {
   /*===== 產品路徑設置 =====*/
   .path-box {
     text-align: left;
+    height: 20px;
+
+    .left-box {
+      float: left;
+    }
+
+    .right-box {
+      float: right;
+
+      button {
+        margin: -15px 0 -15px 0;
+        padding: 7.5px 10px 7.5px 10px;
+        border: 2px solid #666;
+        color: #333;
+      }
+
+      button:focus {
+        background-color: #fff;
+        color: #333;
+      }
+
+      ul {
+        margin-top: 15px;
+      }
+    }
   }
 }
 
