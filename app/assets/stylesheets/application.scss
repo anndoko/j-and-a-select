@@ -593,6 +593,11 @@ body {
     border: 1px solid #ccc;
   }
 
+  h2 {
+    text-align: center;
+    margin-top: 35px;
+  }
+
   a {
     color: #666;
   }
@@ -601,13 +606,18 @@ body {
     color: #44c7f4;
   }
 
-  .action-box {
-    margin-top: -3.5px;
-    margin-bottom: -3.5px;
+  .description-box {
+    max-width: 550px;
   }
 
-  .show-btn {
-    background-color: #eee !important;
+  .action-box {
+    min-width: 100px;
+    margin-top: -3.5px;
+    margin-bottom: -3.5px;
+
+    .show-btn {
+      background-color: #eee !important;
+    }
   }
 
   .btn-default {
@@ -641,13 +651,6 @@ body {
       background-color: #ccc;
       color: #666 !important;
     }
-  }
-
-  .description-box {
-    max-width: 550px;
-  }
-  .action-box {
-    min-width: 100px;
   }
 }
 
