@@ -474,6 +474,7 @@ body {
     }
   }
 
+  /*===== 產品列表內容設置 =====*/
   .product-content {
     img {
       width: 100%;
@@ -491,14 +492,17 @@ body {
     line-height: 14px;
   }
 
+  /*===== 產品路徑設置 =====*/
   .path-box {
     text-align: left;
   }
 }
 
+/*===== 產品信息區塊設置 =====*/
 .product-show {
   margin: 0 0 100px 0;
 
+  /*===== 產品圖片區塊設置=====*/
   .product-image {
     .image-box {
       padding: 7.5px;
@@ -518,6 +522,7 @@ body {
     }
   }
 
+  /*===== 產品介紹區塊設置 =====*/
   .product-detail {
     padding: 0 25px 0 25px;
     text-align: left;
@@ -556,6 +561,7 @@ body {
       margin-right: 15px;
     }
 
+    /*===== 按鈕設置 =====*/
     .btn-default {
       margin-top: 25px;
       width: 100%;
@@ -629,6 +635,7 @@ body {
     max-width: 550px;
   }
 
+  /*===== 操作選項 =====*/
   .action-box {
     min-width: 100px;
     margin-top: -3.5px;
@@ -639,6 +646,7 @@ body {
     }
   }
 
+  /*===== 按鈕設置 =====*/
   .btn-default {
     padding: 5px 10px 5px 10px;
     background-color: #fff;
@@ -659,6 +667,7 @@ body {
     color: #fff;
   }
 
+  /*===== 換頁按鈕 =====*/
   .admin-page-box {
     margin-top: 75px;
 
@@ -703,6 +712,7 @@ body {
     font-size: 16px;
   }
 
+  /*===== 送出按鈕 =====*/
   .form-actions{
     text-align: center;
     margin-top: 50px;
@@ -725,6 +735,26 @@ body {
   }
 }
 
+
+/*===== Admin 產品後台圖片區塊設置 =====*/
+.product-image {
+  .image-box {
+    padding: 7.5px;
+  }
+
+  .main-image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .list-image {
+    width: 100%;
+  }
+
+  .list-image-active {
+    box-shadow: 1.5px 1.5px 1.5px #666;
+  }
+}
 
 /*===== Users 用戶中心 =====*/
 .user_setup{
