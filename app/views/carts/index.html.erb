@@ -28,11 +28,15 @@
             <div class="name"><%= link_to(cart_item.product.name, product_path(cart_item.product)) %></div>
             <div class="price">$ <%= cart_item.product.price %></div>
             <div class="quantity">x <%= cart_item.quantity %></div>
-            <div class="close"><%= link_to('x' ,cart_item_path(cart_item.product_id), method: :delete) %></div>
+            <div>
+              <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                <i class='fa fa-close'></i>
+              <% end %>
+            </div>
+            <hr/>
           </div>
           <% end %>
         </div>
-        <hr/>
         <!-- 購物車內商品總價 -->
         <div class='clearfix'>
           <div class='pull-right'><%= t('f-cart-total') %>$ <%= render_cart_total_price(current_cart) %></div>

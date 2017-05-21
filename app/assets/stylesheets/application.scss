@@ -646,6 +646,10 @@ body {
   .btn-default {
     margin: 10px 0 0 -10px;
   }
+
+  .btn-default:hover {
+    border-color: #eb5424;
+  }
 }
 
 /*===== Cart 網站-購物車設定 =====*/
@@ -674,13 +678,6 @@ body {
 
   .price {
     min-width: 100px;
-  }
-
-  .close {
-    margin-top: 25px;
-    a {
-      color: #000 !important;
-    }
   }
 }
 
