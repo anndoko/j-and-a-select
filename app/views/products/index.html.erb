@@ -1,6 +1,6 @@
 <div class="product-box">
   <div class="container">
-  <!--=== 商品類型 & 品牌選單 ===-->
+  <!--=== 商品類型 Banner ===-->
   <% if params[:id].present? %>
     <%= image_tag(@product.category.category_group.image, class: "background-image") %>
   <% elsif params[:category].present? %>
@@ -10,6 +10,7 @@
   <% else %>
     <%= image_tag("product_bg.jpg", class: "background-image") %>
   <% end %>
+  <!--=== 商品類型 & 品牌選單 ===-->
   <%= render "products/menu" %>
 
   <% if @products.length > 0 %>
@@ -40,7 +41,7 @@
   <% end %>
 
     <div class="page-box">
-      <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => '←', :next_label => '→' %>
+      <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => t('previous-label'), :next_label => t('next-label') %>
     </div>
   </div>
 </div>

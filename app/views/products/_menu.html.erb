@@ -1,16 +1,14 @@
-<!--=== 頁面標題 ===-->
-<!-- <h1><%= t('j-and-a-select') %></h1> -->
 <!--=== 商品類型 & 品牌選單 ===-->
 <div class="btn-group">
-  <!--=== 類型 ===-->
+  <!--=== 類型選單 ===-->
   <% @category_groups.each do |category_group| %>
     <div class='dropdown btn-group clearfix'>
       <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
         <%= category_group.name %> <i class="fa fa-angle-down"></i>
       </button>
-      <!-- 下拉式選單 -->
+
+      <!-- 選項：列出該類型所有分類 -->
       <ul class='dropdown-menu'>
-        <!-- 選單列出該類型所有分類 -->
         <% category_group.categories.each do |category| %>
           <li>
             <%= link_to(category.name, products_path(:category => category.name)) %>
@@ -20,14 +18,14 @@
     </div>
   <% end %>
 
-  <!--=== 品牌 ===-->
+  <!--=== 品牌選單 ===-->
   <div class='dropdown btn-group clearfix'>
     <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
       <%= t('nav-brand') %> <i class="fa fa-angle-down"></i>
     </button>
-    <!-- 下拉式選單 -->
+
+    <!-- 選項：列出所有品牌 -->
     <ul class='dropdown-menu'>
-      <!-- 選單列出所有品牌 -->
       <% @brands.each do|brand| %>
         <li>
           <%= link_to(brand.name, products_path(:brand => brand.name)) %>
@@ -37,8 +35,9 @@
   </div>
 </div>
 <hr/>
-<!--=== 路徑 ===-->
+
 <div class="path-box">
+  <!--=== 產品頁面路徑 ===-->
   <div class="left-box">
     <%= link_to products_path do %>
       <%= (t('j-and-a-select')) %>
@@ -54,6 +53,10 @@
     / <a href="products?brand=<%= @brand.name %>"><%= @brand.name %></a>
     <% end %>
   </div>
+
+  <!-- 只在 Products#index 和 products/search 兩個頁面顯示 -->
+  <% if current_page?(products_url) || current_page?('/products/search') %>
+  <!--=== 排序選單 ===-->
   <div class="right-box">
     <div class="dropdown btn-group clearfix">
       <% if params[:order].present? %>
@@ -62,16 +65,19 @@
         </button>
       <% else %>
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          預設排序 <span class="caret"></span>
+          <%= t('order-btn-title') %> <span class="caret"></span>
         </button>
       <% end %>
+
+      <!-- 選項：列出排序方式 -->
       <ul class="dropdown-menu dropdown-menu-right" selection aria-labelledby="dropdownMenuDivider">
-        <li><%= link_to("依熱銷度", '#') %></li>
-        <li><%= link_to("依上架時間", '#') %></li>
-        <li><%= link_to("依價格排序：低至高", '#') %></li>
-        <li><%= link_to("依價格排序：高至低", '#') %></li>
+        <li><%= link_to(t('order-btn-hot'), '#') %></li>
+        <li><%= link_to(t('order-btn-recent'), '#') %></li>
+        <li><%= link_to(t('order-btn-price-l'), '#') %></li>
+        <li><%= link_to(t('order-btn-price-h'), '#') %></li>
       </ul>
     </div>
   </div>
+  <% end %>
 </div>
 <hr/>

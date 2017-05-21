@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
       @group_s = params[:group]
       @group = CategoryGroup.find_by(name: @group_s)
 
-      @products = Product.joins(:category).where("categories.category_group_id" => @group.id).paginate(:page => params[:page], :per_page => 12)
+      @products = Product.joins(:category).where("categories.category_group_id" => @group.id).published.recent.paginate(:page => params[:page], :per_page => 12)
 
     # 判斷是否篩選品牌
     elsif params[:brand].present?
@@ -92,7 +92,7 @@ class ProductsController < ApplicationController
 
   def search
     if @query_string.present?
-      # 显示符合关键字的公开职位 #
+      # 顯示符合條件的商品
       search_result = Product.joins(:brand).ransack(@search_criteria).result(:distinct => true)
       @products = search_result.published.recent.paginate(:page => params[:page], :per_page => 12 )
     end
@@ -104,14 +104,14 @@ class ProductsController < ApplicationController
   protected
 
   def validate_search_key
-    # 去除特殊字符 #
+    # 去除特殊字符
     @query_string = params[:keyword].gsub(/\\|\'|\/|\?/, "") if params[:keyword].present?
     @search_criteria = search_criteria(@query_string)
 
   end
 
   def search_criteria(query_string)
-    # 筛选多个栏位 #
+    # 篩選多個欄位
     { :name_or_description_or_brand_name_cont => query_string }
   end
 

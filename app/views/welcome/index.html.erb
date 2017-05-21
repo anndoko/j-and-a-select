@@ -1,26 +1,23 @@
 <div class="welcome-box">
-  <!--===== 网站介紹 =====-->
+  <!--===== 廣告輪播 =====-->
   <section class="intro-box">
     <div class="row">
       <div class="col-md-12">
-        <!--===== 网站介紹-Covers =====-->
         <div id="intro" class="carousel slide" data-ride="carousel">
-          <!--===== 下方按钮 =====-->
+          <!--===== 輪播按鈕 =====-->
           <!-- <ol class="carousel-indicators">
             <li data-target="#intro" data-slide-to="0" class="active"></li>
             <li data-target="#intro" data-slide-to="1"></li>
             <li data-target="#intro" data-slide-to="2"></li>
           </ol> -->
 
-          <!--===== 轮播内容 =====-->
-          <!--===== 图片尺寸 1280x600 =====-->
+          <!--===== 輪播內容 =====-->
           <div class="carousel-inner" role="listbox">
-            <% i = 1 %>
-            <% @intros.each do |intro| %>
-              <% if i == 1 %>
-              <div class="item active">
+            <% @intros.each_with_index do |intro,index| %>
+              <% if index == 0 %>
+                <div class="item active">
               <% else %>
-              <div class="item">
+                <div class="item">
               <% end %>
                 <%= link_to intro.link, target: "_blank" do %>
                   <%= image_tag(intro.image) %>
@@ -30,11 +27,10 @@
                   </div>
                 <% end %>
               </div>
-              <% i += 1 %>
             <% end %>
           </div>
 
-          <!--===== 换页按钮 =====-->
+          <!--===== 換頁按鈕 =====-->
           <a class="left carousel-control" href="#intro" role="button" data-slide="prev">
             <span class="fa fa-angle-left" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -78,11 +74,11 @@
     </div>
   </section>
 
-  <!--===== 商品分类 =====-->
+  <!--===== 商品類型 =====-->
   <section class="categories-box">
     <div class="row">
       <div class="col-md-4 category-content">
-        <%= link_to '#' , class: "category_1" do %>
+        <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E6%97%A5%E5%B8%B8%E6%96%87%E5%85%B7' , class: "category_1" do %>
           <div class="category-box">
             <%= image_tag("category_1.jpg") %>
           </div>
@@ -93,7 +89,7 @@
         <% end %>
       </div>
       <div class="col-md-4 category-content">
-        <%= link_to '#' , class: "category_2" do %>
+        <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E7%94%9F%E6%B4%BB%E5%99%A8%E7%89%A9' , class: "category_2" do %>
           <div class="category-box">
             <%= image_tag("category_2.jpg") %>
           </div>
@@ -104,7 +100,7 @@
         <% end %>
       </div>
       <div class="col-md-4 category-content">
-        <%= link_to '#' , class: "category_3" do %>
+        <%= link_to 'https://j-and-a-select.herokuapp.com/products?group=%E5%80%8B%E4%BA%BA%E5%96%AE%E5%93%81' , class: "category_3" do %>
           <div class="category-box">
             <%= image_tag("category_3.jpg") %>
           </div>
@@ -117,7 +113,7 @@
     </div>
   </section>
 
-  <!--===== 推荐商品 =====-->
+  <!--===== 推薦商品 =====-->
   <section class="show-box">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
@@ -126,37 +122,37 @@
         <div class="row">
           <div class="col-md-3">
             <div class="box">
-              <%= link_to '#' do %><%= image_tag("item_1.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/19' do %><%= image_tag("item_1.jpg") %><% end %>
             </div>
             <div class="box">
-              <%= link_to '#' do %><%= image_tag("item_2.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/24' do %><%= image_tag("item_2.jpg") %><% end %>
             </div>
           </div>
           <div class="col-md-3">
             <div class="box">
-              <%= link_to '#' do %><%= image_tag("item_3.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/27' do %><%= image_tag("item_3.jpg") %><% end %>
             </div>
             <div class="box">
-              <%= link_to '#' do %><%= image_tag("item_4.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/21' do %><%= image_tag("item_4.jpg") %><% end %>
             </div>
           </div>
           <div class="col-md-3">
             <div class="box three">
-              <%= link_to '#' do %><%= image_tag("item_5.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/22' do %><%= image_tag("item_5.jpg") %><% end %>
             </div>
             <div class="box three">
-              <%= link_to '#' do %><%= image_tag("item_6.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/20' do %><%= image_tag("item_6.jpg") %><% end %>
             </div>
             <div class="box three">
-              <%= link_to '#' do %><%= image_tag("item_7.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/25' do %><%= image_tag("item_7.jpg") %><% end %>
             </div>
           </div>
           <div class="col-md-3">
             <div class="box">
-              <%= link_to '#' do %><%= image_tag("item_8.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/26' do %><%= image_tag("item_8.jpg") %><% end %>
             </div>
             <div class="box">
-              <%= link_to '#' do %><%= image_tag("item_9.jpg") %><% end %>
+              <%= link_to 'https://j-and-a-select.herokuapp.com/products/2' do %><%= image_tag("item_9.jpg") %><% end %>
             </div>
           </div>
         </div>
@@ -183,14 +179,13 @@
     </div>
   </section>
 
-  <!--===== 立即购买 =====-->
+  <!--===== 立即購買 =====-->
   <section class="push-box">
     <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-push' ) %>
   </section>
 
-  <!--===== Go top（回到顶端） =====-->
+  <!--===== Go top（回到頂端） =====-->
   <div class="goTop">
-    <a href="#"><span class="fa fa-chevron-up"></span></a>
+    <span class="fa fa-chevron-up"></span>
   </div>
-
 </div>
