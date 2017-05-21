@@ -21,7 +21,7 @@
             <!-- 商品圖片 -->
             <% if product.product_images.present? %>
               <!-- 顯示第一張圖片 -->
-              <%= image_tag(product.product_images[0].image.thumb.url, class: 'thumbnail')%>
+              <%= image_tag(product.product_images[0].image.other.url, class: 'thumbnail')%>
             <% else %>
               <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>
             <% end %>
