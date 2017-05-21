@@ -4,9 +4,13 @@
 
 </br>
 
-對 J&A SELECT 的功能、前端視覺有興趣，又或著想了解我們的開發歷程，隨時與 Jimmy & Anndo 聯繫。如果喜歡我們的作品 J&A SELECT，可至下方參賽地址投下您寶貴的一票。希望能得到您的支持！
+對 J&A SELECT 的功能、前端視覺有興趣，又或著想了解我們的開發歷程，隨時與 Jimmy & Anndo 聯繫。如果喜歡我們的作品 (J&A SELECT)[https://fullstack.xinshengdaxue.com/works/558]，可至下方參賽連結投下您寶貴的一票。希望能得到您的支持！
 
 <hr/>
 
-* 參賽地址：https://fullstack.xinshengdaxue.com/works/558
-* 網站地址：https://j-and-a-select.herokuapp.com/
+* [全棧營參賽頁面][https://fullstack.xinshengdaxue.com/works/558]
+
+***
+J&A SELECT 相關
+* [J&A SELECT 網站地址](https://j-and-a-select.herokuapp.com/)
+* [J&A SELECT 介紹（詳細圖文）](http://anndo-blog.logdown.com/posts/1862623)
