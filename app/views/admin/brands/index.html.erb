@@ -46,8 +46,8 @@
     </tr>
   <% end %>
 </table>
-<div class="col-md-12 admin-page-box">
+<div class="col-md-12">
   <div class="text-center">
-    <%= will_paginate @brands, renderer: BootstrapPagination::Rails %>
+    <%= will_paginate @brands, renderer: BootstrapPagination::Rails, :previous_label => '←', :next_label => '→' %>
   </div>
 </div>
