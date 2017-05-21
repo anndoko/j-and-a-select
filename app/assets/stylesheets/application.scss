@@ -712,6 +712,29 @@ body {
   }
 }
 
+/*===== Order 網站-訂單歷史 =====*/
+.order-box {
+  text-align: left;
+
+  h3 {
+    text-align: center;
+  }
+
+  table{
+    box-shadow: 0 0 3px #999;
+  }
+
+  thead{
+    background-color: #02061A;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+}
+
 /*===== Control 後台-控制選單 =====*/
 .nav-sidebar {
   margin-top: 65px;

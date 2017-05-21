@@ -1,30 +1,31 @@
-<div class='row'>
-  <div class='col-md-12'>
-    <!--=== 頁面標題 ===-->
-    <h2><%= t('account-order-index') %></h2>
-
-    <!--=== 使用者歷史訂單===-->
-    <table class='table'>
-      <!-- 歷程訂單列表標題 -->
-      <thead>
-        <tr>
-          <th>#</th>
-          <th><%= t('f-order-created-at') %></th>
-        </tr>
-      </thead>
-      <!-- 歷程訂單列表內容 -->
-      <tbody>
-        <% @orders.each do |order| %>
+<div class="product-box">
+  <div class="container">
+    <div class='row content-box order-box'>
+      <div class='col-md-8 col-md-offset-2'>
+        <!--=== 頁面標題 ===-->
+        <h3><i class='fa fa-credit-card'></i> <%= t('account-order-index') %></h3>
+        <!--=== 使用者歷史訂單===-->
+        <table class='table table-hover'>
+          <!-- 歷程訂單列表標題 -->
+          <thead>
+            <tr>
+              <th><%= t('order-id') %></th>
+              <th><%= t('order-total') %></th>
+              <th><%= t('order-date') %></th>
+            </tr>
+          </thead>
+          <!-- 歷程訂單列表內容 -->
+          <tbody>
+          <% @orders.each do |order| %>
           <tr>
-            <td>
-              <%= link_to(order.id, order_path(order.token)) %>
-            </td>
-            <td>
-              <%= order.created_at.to_s(:long) %>
-            </td>
+            <td class="width-50"># <%= link_to(order.id, order_path(order.token)) %></td>
+            <td>$ <%= order.total %></td>
+            <td><%= order.created_at.strftime("%Y-%m-%d - %H:%M") %></td>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
+          <% end %>
+        </tbody>
+      </table>
+      </div>
+    </div>
   </div>
 </div>

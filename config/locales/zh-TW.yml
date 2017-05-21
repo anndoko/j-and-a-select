@@ -155,6 +155,7 @@ zh-TW:
   admin-access: 後台專區
   account-order-access: 歷史訂單
   user-center: 我的帳戶
+  user-order: 我的訂單
   keywaods: 搜索商品
 
   # 後台操作面板 #
@@ -192,6 +193,9 @@ zh-TW:
   # 歷史訂單 #
   account-order-index: 歷史訂單
   f-order-created-at: 下訂日期 / 年 /時間
+  order-id: 訂單編號
+  order-total: 訂單總額
+  order-date: 下單時間
 
 #--=== 管理員專區 ===--#
   # 共用元素 #
