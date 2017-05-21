@@ -27,7 +27,7 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,900,700,600,500,300,200,100,800);
 @import url(https://fonts.googleapis.com/css?family=Acme);
 
-/*===== 网站通用设置 ======*/
+/*===== 網站通用設置 ======*/
 body {
   overflow-x: hidden; //裁剪内容 - 不提供滚动机制。
   letter-spacing: 1px;
@@ -77,6 +77,22 @@ body {
 
   .height-200 {
     height: 200px;
+  }
+
+  /*===== 立即選購按鈕 ======*/
+  .buy-box {
+    margin: 100px 0 0 0;
+    color: #02061A;
+
+    .btn-default {
+      padding: 15px 20px 15px 20px;
+    }
+
+    .btn-default:hover,
+    .btn-default:active,
+    .btn-default:focus {
+      background-color: #fff;
+    }
   }
 }
 
