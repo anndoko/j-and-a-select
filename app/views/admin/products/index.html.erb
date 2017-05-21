@@ -1,5 +1,5 @@
 <!--=== 頁面標題 ===-->
-<!-- <h2><%= t('product-index') %></h2> -->
+<h2><%= t('product-index') %></h2>
 
 <!--=== 新增商品 ===-->
 <div class='pull-right'>
@@ -55,6 +55,6 @@
 </table>
 <div class="col-md-12 admin-page-box">
   <div class="text-center">
-    <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+    <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => '←', :next_label => '→' %>
   </div>
 </div>

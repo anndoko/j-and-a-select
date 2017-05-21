@@ -1,5 +1,5 @@
 <!--=== 頁面標題 ===-->
-<!-- <h2><%= t('brand-index') %></h2> -->
+<h2><%= t('brand-index') %></h2>
 
 <!--=== 新增品牌 ===-->
 <div class="pull-right">
@@ -12,7 +12,7 @@
   <thead>
     <tr>
       <th><%= t('f-brand-name') %></th>
-      <th><%= t('f-brand-logo') %></th>
+      <!-- <th><%= t('f-brand-logo') %></th> -->
       <th><%= t('f-brand-description') %></th>
       <th><%= t('f-options') %></th>
     </tr>
@@ -22,7 +22,7 @@
   <% @brands.each do |brand| %>
     <tr>
       <td><%= render_brand_status(brand) %> <%= link_to(brand.name, admin_brand_path(brand)) %></td>
-      <td><%= render_brand_logo(brand) %></td>
+      <!-- <td><%= render_brand_logo(brand) %></td> -->
       <td class="description-box"><%= simple_format(brand.description) %></td>
       <!--=== 操作選項 ===-->
       <td class="action-box">
@@ -46,8 +46,8 @@
     </tr>
   <% end %>
 </table>
-<div class="col-md-12 admin-page-box">
+<div class="col-md-12">
   <div class="text-center">
-    <%= will_paginate @brands, renderer: BootstrapPagination::Rails %>
+    <%= will_paginate @brands, renderer: BootstrapPagination::Rails, :previous_label => '←', :next_label => '→' %>
   </div>
 </div>

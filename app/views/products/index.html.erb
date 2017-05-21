@@ -40,7 +40,7 @@
   <% end %>
 
     <div class="page-box">
-      <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+      <%= will_paginate @products, renderer: BootstrapPagination::Rails, :previous_label => '←', :next_label => '→' %>
     </div>
   </div>
 </div>
