@@ -109,13 +109,14 @@ zh-TW:
   # 購物車 #
   cart-index: 購物車
   cart-clear: 清空購物車
+  cart-list: 購物清單
 
   f-cart-product-info: 商品資訊
   f-cart-product-price: 商品單價
   f-cart-product-quantity: 商品數量
   f-cart-total: 合計：
 
-  btn-checkout: 確認結帳
+  btn-checkout: 前往結帳
 
   # 生成訂單 #
   checkout-index: 訂單資訊
@@ -128,7 +129,7 @@ zh-TW:
   f-shipping-phone: 收件人 - 電話（選填）
   f-shipping-address: 收件人 - 收貨地址
 
-  btn-order-create: 生成訂單
+  btn-order-create: 確認付款
 
   # 訂單 #
   order-show: 訂單明細

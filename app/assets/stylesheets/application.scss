@@ -635,6 +635,7 @@ body {
   h3 {
     color: #2c3e50;
     letter-spacing: 2px;
+    margin-top: 35px;
   }
 
   hr {
@@ -651,6 +652,8 @@ body {
     border-color: #eb5424;
   }
 }
+
+
 
 /*===== Cart 網站-購物車設定 =====*/
 .cart-item-box {
@@ -678,6 +681,34 @@ body {
 
   .price {
     min-width: 100px;
+  }
+}
+
+
+/*===== Order 網站-訂單資訊設定 =====*/
+.order-form {
+  text-align: left;
+
+  .form-group {
+    input {
+      height: 40px;
+    }
+  }
+
+  .form-actions {
+    text-align: center;
+
+    .btn-default {
+      color: #333;
+    }
+
+    .btn-default:hover,
+    .btn-default:active,
+    .btn-default:focus {
+      background-color: #fff;
+      border-color: #eb5424;
+      color: #eb5424;
+    }
   }
 }
 
