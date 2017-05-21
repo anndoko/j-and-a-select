@@ -132,6 +132,8 @@ zh-TW:
 
   btn-checkout: 前往結帳
 
+  cart-no-data: 購物車還沒有商品哦！
+
   # 生成訂單 #
   checkout-index: 訂單資訊
 
@@ -202,6 +204,7 @@ zh-TW:
   # 願望清單 #
   account-wish-list-index: 願望清單
   btn-move-to-cart: 移動至購物車
+  wish-no-data: 願望清單還沒有商品哦！
 
 
   # 歷史訂單 #
@@ -210,6 +213,8 @@ zh-TW:
   order-id: 訂單編號
   order-total: 訂單總額
   order-date: 下單時間
+
+  order-no-data: 你還沒買過任何東西哦！
 
 #--=== 管理員專區 ===--#
   # 共用元素 #
