@@ -1,12 +1,11 @@
 <div class="product-box">
   <div class="container">
-    <div class='row content-box'>
-      <div class='col-md-12'>
+    <div class='row content-box order-box'>
+      <div class='col-md-8 col-md-offset-2'>
         <!--=== 頁面標題 ===-->
-        <h3><%= t('order-show') %></h3>
-        <hr />
+        <h3><i class='fa fa-list-alt'></i> <%= t('order-show') %></h3>
         <!--=== 訂單資訊 ===-->
-        <div class="row">
+        <table class='table table-hover'>
           <!-- 訂單列表標題 -->
           <thead>
             <tr>
@@ -17,57 +16,54 @@
           </thead>
           <!-- 訂單列表內容 -->
           <tbody>
-            <% @order_items.each do |order_item| %>
-              <tr>
-                <td>
-                  <%= order_item.product_name %>
-                </td>
-                <td>
-                  <%= order_item.product_price %>
-                </td>
-                <td>
-                  <%= order_item.quantity %>
-                </td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
+          <% @order_items.each do |order_item| %>
+          <tr>
+            <td class="width-50"><%= order_item.product_name %></td>
+            <td>$ <%= order_item.product_price %></td>
+            <td><%= order_item.product_price %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
         <!-- 訂單商品總價 -->
         <div class='totol clearfix'>
           <span class='pull-right'>
             <%= t('f-cart-total') %>
-            <%= @order.total %>
+            $ <%= @order.total %>
           </span>
         </div>
 
         <!--=== 頁面標題 ===-->
-        <h3><%= t('checkout-index') %></h3>
-
+        <h3><i class='fa fa-credit-card'></i> <%= t('checkout-index') %></h3>
         <!--=== 聯絡人 / 收件人資訊 ===-->
         <table class='table'>
           <tbody>
             <!-- 聯絡人資訊 -->
-            <tr>
-              <th>
-                <%= t('f-billing-info') %>
-              </th>
-            </tr>
+            <thead>
+              <tr>
+                <th>
+                  <%= t('f-billing-info') %>
+                </th>
+              </tr>
+            </thead>
             <tr>
               <td>
-                <%= @order.billing_name%><br/>
-                <%= @order.billing_address%>
+                <strong><%= t('f-billing-name') %>：</strong><%= @order.billing_name%><br/>
+                <strong><%= t('f-billing-address') %>：</strong><%= @order.billing_address%>
               </td>
             </tr>
             <!-- 收件人資訊 -->
-            <tr>
-              <th>
-                <%= t('f-shipping-info') %>
-              </th>
-            </tr>
+            <thead>
+              <tr>
+                <th>
+                  <%= t('f-shipping-info') %>
+                </th>
+              </tr>
+            </thead>
             <tr>
               <td>
-                <%= @order.shipping_name%><br/>
-                <%= @order.shipping_address%>
+                <strong><%= t('f-shipping-name') %>：</strong><%= @order.shipping_name%><br/>
+                <strong><%= t('f-shipping-address') %>：</strong><%= @order.shipping_address%>
               </td>
             </tr>
           </tbody>
@@ -76,7 +72,7 @@
         <!--=== 申請取消訂單 ===-->
         <div class='pull-left'>
           <% if @order.order_placed? || @order.paid? %>
-            <%= link_to(t('btn-apply-to-cancel'), apply_to_cancel_order_path(@order), method: :post, class: 'btn btn-lg btn-default') %>
+            <%= link_to(t('btn-apply-to-cancel'), apply_to_cancel_order_path(@order), method: :post, class: 'btn btn-md btn-default') %>
           <% end %>
         </div>
 
@@ -84,7 +80,7 @@
         <!--=== 付款（暫） ===-->
         <% if !@order.is_paid? %>
           <div class='group pull-right'>
-            <%= link_to(t('btn-pay'), pay_order_path(@order.token), :method => :post, class: 'btn btn-lg btn-default') %>
+            <%= link_to(t('btn-pay'), pay_order_path(@order.token), :method => :post, class: 'btn btn-md btn-default') %>
           </div>
         <% else %>
           <p class='text-center'>
