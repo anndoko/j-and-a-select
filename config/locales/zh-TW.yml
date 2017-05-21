@@ -117,13 +117,14 @@ zh-TW:
   # 購物車 #
   cart-index: 購物車
   cart-clear: 清空購物車
+  cart-list: 購物清單
 
   f-cart-product-info: 商品資訊
   f-cart-product-price: 商品單價
   f-cart-product-quantity: 商品數量
-  f-cart-total: 總計：
+  f-cart-total: 合計：
 
-  btn-checkout: 確認結帳
+  btn-checkout: 前往結帳
 
   # 生成訂單 #
   checkout-index: 訂單資訊
@@ -136,7 +137,7 @@ zh-TW:
   f-shipping-phone: 收件人 - 電話（選填）
   f-shipping-address: 收件人 - 收貨地址
 
-  btn-order-create: 生成訂單
+  btn-order-create: 確認付款
 
   # 訂單 #
   order-show: 訂單明細
@@ -162,6 +163,7 @@ zh-TW:
   admin-access: 後台專區
   account-order-access: 歷史訂單
   user-center: 我的帳戶
+  user-order: 我的訂單
   keywaods: 搜索商品
 
   # 後台操作面板 #
@@ -199,6 +201,9 @@ zh-TW:
   # 歷史訂單 #
   account-order-index: 歷史訂單
   f-order-created-at: 下訂日期 / 年 /時間
+  order-id: 訂單編號
+  order-total: 訂單總額
+  order-date: 下單時間
 
 #--=== 管理員專區 ===--#
   # 共用元素 #

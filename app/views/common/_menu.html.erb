@@ -1,0 +1,38 @@
+<%= image_tag("product_bg.jpg", class: "background-image") %>
+<!--=== 商品類型 & 品牌選單 ===-->
+<div class="btn-group">
+  <!--=== 類型 ===-->
+  <% @category_groups.each do |category_group| %>
+    <div class='dropdown btn-group clearfix'>
+      <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
+        <%= category_group.name %> <i class="fa fa-angle-down"></i>
+      </button>
+      <!-- 下拉式選單 -->
+      <ul class='dropdown-menu'>
+        <!-- 選單列出該類型所有分類 -->
+        <% category_group.categories.each do |category| %>
+          <li>
+            <%= link_to(category.name, products_path(:category => category.name)) %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--=== 品牌 ===-->
+  <div class='dropdown btn-group clearfix'>
+    <button class='btn dropdown-toggle' type='button' data-toggle='dropdown'>
+      <%= t('nav-brand') %> <i class="fa fa-angle-down"></i>
+    </button>
+    <!-- 下拉式選單 -->
+    <ul class='dropdown-menu'>
+      <!-- 選單列出所有品牌 -->
+      <% @brands.each do|brand| %>
+        <li>
+          <%= link_to(brand.name, products_path(:brand => brand.name)) %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<hr/>

@@ -627,6 +627,118 @@ body {
   }
 }
 
+
+/*===== Content 網站-內容區塊排版設定 =====*/
+.content-box {
+  min-height: 450px;
+
+  h3 {
+    color: #2c3e50;
+    letter-spacing: 2px;
+    margin-top: 35px;
+  }
+
+  hr {
+    height: 1.5px;
+    background-color: #666 !important;
+    margin-bottom: 5px;
+  }
+
+  .btn-default {
+    margin: 10px 0 0 -10px;
+  }
+
+  .btn-default:hover {
+    border-color: #eb5424;
+  }
+}
+
+
+
+/*===== Cart 網站-購物車設定 =====*/
+.cart-item-box {
+  text-align: left;
+  margin: 5px 0 5px 0;
+
+  img {
+    max-width: 75px;
+  }
+
+  div {
+    margin-left: 15px;
+    display: inline-block;
+  }
+
+  hr {
+    height: 1px;
+    background-color: #eee !important;
+    margin: 7.5px 0 -2.5px 0;
+  }
+
+  .name {
+    min-width: 50%;
+  }
+
+  .price {
+    min-width: 100px;
+  }
+}
+
+
+/*===== Order 網站-訂單資訊設定 =====*/
+.order-form {
+  text-align: left;
+
+  .form-group {
+    input {
+      height: 40px;
+    }
+  }
+
+  .form-actions {
+    text-align: center;
+
+    .btn-default {
+      color: #333;
+    }
+
+    .btn-default:hover,
+    .btn-default:active,
+    .btn-default:focus {
+      background-color: #fff;
+      border-color: #eb5424;
+      color: #eb5424;
+    }
+  }
+}
+
+/*===== Order 網站-訂單歷史 =====*/
+.order-box {
+  text-align: left;
+
+  h3 {
+    text-align: center;
+  }
+
+  table{
+    box-shadow: 0 0 3px #999;
+  }
+
+  thead{
+    background-color: #02061A;
+    font-size: 16px;
+    color: #fff;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+  }
+
+  .btn-default {
+    margin: 0 5px 0 5px;
+  }
+}
+
 /*===== Control 後台-控制選單 =====*/
 .nav-sidebar {
   margin-top: 65px;

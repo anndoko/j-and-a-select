@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       post :remove_from_wish_list
     end
 
+    # 搜索 #
     collection do
       get :search
     end

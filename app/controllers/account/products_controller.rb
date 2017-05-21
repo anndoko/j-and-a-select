@@ -3,6 +3,10 @@ class Account::ProductsController < ApplicationController
 
   def index
     @products = current_user.wish_list_items
+
+    # 商品類型 / 品牌
+    @category_groups = CategoryGroup.published
+    @brands = Brand.published
   end
 
   # 從願望清單上刪除該商品
