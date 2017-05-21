@@ -42,6 +42,7 @@ zh-CN:
   message-cancel-request-sent: 已提交申请，J&A SELECT 会尽速与您联系。
 
 #--=== 首页 ===--#
+
   # 品牌故事 #
   th-j-and-a-select: 品牌故事
   th-j-and-a: J & A
@@ -65,6 +66,7 @@ zh-CN:
   th-accessories: 个人单品
   slogan-accessories:
     个人配件，是一种态度的展现。好东西不用多，几个设计出众、容易搭配的物品，便可以陪伴我们很久，带给我们满足、自信。如果你也认同「简单，却也很不简单」的穿搭理念、想为自己添上不娇不作的优雅气质，J&A SELECT 诚挚挑选的高质感单品，必然会让你爱不释手。
+
 
   # 推荐商品 #
   th-featured-products: 精选商品
@@ -100,9 +102,15 @@ zh-CN:
   nav-brand: 严选品牌
   no-product-data: 此分类暂时没有商品哦
 
-  will-paginate:
-    previous-label: <span class=fa fa-angle-double-left></span>
-    next-label: <span class=fa fa-angle-double-right></span>
+  order-btn-title: 预设排序
+  order-btn-hot: 依热销度
+  order-btn-recent: 依上架时间
+  order-btn-price-h: 依价格排序：高至低
+  order-btn-price-l: 依价格排序：低至高
+
+  # will-paginate:
+  previous-label: <span class="fa fa-angle-double-left"></span>
+  next-label: <span class="fa fa-angle-double-right"></span>
 
 #--=== 商品资讯页 ===--#
   btn-add-to-cart: 加入购物车
@@ -115,13 +123,16 @@ zh-CN:
   # 购物车 #
   cart-index: 购物车
   cart-clear: 清空购物车
+  cart-list: 购物清单
 
   f-cart-product-info: 商品资讯
   f-cart-product-price: 商品单价
   f-cart-product-quantity: 商品数量
-  f-cart-total: 总计：
+  f-cart-total: 合计：
 
-  btn-checkout: 确认结帐
+  btn-checkout: 前往结帐
+
+  cart-no-data: 购物车还没有商品哦！
 
   # 生成订单 #
   checkout-index: 订单资讯
@@ -134,7 +145,7 @@ zh-CN:
   f-shipping-phone: 收件人 - 电话（选填）
   f-shipping-address: 收件人 - 收货地址
 
-  btn-order-create: 生成订单
+  btn-order-create: 确认付款
 
   # 订单 #
   order-show: 订单明细
@@ -160,6 +171,7 @@ zh-CN:
   admin-access: 后台专区
   account-order-access: 历史订单
   user-center: 我的帐户
+  user-order: 我的订单
   keywaods: 搜索商品
 
   # 后台操作面板 #
@@ -192,11 +204,17 @@ zh-CN:
   # 愿望清单 #
   account-wish-list-index: 愿望清单
   btn-move-to-cart: 移动至购物车
+  wish-no-data: 愿望清单还没有商品哦！
 
 
   # 历史订单 #
   account-order-index: 历史订单
   f-order-created-at: 下订日期 / 年 /时间
+  order-id: 订单编号
+  order-total: 订单总额
+  order-date: 下单时间
+
+  order-no-data: 你还没买过任何东西哦！
 
 #--=== 管理员专区 ===--#
   # 共用元素 #
