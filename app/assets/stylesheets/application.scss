@@ -627,6 +627,54 @@ body {
   }
 }
 
+
+/*===== Content 網站-內容區塊排版設定 =====*/
+.content-box {
+  h3 {
+    color: #2c3e50;
+    letter-spacing: 2px;
+  }
+
+  hr {
+    height: 1.5px;
+    background-color: #666 !important;
+  }
+
+  .btn-default {
+    margin: 10px 0 0 -10px;
+  }
+}
+
+/*===== Cart 網站-購物車設定 =====*/
+.cart-item-box {
+  text-align: left;
+  margin: 5px 0 5px 0;
+
+  img {
+    max-width: 75px;
+  }
+
+  div {
+    margin-left: 15px;
+    display: inline-block;
+  }
+
+  .name {
+    min-width: 50%;
+  }
+
+  .price {
+    min-width: 100px;
+  }
+
+  .close {
+    margin-top: 25px;
+    a {
+      color: #000 !important;
+    }
+  }
+}
+
 /*===== Control 後台-控制選單 =====*/
 .nav-sidebar {
   margin-top: 65px;
