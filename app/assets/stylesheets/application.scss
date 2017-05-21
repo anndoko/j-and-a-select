@@ -29,7 +29,7 @@
 
 /*===== 網站通用設置 ======*/
 body {
-  overflow-x: hidden; //裁剪内容 - 不提供滚动机制。
+  overflow-x: hidden; //裁切內容，超出視窗不顯示
   letter-spacing: 1px;
   font-size: 14px;
   position: relative;
@@ -38,13 +38,13 @@ body {
     text-decoration:none !important;
   }
 
-    /*===== 頁面內容區塊設定 ======*/
+    /*===== 頁面內容設定 ======*/
   .container-fluid {
     margin-top: 55px;
     min-height: 550px;
   }
 
-    /*===== 換頁按鈕區塊設定 ======*/
+    /*===== 換頁按鈕設定 ======*/
   .page-box {
     margin-top: 75px;
 
@@ -81,6 +81,7 @@ body {
 
   /*===== 立即選購按鈕 ======*/
   .buy-box {
+    text-align: center;
     margin: 100px 0 0 0;
     color: #02061A;
 

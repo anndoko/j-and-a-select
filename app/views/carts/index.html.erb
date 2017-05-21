@@ -40,9 +40,6 @@
             <hr/>
           </div>
           <% end %>
-
-
-
         </div>
         <!-- 購物車內商品總價 -->
         <div class='clearfix'>
@@ -53,7 +50,7 @@
           <div class='pull-right'><%= link_to(t('btn-checkout'), checkout_carts_path, method: :post, class: 'btn btn-md btn-default') %></div>
         </div>
 
-        <!-- 如果願望清單沒有商品 -->
+        <!-- 如果購物車沒有商品 -->
         <% else %>
           <div class="buy-box">
             <h1><%= t('cart-no-data') %></h1>

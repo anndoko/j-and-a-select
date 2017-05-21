@@ -208,6 +208,8 @@ zh-TW:
   order-total: 訂單總額
   order-date: 下單時間
 
+  order-no-data: 你還沒買過任何東西哦！
+
 #--=== 管理員專區 ===--#
   # 共用元素 #
   f-hide: 隱藏

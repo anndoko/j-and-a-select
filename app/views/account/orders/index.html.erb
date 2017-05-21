@@ -4,6 +4,10 @@
       <div class='col-md-8 col-md-offset-2'>
         <!--=== 頁面標題 ===-->
         <h3><i class='fa fa-credit-card'></i> <%= t('account-order-index') %></h3>
+
+        <!-- 如果有訂單資料，顯示訂單內容 -->
+        <% if @orders.length > 0 %>
+
         <!--=== 使用者歷史訂單===-->
         <table class='table table-hover'>
           <!-- 歷程訂單列表標題 -->
@@ -25,6 +29,15 @@
           <% end %>
         </tbody>
       </table>
+
+      <!-- 如果沒有訂單資料 -->
+      <% else %>
+        <div class="buy-box">
+          <h1><%= t('order-no-data') %></h1>
+          <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-lg btn-default' ) %>
+        </div>
+      <% end %>
+
       </div>
     </div>
   </div>
