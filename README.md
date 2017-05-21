@@ -1,6 +1,5 @@
 # J&A SELECT 選物商店
 
-
 < J&A SELECT > 是 <a href="http://xbearx1987-blog.logdown.com">Jimmy</a> & <a href="http://anndo-blog.logdown.com">Anndo</a> 共同設計的網頁作品，以「選物」為主題，販售實用與美感兼具的高品質物件。
 
 </br>
@@ -9,6 +8,5 @@
 
 <hr/>
 
-參賽地址：https://j-and-a-select.herokuapp.com/
-
-作品地址：https://fullstack.xinshengdaxue.com/works/
+* 參賽地址：https://fullstack.xinshengdaxue.com/works/558
+* 網站地址：https://j-and-a-select.herokuapp.com/
