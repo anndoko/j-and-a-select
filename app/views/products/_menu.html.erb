@@ -54,6 +54,8 @@
     <% end %>
   </div>
 
+  <!-- 只在 Products#index 和 products/search 兩個頁面顯示 -->
+  <% if current_page?(products_url) || current_page?('/products/search') %>
   <!--=== 排序選單 ===-->
   <div class="right-box">
     <div class="dropdown btn-group clearfix">
@@ -76,5 +78,6 @@
       </ul>
     </div>
   </div>
+  <% end %>
 </div>
 <hr/>
