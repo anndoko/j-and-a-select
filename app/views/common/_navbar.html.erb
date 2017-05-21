@@ -32,13 +32,13 @@
             <!-- 願望清單 -->
             <li>
               <%= link_to account_products_path do %>
-                <%= t('wish-list') %> <i class='fa fa-smile-o'></i>
+                <%= t('wish-list') %> <i class='fa fa-gift'></i>
               <% end %>
             </li>
             <!-- 購物車 -->
             <li>
               <%= link_to carts_path do %>
-                <%= t('cart') %> <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
+                <i class='fa fa-shopping-cart'></i> ( <%= current_cart.products.count %> )
               <% end %>
             </li>
             <!-- 切換語系 -->
