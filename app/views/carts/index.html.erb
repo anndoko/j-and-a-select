@@ -21,7 +21,7 @@
           <div class="col-md-12 cart-item-box">
             <% if cart_item.product.product_images.present? %>
               <!-- 顯示第一張圖片 -->
-              <%= image_tag(cart_item.product.product_images[0].image.thumb.url)%>
+              <%= image_tag(cart_item.product.product_images[0].image.other.url)%>
             <% else %>
               <%= image_tag('http://placehold.it/200x200&text=No Pic') %>
             <% end %>

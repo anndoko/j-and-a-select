@@ -5,7 +5,7 @@
 
 <p>
   <% if @brand.logo.present? %>
-    <%= image_tag(@brand.logo.thumb.url) %>
+    <%= image_tag(@brand.logo.other.url) %>
   <% else %>
     <%= t('notice-no-image') %>
   <% end %>

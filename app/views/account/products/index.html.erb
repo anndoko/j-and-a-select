@@ -16,7 +16,7 @@
               <%= link_to product_path(product) do %>
                 <% if product.product_images.present? %>
                   <!-- 顯示第一張圖片 -->
-                  <%= image_tag(product.product_images[0].image.thumb.url)%>
+                  <%= image_tag(product.product_images[0].image.other.url)%>
                 <% else %>
                   <%= image_tag('http://placehold.it/100x100&text=No Pic') %>
                 <% end %>

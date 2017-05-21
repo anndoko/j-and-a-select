@@ -3,7 +3,7 @@
   <%= simple_form_for [:admin, @brand] do |f| %>
     <%= f.input :name, :label => t('f-brand-name'), input_html: { class: 'width-50' } %>
     <% if @brand.logo.present?%>
-      <%= image_tag(@brand.logo.thumb.url) %>
+      <%= image_tag(@brand.logo.other.url) %>
     <% end %>
     <%= f.input :logo, as: :file, :label => t('f-brand-logo') %>
     <%= f.input :description, :label => t('f-brand-description'), input_html: { class: 'height-200' } %>
