@@ -102,9 +102,9 @@ zh-TW:
   nav-brand: 嚴選品牌
   no-product-data: 此分類暫時沒有商品哦
 
-  will-paginate:
-    previous-label: <span class=fa fa-angle-double-left></span>
-    next-label: <span class=fa fa-angle-double-right></span>
+  # will-paginate:
+  previous-label: <span class="fa fa-angle-double-left"></span>
+  next-label: <span class="fa fa-angle-double-right"></span>
 
 #--=== 商品資訊頁 ===--#
   btn-add-to-cart: 加入購物車
