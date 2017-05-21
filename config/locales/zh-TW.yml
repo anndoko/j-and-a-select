@@ -102,6 +102,12 @@ zh-TW:
   nav-brand: 嚴選品牌
   no-product-data: 此分類暫時沒有商品哦
 
+  order-btn-title: 預設排序
+  order-btn-hot: 依熱銷度
+  order-btn-recent: 依上架時間
+  order-btn-price-h: 依價格排序：高至低
+  order-btn-price-l: 依價格排序：低至高
+
   # will-paginate:
   previous-label: <span class="fa fa-angle-double-left"></span>
   next-label: <span class="fa fa-angle-double-right"></span>

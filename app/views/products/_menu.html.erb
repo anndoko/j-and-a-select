@@ -62,14 +62,14 @@
         </button>
       <% else %>
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          預設排序 <span class="caret"></span>
+          <%= t('order-btn-title') %> <span class="caret"></span>
         </button>
       <% end %>
       <ul class="dropdown-menu dropdown-menu-right" selection aria-labelledby="dropdownMenuDivider">
-        <li><%= link_to("依熱銷度", '#') %></li>
-        <li><%= link_to("依上架時間", '#') %></li>
-        <li><%= link_to("依價格排序：低至高", '#') %></li>
-        <li><%= link_to("依價格排序：高至低", '#') %></li>
+        <li><%= link_to(t('order-btn-hot'), '#') %></li>
+        <li><%= link_to(t('order-btn-recent'), '#') %></li>
+        <li><%= link_to(t('order-btn-price-l'), '#') %></li>
+        <li><%= link_to(t('order-btn-price-h'), '#') %></li>
       </ul>
     </div>
   </div>
