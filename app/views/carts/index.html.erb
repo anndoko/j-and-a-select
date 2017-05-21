@@ -6,8 +6,11 @@
       <div class='col-md-12'>
         <!--=== 頁面標題 ===-->
         <h3><i class='fa fa-shopping-cart'></i> <%= t('cart-index') %></h3>
-        <%=link_to(t('cart-clear'), clear_carts_path, method: :delete, class: 'pull-right' , data: { confirm: t('message-confirm-clear-cart') } ) %>
         <hr />
+        <!-- 如果購物車有商品，顯示商品內容 -->
+        <% if current_cart.cart_items.length > 0 %>
+
+        <%=link_to(t('cart-clear'), clear_carts_path, method: :delete, class: 'pull-right' , data: { confirm: t('message-confirm-clear-cart') } ) %>
         <!--=== 購物車資訊 ===-->
         <div class="row">
           <!-- 購物車列表標題 -->
@@ -16,6 +19,7 @@
             <%= t('f-cart-product-price') %>
             <%= t('f-cart-product-quantity') %>
           </div> -->
+
           <!-- 購物車列表內容 -->
           <% current_cart.cart_items.each do |cart_item| %>
           <div class="col-md-12 cart-item-box">
@@ -36,6 +40,9 @@
             <hr/>
           </div>
           <% end %>
+
+
+
         </div>
         <!-- 購物車內商品總價 -->
         <div class='clearfix'>
@@ -45,6 +52,15 @@
         <div class='clearfix'>
           <div class='pull-right'><%= link_to(t('btn-checkout'), checkout_carts_path, method: :post, class: 'btn btn-md btn-default') %></div>
         </div>
+
+        <!-- 如果願望清單沒有商品 -->
+        <% else %>
+          <div class="buy-box">
+            <h1><%= t('cart-no-data') %></h1>
+            <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-lg btn-default' ) %>
+          </div>
+        <% end %>
+
       </div>
     </div>
   </div>

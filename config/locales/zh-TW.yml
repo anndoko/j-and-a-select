@@ -126,6 +126,8 @@ zh-TW:
 
   btn-checkout: 前往結帳
 
+  cart-no-data: 購物車還沒有商品哦！
+
   # 生成訂單 #
   checkout-index: 訂單資訊
 
