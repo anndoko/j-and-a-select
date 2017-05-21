@@ -78,6 +78,15 @@ body {
   .height-200 {
     height: 200px;
   }
+
+  /*===== DIV排版 ======*/
+  .left-box {
+    float: left;
+  }
+
+  .right-box {
+    float: right;
+  }
 }
 
 /*===== Navbar 导览列 ======*/
@@ -525,13 +534,7 @@ body {
     text-align: left;
     height: 20px;
 
-    .left-box {
-      float: left;
-    }
-
     .right-box {
-      float: right;
-
       button {
         margin: -15px 0 -15px 0;
         padding: 7.5px 10px 7.5px 10px;
@@ -577,7 +580,7 @@ body {
 
   /*===== 產品介紹區塊設置 =====*/
   .product-detail {
-    padding: 0 25px 0 25px;
+    // padding: 0 25px 0 25px;
     text-align: left;
 
     h1 {
@@ -604,13 +607,28 @@ body {
       display: block;
     }
 
-    .left-box {
-      float: left;
-      margin-left: 15px;
+    .price {
+      height: 60px;
     }
 
-    .right-box {
-      float: right;
+    .currency {
+      margin: 10px 0 0 0;
+
+      button {
+        margin-right: -10px;
+      }
+
+      ul{
+        margin-top: -5px;
+      }
+    }
+
+    .wish {
+      margin-left: 15px;
+      font-weight: 600;
+    }
+
+    .share {
       margin-right: 15px;
     }
 
