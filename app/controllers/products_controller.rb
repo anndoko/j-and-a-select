@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
       @group_s = params[:group]
       @group = CategoryGroup.find_by(name: @group_s)
 
-      @products = Product.joins(:category).where("categories.category_group_id" => @group.id).paginate(:page => params[:page], :per_page => 12)
+      @products = Product.joins(:category).where("categories.category_group_id" => @group.id).published.recent.paginate(:page => params[:page], :per_page => 12)
 
     # 判斷是否篩選品牌
     elsif params[:brand].present?
