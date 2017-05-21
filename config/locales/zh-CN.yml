@@ -100,8 +100,10 @@ zh-CN:
 
 #--=== 商品资讯页 ===--#
   btn-add-to-cart: 加入购物车
-  wish-list-add: 收藏至愿望清单
+  wish-list-add: 加入收藏
+  nav-currency: 切换币值
   wish-list-remove: 已收藏至愿望清单
+  btn-add-to-cart: 加入购物车
 
 #--=== 购物车 ===--#
   # 购物车 #
@@ -146,11 +148,13 @@ zh-CN:
   wish-list: 愿望清单
   cart: 购物车
   language: 语系
-  product-access: 选物
+  product-access: 精选商品
   brand-access: 品牌故事
   recommend-access: 热门推荐
   admin-access: 后台专区
   account-order-access: 历史订单
+  user-center: 我的帐户
+  keywaods: 搜索商品
 
   # 后台操作面板 #
   admin-order: 订单管理
@@ -160,6 +164,24 @@ zh-CN:
   admin-homepage: 首页广告管理
 
 #--=== 使用者专区 ===--#
+
+  # 帐号相关 #
+  user-sign-up: 帐号注册
+  user-log-in: 帐号登入
+  user-had-account: 已有帐号，立即登入
+  user-have-not-account: 没有帐号，立即注册
+  user-forget-psw: 忘记密码？
+  user-find-psw: 找回密码
+  user-remember-me: 记住我
+
+  user-account: 资料修改
+  name: 真实姓名
+  nickname: 用户名
+  address: 住址
+  phone: 电话
+  birthday: 生日
+  gender: 性别
+  save: 储存
 
   # 愿望清单 #
   account-wish-list-index: 愿望清单
@@ -172,10 +194,11 @@ zh-CN:
 
 #--=== 管理员专区 ===--#
   # 共用元素 #
-  f-hide: 是否隐藏
-  f-submit: 确认送交
+  f-hide: 隐藏
+  f-submit: 确认送出
   f-options: 操作选项
   notice-no-image: 尚无图片
+  f-image-upload: 图片上传
 
   btn-edit: 编辑
   btn-delete: 删除
@@ -231,6 +254,7 @@ zh-CN:
 
   f-category-name: 分类名称
   f-category-group: 类型
+  f-category-groups: 商品类型
   f-category-products: 分类商品一览
 
   btn-category-new: 新增分类
@@ -248,9 +272,12 @@ zh-CN:
   f-product-category: 商品分类
   f-product-brand: 商品品牌
 
-  btn-product-new: 新增商品
+  btn-product-new: 新增产品
 
-  # 商品管理 #
+  # 商品管理（搜索） #
+  search-no-data: 没有符合搜索条件的商品哦！
+
+  # 品牌管理 #
   intro-index: 广告一览
   intro-new: 新增广告
   intro-edit: 编辑广告
