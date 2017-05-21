@@ -630,6 +630,8 @@ body {
 
 /*===== Content 網站-內容區塊排版設定 =====*/
 .content-box {
+  min-height: 450px;
+
   h3 {
     color: #2c3e50;
     letter-spacing: 2px;
@@ -638,6 +640,7 @@ body {
   hr {
     height: 1.5px;
     background-color: #666 !important;
+    margin-bottom: 5px;
   }
 
   .btn-default {
@@ -657,6 +660,12 @@ body {
   div {
     margin-left: 15px;
     display: inline-block;
+  }
+
+  hr {
+    height: 1px;
+    background-color: #eee !important;
+    margin: 7.5px 0 -2.5px 0;
   }
 
   .name {
