@@ -34,9 +34,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'capistrano-rails', group: :development
 
 
-# =====  專案使用到的 Gem ===== #
-
-# 使用者
+# ===== 專案使用到的 Gem ===== #
+# 帳號系統
 gem 'devise'
 
 # 前端視覺
@@ -47,10 +46,10 @@ gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
 gem 'masonry-rails'
 
-# 搜尋
+# 搜尋功能
 gem 'ransack'
 
-# 圖片
+# 圖片功能
 gem 'carrierwave'
 gem 'mini_magick'
 
