@@ -137,16 +137,23 @@ zh-CN:
 
   cart-no-data: 购物车还没有商品哦！
 
-  # 生成订单 #
+# 生成订单 #
   checkout-index: 订单资讯
 
-  f-billing-info: 联络资讯
-  f-billing-name: 联络人 - 姓名
-  f-billing-address: 联络人 - 帐单地址
+  f-billing-info: 付款资讯
+  f-billing-name: 付款人 - 姓名
+  f-billing-address: 付款人 - 帐单地址
   f-shipping-info: 寄送资讯
   f-shipping-name: 收件人 - 姓名
   f-shipping-phone: 收件人 - 电话（选填）
   f-shipping-address: 收件人 - 收货地址
+  f-input-address: 请输入地址
+
+  billing-name: 真实姓名
+  billing-address: 帐单地址
+  shipping-name: 真实姓名
+  shipping-phone: 联络电话
+  shipping-address: 收件地址
 
   btn-order-create: 确认付款
 
@@ -198,11 +205,13 @@ zh-CN:
   user-account: 资料修改
   name: 真实姓名
   nickname: 用户名
-  address: 住址
+  address: 地址
   phone: 电话
   birthday: 生日
   gender: 性别
   save: 储存
+  male: 男
+  female: 女
 
   # 愿望清单 #
   account-wish-list-index: 愿望清单
