@@ -79,6 +79,16 @@ body {
     height: 200px;
   }
 
+  th {
+      vertical-align: middle !important; // 表格標題垂直置中
+  }
+
+  td {
+      height: px;
+      vertical-align: middle !important; // 表格內容垂直置中
+  }
+
+
   /*===== 立即選購按鈕 ======*/
   .buy-box {
     text-align: center;
@@ -771,6 +781,10 @@ body {
 
   .btn-default {
     margin: 0 5px 0 5px;
+  }
+
+  img {
+    max-width: 75px;
   }
 }
 

@@ -20,15 +20,15 @@
           </thead>
           <!-- 歷程訂單列表內容 -->
           <tbody>
-          <% @orders.each do |order| %>
-          <tr>
-            <td class="width-50"># <%= link_to(order.id, order_path(order.token)) %></td>
-            <td>$ <%= order.total %></td>
-            <td><%= order.created_at.strftime("%Y-%m-%d - %H:%M") %></td>
-          </tr>
-          <% end %>
-        </tbody>
-      </table>
+            <% @orders.each do |order| %>
+            <tr>
+              <td class="width-50"># <%= link_to(order.id, order_path(order.token)) %></td>
+              <td>$ <%= order.total %></td>
+              <td><%= order.created_at.strftime("%Y-%m-%d - %H:%M") %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
 
       <!-- 如果沒有訂單資料 -->
       <% else %>

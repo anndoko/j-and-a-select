@@ -14,6 +14,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :product_images
   has_many :wish_lists
   has_many :wish_list_owners, :through => :wish_lists, :source => :user
+  has_one :order_item
 
   # 發佈 / 隱藏 #
   def publish!
@@ -24,6 +25,11 @@ class Product < ApplicationRecord
   def hide!
     self.is_hidden = true
     self.save
+  end
+
+  # 檢查 is_hidden 的 boolean 值 #
+  def hidden?
+    is_hidden
   end
 
   # Scope #

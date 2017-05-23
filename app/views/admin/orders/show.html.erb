@@ -22,10 +22,10 @@
         <% @order_items.each do |order_item| %>
           <tr>
             <td>
-              <%= order_item.product_name %>
+              <%= order_item.product.name %>
             </td>
             <td>
-              <%= order_item.product_price %>
+              <%= order_item.product.price %>
             </td>
             <td>
               <%= order_item.quantity %>
