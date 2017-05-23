@@ -13,8 +13,7 @@ class OrdersController < ApplicationController
       current_cart.cart_items.each do |cart_item|
         order_item = OrderItem.new
         order_item.order = @order
-        order_item.product_name = cart_item.product.name
-        order_item.product_price = cart_item.product.price
+        order_item.product_id = cart_item.product_id # 存商品ID
         order_item.quantity = cart_item.quantity
         order_item.save
       end
