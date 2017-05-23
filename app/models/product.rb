@@ -27,6 +27,11 @@ class Product < ApplicationRecord
     self.save
   end
 
+  # 檢查 is_hidden 的 boolean 值 #
+  def hidden?
+    is_hidden
+  end
+
   # Scope #
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order('created_at DESC') }

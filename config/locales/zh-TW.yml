@@ -119,6 +119,9 @@ zh-TW:
   wish-list-remove: 已收藏至願望清單
   btn-add-to-cart: 加入購物車
 
+  product-is-hidden: 這項商品已被下架。
+  btn-continue: 繼續購物
+
 #--=== 購物車 ===--#
   # 購物車 #
   cart-index: 購物車

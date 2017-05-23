@@ -119,6 +119,9 @@ zh-CN:
   wish-list-remove: 已收藏至愿望清单
   btn-add-to-cart: 加入购物车
 
+  product-is-hidden: 这项商品已被下架。
+  btn-continue: 继续购物
+
 #--=== 购物车 ===--#
   # 购物车 #
   cart-index: 购物车
