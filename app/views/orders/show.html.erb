@@ -19,15 +19,15 @@
           <% @order_items.each do |order_item| %>
           <tr>
             <td>
-            <!-- 商品圖片 -->
-              <% if order_item.product.product_images.present? %>
-                <!-- 顯示第一張圖片 -->
-                <%= image_tag(order_item.product.product_images[0].image.other.url)%>
-              <% else %>
-                <%= image_tag('http://placehold.it/200x200&text=No Pic') %>
-              <% end %>
-            </td>
-            <td class="width-50"><%= order_item.product.name %></td>
+              <!-- 商品圖片 -->
+                <% if order_item.product.product_images.present? %>
+                  <!-- 顯示第一張圖片 -->
+                  <%= image_tag(order_item.product.product_images[0].image.other.url)%>
+                <% else %>
+                  <%= image_tag('http://placehold.it/200x200&text=No Pic') %>
+                <% end %>
+              </td>
+            <td class="width-50"><%= link_to(order_item.product.name, product_path(order_item.product)) %></td>
             <td><%= order_item.product.price %></td>
             <td><%= order_item.quantity %></td>
           </tr>
