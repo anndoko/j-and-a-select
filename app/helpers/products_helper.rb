@@ -1,5 +1,4 @@
 module ProductsHelper
-
   # 幣值切換
   def render_product_price(product)
     if session[:currency].present?

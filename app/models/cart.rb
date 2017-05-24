@@ -11,6 +11,13 @@ class Cart < ApplicationRecord
     ci.save
   end
 
+  # 修改購物車 #
+  def update_product_to_cart(product,quantity)
+    ci = cart_items.find_by(product)
+    ci.quantity = quantity
+    ci.save
+  end
+
   # 清空購物車 #
   def clear!
     cart_items.destroy_all

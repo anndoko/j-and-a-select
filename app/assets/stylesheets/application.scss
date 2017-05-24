@@ -457,7 +457,7 @@ body {
 
   .box {
 	  margin-top: 15px;
-	  box-shadow: 1px 1px 1.5px #ccc;
+	  box-shadow: 0.5px 0.5px 3px #aaa;
 	}
 
   .three {
@@ -465,7 +465,7 @@ body {
   }
 
   .box:hover {
-    opacity: 0.85;
+    opacity: 0.6;
   }
 }
 
@@ -754,6 +754,18 @@ body {
 
   .price {
     min-width: 100px;
+  }
+
+  input {
+    width: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+    outline: none;
+  }
+
+  input:focus {
+    border: 1px solid #000;
   }
 }
 

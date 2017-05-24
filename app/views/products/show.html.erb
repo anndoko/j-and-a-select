@@ -53,9 +53,9 @@
                   <div class="quantity-box">
                     <div class="left-box"><%= t('product-quantity') %>：</div>
                     <div class="left-box">
-                      <%= link_to("-", "#", id: "quantity-down", class: "quantity-actions") %>
+                      <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
                       <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity%>" class="quantity-input">
-                      <%= link_to("+", "#", id: "quantity-up", class: "quantity-actions") %>
+                      <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
                     </div>
                   </div>
                   <% else %>

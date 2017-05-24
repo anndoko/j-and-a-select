@@ -89,12 +89,36 @@ $(document).on('turbolinks:load', function() {
 
   /*===== 確認購買數量（不能超出庫存數量） =====*/
   $("#quantity").blur(function(e) {
-    var num = parseInt($("#quantity").val());
-    var numMax = $("#quantity").attr("max");
+    var num = parseInt($(this).val());
+    var numMax = $(this).attr("max");
     if (num > numMax) {
       num = numMax;
     }
-    $("#quantity").val(num);
+    $(this).val(num);
     e.preventDefault();
+  });
+
+
+  /*===== 確認購買數量（不能超出庫存數量） =====*/
+  $(".cart-quantity-input").blur(function(e) {
+    var num = parseInt($(this).val());
+    var numMax = $(this).attr("max");
+    if (num > numMax) {
+      num = numMax;
+    }
+    $(this).val(num);
+    e.preventDefault();
+
+    var id = $(this).attr("id");
+    $.ajax({
+      type: "PATCH",
+      url: "/cart_items/"+id,
+        dataType:'json',
+        data:{
+          quantity: num
+        },
+    });
+
+    window.location.reload();
   });
 });
