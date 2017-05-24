@@ -29,6 +29,7 @@
               </div>
             </div>
             <!--=== 商品資訊 ===-->
+            <%= form_tag add_to_cart_product_path(@product), :method => :post, :remote => true do %>
             <div class='col-xs-12 col-md-4 product-detail'>
               <div>
                 <h1><%= @product.name %></h1>
@@ -46,8 +47,21 @@
               <hr />
 
               <div>
-                <p>商品品牌：<%= link_to(@product.brand.name, products_path(:brand => @product.brand.name)) %></p>
-                <p>庫存數量：<%= @product.quantity %></p>
+                <p><%= t('product-brand') %>：<%= link_to(@product.brand.name, products_path(:brand => @product.brand.name)) %></p>
+                <p>
+                  <% if @product.quantity > 0 %>
+                  <div class="quantity-box">
+                    <div class="left-box"><%= t('product-quantity') %>：</div>
+                    <div class="left-box">
+                      <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
+                      <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity%>" class="quantity-input">
+                      <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
+                    </div>
+                  </div>
+                  <% else %>
+                    <%= t('product-quantity-none') %>
+                  <% end %>
+                </p>
               </div>
               <hr />
 
@@ -71,17 +85,20 @@
                 </div>
               </div>
               <!-- 加入購物車 -->
-              <%= link_to(t('btn-add-to-cart'), add_to_cart_product_path(@product), :method => :post, :class => 'btn btn-md btn-default') %>
+              <button class="btn btn-md btn-default" type="submit">
+                <%= t('btn-add-to-cart')%>
+              </button>
             </div>
+            <% end %>
 
         <!-- 如果商品是隱藏狀態 -->
         <% else %>
 
-            <div class="buy-box">
-              <h1><%= t('product-is-hidden') %></h1>
-              <br/>
-              <%= link_to(t('btn-continue'), products_path, class:'btn btn-lg btn-default' ) %>
-            </div>
+          <div class="buy-box">
+            <h1><%= t('product-is-hidden') %></h1>
+            <br/>
+            <%= link_to(t('btn-continue'), products_path, class:'btn btn-lg btn-default' ) %>
+          </div>
 
         <% end %>
 

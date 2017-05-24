@@ -7,6 +7,14 @@ class OrdersController < ApplicationController
     @order.user = current_user
     @order.total = current_cart.total_price
 
+    if session[:currency].present? # 搜尋幣值數據
+      @currency_s = session[:currency]
+    else # 預設幣值為新台幣
+      @currency_s = '新台幣'
+    end
+    @currency = Currency.find_by(name: @currency_s)
+    @order.currency = @currency.symbol
+
     if @order.save
 
       # 將購買車內容存入訂單
