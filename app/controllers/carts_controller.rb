@@ -1,4 +1,6 @@
 class CartsController < ApplicationController
+  # 使用者必須登入
+  before_action :authenticate_user!
 
   def index
     @carts = Cart.all
