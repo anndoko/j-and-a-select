@@ -18,7 +18,7 @@
 //= require_tree .
 
 
-/*===== 回到頁面頂端 =====*/
+/*===== Welcome#index - 回到頁面頂端 =====*/
 function goTop(min_height) {
   $(".goTop").click(
     function() {
@@ -42,7 +42,7 @@ $(function() {
 });
 
 
-/*===== 首頁導航列變化 =====*/
+/*===== Welcome#index - 首頁導航列變化 =====*/
 $(window).scroll(function () {
 	var $navbar = $('#navbar')
 	if ($(this).scrollTop() > 125) {
@@ -53,7 +53,7 @@ $(window).scroll(function () {
 })
 
 
-/*===== 變更顯示圖片 =====*/
+/*===== Products#show - 變更顯示圖片 =====*/
 $(document).on('mouseover', '.list-image', function () {
   var src_other = $(this).attr('src') //抓取小圖圖片路徑
   var src_main = src_other.toString().replace("other", "main") //更改圖片路徑
@@ -63,3 +63,38 @@ $(document).on('mouseover', '.list-image', function () {
   $('.list-image').removeClass('list-image-active') //其他圖片移除鎖定狀態
   $(this).addClass('list-image-active') //當前圖片新增鎖定狀態
 })
+
+
+/*===== Products#show - 調整購買數量 =====*/
+$(document).on('turbolinks:load', function() {
+  /*===== 增加購買數量 =====*/
+  $("#quantity-up").click(function(e) {
+    var num = parseInt($("#quantity").val());
+    var numMax = $("#quantity").attr("max");
+    if (num < numMax) {
+      num += 1;
+    }
+    $("#quantity").val(num);
+    e.preventDefault();
+  });
+
+  /*===== 減少購買數量 =====*/
+  $("#quantity-down").click(function(e) {
+    var num = parseInt($("#quantity").val());
+    if (num > 1) {
+      $("#quantity").val(num -= 1);
+    }
+    e.preventDefault();
+  });
+
+  /*===== 確認購買數量（不能超出庫存數量） =====*/
+  $("#quantity").blur(function(e) {
+    var num = parseInt($("#quantity").val());
+    var numMax = $("#quantity").attr("max");
+    if (num > numMax) {
+      num = numMax;
+    }
+    $("#quantity").val(num);
+    e.preventDefault();
+  });
+});

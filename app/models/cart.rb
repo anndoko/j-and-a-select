@@ -4,10 +4,10 @@ class Cart < ApplicationRecord
   has_many :products, through: :cart_items, source: :product
 
   # 加入購物車 #
-  def add_product_to_cart(product)
+  def add_product_to_cart(product,quantity)
     ci = cart_items.build
     ci.product = product
-    ci.quantity = 1
+    ci.quantity = quantity
     ci.save
   end
 
