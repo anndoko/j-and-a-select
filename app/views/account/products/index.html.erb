@@ -25,7 +25,7 @@
                 <% end %>
               <% end %>
               <div class="name"><%= link_to(product.name, product_path(product)) %></div>
-              <div class="price">$ <%= product.price %></div>
+              <div class="price"><%= render_product_price(product) %></div>
             <!-- 移動至購物車 -->
               <div>
                 <%= link_to add_to_cart_account_product_path(product), method: :post do %>

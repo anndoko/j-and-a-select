@@ -22,9 +22,10 @@ class Account::ProductsController < ApplicationController
   # 移動至購物車
   def add_to_cart
     @product = Product.find(params[:id])
+    @quantity = 1
 
     if !current_cart.products.include?(@product)
-      current_cart.add_product_to_cart(@product)
+      current_cart.add_product_to_cart(@product,@quantity)
       current_user.remove_from_wish_list!(@product)
       flash[:notice] = t('message-add-to-cart-success')
     else
