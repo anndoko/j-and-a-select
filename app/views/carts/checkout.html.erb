@@ -8,12 +8,6 @@
         <hr />
         <!--=== 購物車資訊 ===-->
         <div class="row">
-          <!-- 購物車列表標題 -->
-          <!-- <div>
-            <%= t('f-cart-product-info') %>
-            <%= t('f-cart-product-price') %>
-            <%= t('f-cart-product-quantity') %>
-          </div> -->
           <!-- 購物車列表內容 -->
             <% current_cart.cart_items.each do |cart_item| %>
             <div class="col-md-12 cart-item-box">
@@ -44,16 +38,17 @@
           <div class='order-form'>
             <%= simple_form_for @order do |f| %>
               <div class='form-group'>
+
               <!-- 訂購人 -->
               <legend><%= t('f-billing-info') %></legend>
-              <%= f.input :billing_name, :label => t('f-billing-name'), input_html: { class: 'width-50' }%>
-              <%= f.input :billing_address, :label => t('f-billing-address') %>
+              <%= f.input :billing_name, placeholder: t('billing-name'), input_html: {value: current_user.name, class: 'width-50'}, :label => t('f-billing-name') %>
+              <%= f.input :billing_address, placeholder: t('billing-address'), input_html: {value: current_user.address}, :label => t('f-billing-address') %>
 
               <!-- 收貨人 -->
               <legend><%= t('f-shipping-info') %></legend>
-                <%= f.input :shipping_name, :label => t('f-shipping-name'), input_html: { class: 'width-50' } %>
-                <%= f.input :shipping_phone, :label => t('f-shipping-phone') %>
-                <%= f.input :shipping_address, :label => t('f-shipping-address') %>
+                <%= f.input :shipping_name, placeholder: t('shipping-name'), input_html: {value: current_user.name, class: 'width-50'}, :label => t('f-shipping-name') %>
+                <%= f.input :shipping_phone, placeholder: t('shipping-phone'), input_html: {value: current_user.phone}, :label => t('f-shipping-phone') %>
+                <%= f.input :shipping_address, placeholder: t('shipping-address'), input_html: {value: current_user.address}, :label => t('f-shipping-address') %>
               </div>
 
               <!-- 下訂，產生訂單 -->
