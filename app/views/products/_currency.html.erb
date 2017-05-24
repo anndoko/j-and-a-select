@@ -8,7 +8,7 @@
     <!-- 選單列出所有幣值 -->
     <% @currencies.each do |currency| %>
       <li>
-        <%= link_to product_path(:currency => currency.name) do %>
+        <%= link_to setup_currency_product_path(:currency => currency.name), method: :post, :remote => true do %>
           <%= currency.symbol %> - <%= currency.name %>
         <% end %>
       </li>

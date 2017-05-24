@@ -34,7 +34,7 @@
                 <h1><%= @product.name %></h1>
                 <div class="price">
                   <div class="left-box">
-                    <h3><%= @currency.symbol %> <%= @product.price %></h3>
+                    <h3><%= render_product_price(@product) %></h3>
                   </div>
                   <div class="right-box currency">
                     <!-- 幣值轉換 -->

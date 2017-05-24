@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       post :add_to_cart
       post :add_to_wish_list
       post :remove_from_wish_list
+      post :setup_currency
     end
 
     # 搜索 #

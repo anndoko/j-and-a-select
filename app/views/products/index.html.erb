@@ -29,7 +29,7 @@
           <% end %>
           <div class="product-info">
             <p><%= link_to(product.name , product_path(product)) %></p>
-            <p>$ <%= product.price %></p>
+            <p><%= render_product_price(product) %></p>
           </div>
         </div>
       <% end %>
