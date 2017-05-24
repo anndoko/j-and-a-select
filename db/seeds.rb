@@ -1,4 +1,252 @@
-# 新增商品 - Product #
+# This file should contain all the record creation needed to seed the database with its default values.
+ # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+ #
+ # Examples:
+ #
+ #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+ #   Character.create(name: 'Luke', movie: movies.first)
+
+ # 新增 admin 帳號  User #
+   if User.find_by(email: 'admin@rails.com').nil?
+     u = User.new
+     u.name = '測試管理員'
+     u.email = 'admin@rails.com'
+     u.nickname = '測試管理員'
+     u.password = '111111'
+     u.password_confirmation = '111111'
+     u.is_admin = true
+     u.save
+     puts '創建管理員*1'
+   else
+     puts '已創建過此帳號，不重複新增。'
+   end
+
+   # 新增 user 帳號  User #
+   if User.find_by(email: 'user@rails.com').nil?
+     u = User.new
+     u.name = '測試管理員'
+     u.email = 'user@rails.com'
+     u.nickname = '測試管理員'
+     u.password = '111111'
+     u.password_confirmation = '111111'
+     u.is_admin = true
+     u.save
+     puts '創建一般用戶*1'
+   else
+     puts '已創建過此帳號，不重複新增。'
+   end
+
+ # 新增幣別  Currency #
+   Currency.create!(
+     name: '人民币',
+     symbol: '¥',
+     rate: 0.23
+   )
+
+   Currency.create!(
+     name: '新台幣',
+     symbol: 'NT$',
+     rate: 1
+   )
+
+   Currency.create!(
+     name: 'Euro',
+     symbol: '€',
+     rate: 0.03
+   )
+
+   Currency.create!(
+     name: 'US Dollar',
+     symbol: '$',
+     rate: 0.03
+   )
+
+   Currency.create!(
+     name: '日円',
+     symbol: '¥',
+     rate: 3.69
+   )
+
+   puts '創建初始幣別*5：人民幣、新台幣、歐元、美金、日圓'
+
+ # 新增廣告  Intro #
+
+   # 1
+   Intro.create!(
+     title: 'J&A SELECT',
+     content: '講究生活裡細微的美好，就是我們的選物精神。',
+     link: '#'
+   )
+
+   # 2
+   Intro.create!(
+     title: '桌上風景',
+     content: '實用與美學兼具，重新定義你的辦公日常。',
+     link: '#'
+   )
+
+   # 3
+   Intro.create!(
+     title: '生活質感',
+     content: '讓風格成為日常的一部分。',
+     link: '#'
+   )
+
+   # 4
+   Intro.create!(
+     title: '經典單品',
+     content: '從隨身物件展露你的獨到品味',
+     link: '#'
+   )
+
+   puts '創建廣告*4'
+
+ # 新增類型  Category #
+   CategoryGroup.create!(
+     name: '日常文具'
+   )
+
+   CategoryGroup.create!(
+     name: '生活器物'
+   )
+
+   CategoryGroup.create!(
+     name: '個人單品'
+   )
+
+   puts '創建類型*3：日常文具、生活器物、個人單品'
+
+ # 新增分類  Category #
+   # 文具
+   # 1
+   Category.create!(
+     category_group_id: 1,
+     name: '筆具'
+   )
+
+   # 2
+   Category.create!(
+     category_group_id: 1,
+     name: '筆袋'
+   )
+
+   # 3
+   Category.create!(
+     category_group_id: 1,
+     name: '紙本'
+   )
+
+   # 4
+   Category.create!(
+     category_group_id: 1,
+     name: '刀剪'
+   )
+
+   # 5
+   Category.create!(
+     category_group_id: 1,
+     name: '尺規'
+   )
+
+   puts '創建「日常文具」分類*5：筆具、筆袋、紙本、刀剪、書籤'
+
+   # 生活
+   # 6
+   Category.create!(
+     category_group_id: 2,
+     name: '收納'
+   )
+
+   # 7
+   Category.create!(
+     category_group_id: 2,
+     name: '裝飾'
+   )
+
+   # 8
+   Category.create!(
+     category_group_id: 2,
+     name: '器皿'
+   )
+
+   puts '創建「生活器物」分類*3：收納、裝飾、器皿'
+
+   # 個人
+   # 9
+   Category.create!(
+     category_group_id: 3,
+     name: '提袋'
+   )
+   # 10
+   Category.create!(
+     category_group_id: 3,
+     name: '皮件'
+   )
+   # 11
+   Category.create!(
+     category_group_id: 3,
+     name: '小物'
+   )
+
+   puts '創建「個人單品」分類*3：提袋、皮件、小物'
+
+ # 新增品牌  Brand #
+   # 1 Tools to Liveby / 禮拜文房具
+   Brand.create!(
+   name: 'Tools to Liveby / 禮拜文房具',
+   description: '
+   在平凡中，發現不平凡的美
+
+   禮拜文房具設計簡單美好的文書工具，期待改變大家桌上的風景，讓每天工作的好心情就從隨手使用的文具開始。'
+   )
+
+   # 2 Kaweco
+   Brand.create!(
+   name: 'Kaweco',
+   description: '
+   「體積雖小，但成就無限」是 Kaweco® 的創業精神精神標語。
+
+   德國品牌 Kaweco 的設計理念恰恰符合了歐洲時下最流行的「極簡」，其中攜帶便利的短筆筆型為最具代表性的款式之一。'
+   )
+
+   # 3 RHODIA
+   Brand.create!(
+   name: 'RHODIA',
+   description: '
+   RHODIA 來自法國，筆記本紙感滑順，強調使用便利、高品質用紙，適用各種筆款墨水書寫。這樣的設計及用料堅持，讓 RHODIA 筆記本一直是許多歐美名人及設計師的最愛。'
+   )
+
+   # 4 BRAUN
+   Brand.create!(
+   name: 'BRAUN',
+   description: '
+   德國品牌 BRAUN 專注於提供人們所需要的產品功能，操作讓人一看到操作介面，就能立即上手。對於設計美感更是絲毫不妥協，線條俐落，每一個產品細節都完美展現簡單大方的設計美學。'
+   )
+
+   # 5
+   Brand.create!(
+   name: 'Midori',
+   description: '來自日本的 Midori，創立於 1950 年，半個世紀以來，透過提供頂級紙製品，讓無數的人重新愛上書寫。'
+   )
+
+   # 6
+   Brand.create!(
+   name: 'Hightide',
+   description: 'Hightide 是日本知名的文具公司，Hightide 相信文具能在我們的日常生活和工作中產生不同的影響，希望為大家提供質量高的文具，在情感和精神上都得到滿足。'
+   )
+
+   #7
+   Brand.create!(
+   name: 'Merchant & Mills',
+   description: 'Merchant & Mills 創辦於 2010 年，旨在激勵人們對原始手工縫製的熱愛。他們擁有專業的時尚嗅覺，堅持用高品質的面料手工縫紉服裝。「手工縫製重新回歸了人們的視線，現在有關手工製作的所有事情都即將引發新的潮流。」。
+   '
+   )
+
+
+   puts '創建品牌*6'
+ 
+
+# 新增商品  Product #
 
   Product.create!(
     name: 'Tools to Liveby 手工皮革筆袋（大）',
@@ -27,7 +275,7 @@
   )
 
   Product.create!(
-    name: 'Tools to Liveby - 圓把剪刀（黑）',
+    name: 'Tools to Liveby  圓把剪刀（黑）',
     description: '
     使用日本不鏽鋼製造， 比例及造型都是最好的首選。自製的貼心小包裝，能保護刀刃，也以雷射雕刻了禮拜的 logo ，更適合當作禮物送給朋友。 同樣有霧黑與金色兩款，黑色款外層塗布一層鐵氟龍，裁剪膠帶時較不容易殘膠。附紙套包裝。
     ',
@@ -65,7 +313,7 @@
   Product.create!(
     name: 'Tools to Liveby 隨行袋（S）',
     description: '
-    《禮拜文房具》新推出的環保袋，此款袋型較小，可手提也可以斜肩揹，袋口部分有個黑色小扣子的設計，能夠保護袋內物品不易掉出。同樣是雙面圖案設計，一面是經典圖示，另一面印著我們很喜歡也一直是我們生活理念的 Quote - “Be refined, polite and well-spoken.” 。
+    《禮拜文房具》新推出的環保袋，此款袋型較小，可手提也可以斜肩揹，袋口部分有個黑色小扣子的設計，能夠保護袋內物品不易掉出。同樣是雙面圖案設計，一面是經典圖示，另一面印著我們很喜歡也一直是我們生活理念的 Quote  “Be refined, polite and wellspoken.” 。
 
     第一次選用藍色與灰色來製作，因為這兩種顏色給人沉穩且時尚的感覺，並且與我們日常生活的服飾容易搭配，很適合微旅行使用。
     ',

@@ -32,7 +32,6 @@ class ProductsController < ApplicationController
     else
       @products = Product.published.recent.paginate(:page => params[:page], :per_page => 12)
     end
-
   end
 
   def show
@@ -42,22 +41,17 @@ class ProductsController < ApplicationController
     @category_groups = CategoryGroup.published
     @brands = Brand.published
     @currencies = Currency.all
+  end
 
-    # 幣值切換
-    if params[:currency].present?
-      @currency_s = params[:currency]
-      @currency = Currency.find_by(name: @currency_s)
-      @product.price = @product.price * @currency.rate
-    else
-      # 預設幣值為新台幣
-      @currency = Currency.find_by(name: '新台幣')
-      @product.price = @product.price * 1
-    end
+  # 設定幣值
+  def setup_currency
+    set_currency
+
+    redirect_to :back
   end
 
   # 加入購物車
   def add_to_cart
-
     @product = Product.find(params[:id])
 
     if !current_cart.products.include?(@product)
