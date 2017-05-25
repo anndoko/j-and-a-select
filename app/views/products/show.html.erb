@@ -62,6 +62,15 @@
                     <%= t('product-quantity-none') %>
                   <% end %>
                 </p>
+                <!-- 如果商品有顏色選擇 -->
+                <% if @product.colors.present? %>
+                  <p>
+                    <%= t('f-product-color') %>：
+                    <% @product.colors. each do |c|%>
+                      <%= c.name %> 
+                    <% end %>
+                  </p>
+                <% end %>
               </div>
               <hr />
 
