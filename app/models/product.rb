@@ -20,6 +20,7 @@ class Product < ApplicationRecord
 
   has_many :product_color_relationships
   has_many :colors, :through => :product_color_relationships, :source => :color
+  accepts_nested_attributes_for :colors
 
   # 發佈 / 隱藏 #
   def publish!

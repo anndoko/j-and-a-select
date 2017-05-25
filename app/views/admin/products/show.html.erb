@@ -23,30 +23,26 @@
 
 <!-- 所屬主類別 -->
 <h3><%= t('f-category-group') %></h3>
-<p>
-  <%= @product.category.category_group.name %>
-</p>
+<p><%= @product.category.category_group.name %></p>
 
 <!-- 所屬類別 -->
 <h3><%= t('f-product-category') %></h3>
-<p>
-  <%= @product.category.name %>
-</p>
+<p><%= @product.category.name %></p>
 
 <!-- 所屬品牌 -->
 <h3><%= t('f-product-brand') %></h3>
-<p>
-  <%= @product.brand.name %>
-</p>
+<p><%= @product.brand.name %></p>
+
+<!-- 商品顏色 -->
+<h3><%= t('f-product-color') %></h3>
+<% @product.colors. each do |c|%>
+  <%= c.name %>
+<% end %>
 
 <!-- 商品價錢 -->
 <h3><%= t('f-product-price') %></h3>
-<p>
-  <%= @product.price %>
-</p>
+<p><%= @product.price %></p>
 
 <!-- 商品庫存 -->
 <h3><%= t('f-product-quantity') %></h3>
-<p>
-  <%= @product.quantity %>
-</p>
+<p><%= @product.quantity %></p>
