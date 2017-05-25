@@ -10,11 +10,16 @@ class Product < ApplicationRecord
   # 關聯 #
   belongs_to :category
   belongs_to :brand
+  has_one :order_item
+
   has_many :product_images, dependent: :destroy
   accepts_nested_attributes_for :product_images
+
   has_many :wish_lists
   has_many :wish_list_owners, :through => :wish_lists, :source => :user
-  has_one :order_item
+
+  has_many :product_color_relationships
+  has_many :colors, :through => :product_color_relationships, :source => :color
 
   # 發佈 / 隱藏 #
   def publish!
