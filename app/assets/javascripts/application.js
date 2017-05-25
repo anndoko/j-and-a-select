@@ -72,9 +72,8 @@ $(document).on('turbolinks:load', function() {
     var num = parseInt($("#quantity").val());
     var numMax = $("#quantity").attr("max");
     if (num < numMax) {
-      num += 1;
+      $("#quantity").val(num += 1);
     }
-    $("#quantity").val(num);
     e.preventDefault();
   });
 
