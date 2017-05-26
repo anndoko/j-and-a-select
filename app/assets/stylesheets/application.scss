@@ -92,10 +92,12 @@ body {
   /*===== 立即選購按鈕 ======*/
   .buy-box {
     text-align: center;
-    margin: 100px 0 0 0;
+    margin: 50px 0 0 0;
     color: #02061A;
 
+
     .btn-default {
+      margin-top: 30px;
       padding: 15px 20px 15px 20px;
     }
 
@@ -104,6 +106,20 @@ body {
     .btn-default:focus {
       background-color: #fff;
     }
+
+
+    .suggested-product-content{
+
+      text-align: center;
+      margin: 20px 0px 20px 0px;
+
+      img {
+        margin: auto;
+        max-width: 200px;
+      }
+    }
+
+
   }
 
   /*===== DIV排版 ======*/

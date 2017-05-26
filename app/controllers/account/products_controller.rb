@@ -3,6 +3,7 @@ class Account::ProductsController < ApplicationController
 
   def index
     @products = current_user.wish_list_items
+    @suggests = Product.published.random3
 
     # 商品類型 / 品牌
     @category_groups = CategoryGroup.published
