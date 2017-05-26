@@ -202,7 +202,7 @@ body {
 /*===== Footer 页脚 ======*/
 .footer{
   text-align: center;
-  min-height: 250px;
+  min-height: 200px;
   background-color: #02061A;
   padding: 15px 0;
   color: #fff;
@@ -230,12 +230,13 @@ body {
   }
 
   img {
-    width: 35px;
-    margin: 5px;
-  }
-
-  img:hover {
-    opacity: 0.75;
+    display: inline-block;
+    margin-top: -6px;
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff; /* Logo 外框 */
+    border-radius: 25px; /* Logo 切成圓形 */
   }
 
   p {
