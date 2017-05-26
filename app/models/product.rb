@@ -22,6 +22,11 @@ class Product < ApplicationRecord
   has_many :colors, :through => :product_color_relationships, :source => :color
   accepts_nested_attributes_for :colors
 
+  # 商品資訊網址優化 #
+  def to_param
+    "#{self.id}-#{self.name.gsub(/\s+/, "")}"
+  end
+
   # 發佈 / 隱藏 #
   def publish!
     self.is_hidden = false
