@@ -140,7 +140,7 @@ zh-CN:
 
   btn-checkout: 前往结帐
 
-  cart-no-data: 购物车还没有商品哦！
+  cart-no-data: 您尚未加入任何商品，J & A SELECT 诚挚向您推荐：
 
 # 生成订单 #
   checkout-index: 订单资讯
@@ -221,8 +221,7 @@ zh-CN:
   # 愿望清单 #
   account-wish-list-index: 愿望清单
   btn-move-to-cart: 移动至购物车
-  wish-no-data: 愿望清单还没有商品哦！
-
+  wish-no-data: 您尚未收藏任何商品，J & A SELECT 诚挚向您推荐：
 
   # 历史订单 #
   account-order-index: 历史订单
@@ -312,6 +311,7 @@ zh-CN:
   f-product-quantity: 库存数量
   f-product-category: 商品分类
   f-product-brand: 商品品牌
+  f-product-color: 商品颜色
 
   btn-product-new: 新增产品
 

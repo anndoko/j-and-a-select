@@ -23,22 +23,15 @@ class Admin::ProductsController < ApplicationController
     # 商品圖片
     @product_image = @product.product_images.build
 
-    # 商品所屬的品牌/分類
+    # 商品所屬的品牌/分類/顏色
     @brands = Brand.all
     @categories = Category.all.order("category_group_id, name")
-    # @brands = Brand.all.map { |b| [b.name, b.id] }
-    # @categories = Category.all.map { |c| [c.name, c.id] }
+    @colors = Color.all
+
   end
 
   def create
     @product = Product.new(product_params)
-
-    # 商品所屬的品牌
-    # @brands = Brand.all.map { |b| [b.name, b.id] }
-    # @product.brand_id = params[:brand_id]
-    # 商品所屬的分類
-    # @categories = Category.all.map { |c| [c.name, c.id] }
-    # @product.category_id = params[:category_id]
 
     if @product.save
       if params[:product_images] != nil
@@ -58,8 +51,7 @@ class Admin::ProductsController < ApplicationController
     # 商品所屬的品牌/分類
     @brands = Brand.all
     @categories = Category.all.order("category_group_id, name")
-    # @brands = Brand.all.map { |b| [b.name, b.id] }
-    # @categories = Category.all.map { |c| [c.name, c.id] }
+
   end
 
   def update
@@ -113,7 +105,7 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :quantity, :category_id, :brand_id, :is_hidden)
+    params.require(:product).permit(:name, :description, :price, :quantity, :category_id, :brand_id, :is_hidden, color_ids: [])
   end
 
 end

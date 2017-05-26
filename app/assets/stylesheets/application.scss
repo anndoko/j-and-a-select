@@ -92,10 +92,12 @@ body {
   /*===== 立即選購按鈕 ======*/
   .buy-box {
     text-align: center;
-    margin: 100px 0 0 0;
+    margin: 50px auto 0 auto;
     color: #02061A;
 
+
     .btn-default {
+      margin-top: 30px;
       padding: 15px 20px 15px 20px;
     }
 
@@ -103,6 +105,16 @@ body {
     .btn-default:active,
     .btn-default:focus {
       background-color: #fff;
+    }
+
+    .suggested-product-content{
+      text-align: center;
+      margin: 20px 0px 20px 0px;
+
+      img {
+        margin: auto;
+        max-width: 200px;
+      }
     }
   }
 
@@ -202,7 +214,7 @@ body {
 /*===== Footer 页脚 ======*/
 .footer{
   text-align: center;
-  min-height: 250px;
+  min-height: 200px;
   background-color: #02061A;
   padding: 15px 0;
   color: #fff;
@@ -230,12 +242,13 @@ body {
   }
 
   img {
-    width: 35px;
-    margin: 5px;
-  }
-
-  img:hover {
-    opacity: 0.75;
+    display: inline-block;
+    margin-top: -6px;
+    margin-right: 8px;
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ffffff; /* Logo 外框 */
+    border-radius: 25px; /* Logo 切成圓形 */
   }
 
   p {
@@ -579,6 +592,22 @@ body {
       }
     }
   }
+
+  /*===== 產品顏色設置 =====*/
+  .color-circle {
+    button {
+      border: none;
+      outline: none;
+      border-radius: 25px;
+      color: #ffffff;
+      padding: 10px 10px 10px 10px;
+      margin: 0px 2px 0px 2px;
+    }
+
+    button:active {
+      outline: none; //點擊不顯示外框
+    }
+  }
 }
 
 /*===== 產品信息區塊設置 =====*/
@@ -714,7 +743,7 @@ body {
   hr {
     height: 1.5px;
     background-color: #666 !important;
-    margin-bottom: 5px;
+    margin-bottom: 15px;
   }
 
   .btn-default {
@@ -921,6 +950,23 @@ body {
     color: #fff;
   }
 
+  /*===== 產品顏色設置 =====*/
+
+  .admin-color-circle {
+    button {
+      border: none;
+      outline: none;
+      border-radius: 25px;
+      color: #ffffff;
+      padding: 10px 10px 10px 10px;
+      margin: 0px 2px 0px 2px;
+    }
+
+    button:active {
+      outline: none; //點擊不顯示外框
+    }
+  }
+
   /*===== 換頁按鈕 =====*/
   .admin-page-box {
     margin-top: 75px;
@@ -935,6 +981,9 @@ body {
     }
   }
 }
+
+
+
 
 /*===== Admin-Form 後台表單設置 =====*/
 .admin-data-box {
