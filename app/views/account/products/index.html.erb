@@ -12,42 +12,44 @@
           <!-- 如果願望清單有商品，顯示商品內容 -->
           <% if @products.length > 0 %>
 
-          <!-- 願望清單列表內容 -->
-          <% @products.each do |product| %>
-            <div class="col-md-12 cart-item-box">
-            <!-- 商品圖片 -->
-              <%= link_to product_path(product) do %>
-                <% if product.product_images.present? %>
-                  <!-- 顯示第一張圖片 -->
-                  <%= image_tag(product.product_images[0].image.other.url)%>
-                <% else %>
-                  <%= image_tag('http://placehold.it/100x100&text=No Pic') %>
+            <!-- 願望清單列表內容 -->
+            <% @products.each do |product| %>
+              <div class="col-md-12 cart-item-box">
+              <!-- 商品圖片 -->
+                <%= link_to product_path(product) do %>
+                  <% if product.product_images.present? %>
+                    <!-- 顯示第一張圖片 -->
+                    <%= image_tag(product.product_images[0].image.other.url)%>
+                  <% else %>
+                    <%= image_tag('http://placehold.it/100x100&text=No Pic') %>
+                  <% end %>
                 <% end %>
-              <% end %>
-              <div class="name"><%= link_to(product.name, product_path(product)) %></div>
-              <div class="price"><%= render_product_price(product) %></div>
-            <!-- 移動至購物車 -->
-              <div>
-                <%= link_to add_to_cart_account_product_path(product), method: :post do %>
-                  <%= t('btn-move-to-cart') %>
-                <% end %>
+                <div class="name"><%= link_to(product.name, product_path(product)) %></div>
+                <div class="price"><%= render_product_price(product) %></div>
+              <!-- 移動至購物車 -->
+                <div>
+                  <%= link_to add_to_cart_account_product_path(product), method: :post do %>
+                    <%= t('btn-move-to-cart') %>
+                  <% end %>
+                </div>
+              <!-- 從願望清單上刪除該商品 -->
+                <div>
+                  <%= link_to remove_from_wish_list_account_product_path(product), method: :post do %>
+                    <i class='fa fa-close'></i>
+                  <% end %>
+                </div>
+                <hr />
               </div>
-            <!-- 從願望清單上刪除該商品 -->
-              <div>
-                <%= link_to remove_from_wish_list_account_product_path(product), method: :post do %>
-                  <i class='fa fa-close'></i>
-                <% end %>
-              </div>
-              <hr />
-            </div>
-          <% end %>
+            <% end %>
 
           <!-- 如果願望清單沒有商品 -->
           <% else %>
+
             <div class="buy-box">
               <h3><%= t('wish-no-data') %></h3>
               <br/>
               <div class='col-md-8 col-md-offset-2'>
+                <!-- 顯示隨機推薦商品 -->
                 <% @suggests.each_with_index do |product, index| %>
                   <div class='col-xs-12 col-sm-4 col-md-4 suggested-product-content'>
                     <%= link_to product_path(product) do %>
@@ -67,6 +69,7 @@
                 <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-lg btn-default' ) %>
               </div>
             </div>
+
           <% end %>
         </div>
       </div>

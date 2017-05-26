@@ -4,6 +4,8 @@ class CartsController < ApplicationController
 
   def index
     @carts = Cart.all
+
+    # 隨機推薦 3 項商品
     @suggests = Product.published.random3
 
     # 商品類型 / 品牌
