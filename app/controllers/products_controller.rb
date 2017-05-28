@@ -37,6 +37,10 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @product_images = @product.product_images.all
+
+    # 隨機推薦 3 項商品
+    @suggests = Product.published.random3
+
     # 類型 / 品牌 / 幣值
     @category_groups = CategoryGroup.published
     @brands = Brand.published
