@@ -28,41 +28,14 @@
         </div>
         <!--=== 商品資訊 ===-->
         <%= form_tag add_to_cart_product_path(@product), :method => :post, :remote => true do %>
-
-              <div>
-                <p><%= t('product-brand') %>：<%= link_to(@product.brand.name, products_path(:brand => @product.brand.name)) %></p>
-                <p>
-                  <!--=== 如果庫存數量大於零 ===-->
-                  <% if @orderSum < @product.quantity && @product.quantity > 0 %>
-                  <div class="quantity-box">
-                    <div class="left-box"><%= t('product-quantity') %>：</div>
-                    <div class="left-box">
-                      <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
-                      <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity - @orderSum %>" class="quantity-input">
-                      <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
-                    </div>
-                  </div>
-
-                  <!--=== 如果沒有庫存 ===-->
-                  <% else %>
-                    <div class="quantity-box">
-                      <%= t('product-quantity') %>：<span class="quantity-none"><%= t('product-quantity-none') %></span>
-                    </div>
-                  <% end %>
-                </p>
-                <!-- 如果商品有顏色選擇 -->
-                <div class='color-circle'>
-                  <% if @product.colors.present? %>
-                    <p>
-                      <%= t('f-product-color') %>：
-                        <% @product.colors. each do |color|%>
-                            <button style='background-color:<%= color.code %>'></button>
-                        <% end %>
-                    </p>
-                  <% end %>
-                </div>
+        <div class='col-xs-12 col-md-4 product-detail'>
+          <div>
+            <h1><%= @product.name %></h1>
+            <div class="price">
+              <div class="left-box">
+                <h3><%= render_product_price(@product) %></h3>
               </div>
-              <div class='right-box currency'>
+              <div class="right-box currency">
                 <!-- 幣值轉換 -->
                 <%= render 'products/currency' %>
               </div>
@@ -76,33 +49,38 @@
             <%= render 'products/specification' %>
             <br/>
             <p>
-              <% if @product.quantity > 0 %>
-              <div class='quantity-box'>
-                <div class='left-box'><%= t('product-quantity') %>：</div>
-                <div class='left-box'>
-                  <%= link_to('-', '', id: 'quantity-down', class: 'quantity-actions') %>
-                  <input type='text' name='quantity' value='1' id='quantity' max='<%= @product.quantity%>' class='quantity-input'>
-                  <%= link_to('+', '', id: 'quantity-up', class: 'quantity-actions') %>
-                </div>
-              </div>
               <!--=== 如果庫存數量大於零 ===-->
               <% if @orderSum < @product.quantity && @product.quantity > 0 %>
-                <!-- 加入購物車 -->
-                <button class="btn btn-md btn-default" type="submit">
-                  <%= t('btn-add-to-cart')%>
-                </button>
+              <div class="quantity-box">
+                <div class="left-box"><%= t('product-quantity') %>：</div>
+                <div class="left-box">
+                  <%= link_to("-", "", id: "quantity-down", class: "quantity-actions") %>
+                  <input type="text" name="quantity" value="1" id="quantity" max="<%= @product.quantity - @orderSum %>" class="quantity-input">
+                  <%= link_to("+", "", id: "quantity-up", class: "quantity-actions") %>
+                </div>
+              </div>
 
               <!--=== 如果沒有庫存 ===-->
               <% else %>
-                <button class="btn btn-md btn-default" disabled="disabled" type="button">
-                  <%= t('btn-add-to-cart-none')%>
-                </button>
-              <% else %>
-                <%= t('product-quantity-none') %>
+                <div class="quantity-box">
+                  <%= t('product-quantity') %>：<span class="quantity-none"><%= t('product-quantity-none') %></span>
+                </div>
               <% end %>
             </p>
+            <!-- 如果商品有顏色選擇 -->
+            <div class='color-circle'>
+              <% if @product.colors.present? %>
+                <p>
+                  <%= t('f-product-color') %>：
+                    <% @product.colors. each do |color|%>
+                        <button style='background-color:<%= color.code %>'></button>
+                    <% end %>
+                </p>
+              <% end %>
+            </div>
           </div>
           <hr />
+
           <div class='row'>
             <!-- 願望清單 -->
             <div class='left-box wish'>
@@ -122,21 +100,26 @@
               <a href='#s'><%= image_tag('link_google-plus.png') %></a>
             </div>
           </div>
-          <!-- 加入購物車 -->
-          <button class='btn btn-md btn-default' type='submit'>
-            <%= t('btn-add-to-cart')%>
-          </button>
-        </div>
+          <!--=== 如果庫存數量大於零 ===-->
+          <% if @orderSum < @product.quantity && @product.quantity > 0 %>
+            <!-- 加入購物車 -->
+            <button class="btn btn-md btn-default" type="submit">
+              <%= t('btn-add-to-cart')%>
+            </button>
 
-        <% end %>
-
-        <!-- 顯示隨機推薦商品 -->
-        <section class='suggest-box'>
-          <div class='col-xs-12 col-md-4'>
+          <!--=== 如果沒有庫存 ===-->
+          <% else %>
+            <button class="btn btn-md btn-default" disabled="disabled" type="button">
+              <%= t('btn-add-to-cart-none')%>
+            </button>
+          <% end %>
+          <!-- 顯示隨機推薦商品 -->
+          <div class='suggest-box'>
             <hr class='suggest'>
             <%= render 'shared/suggest' %>
           </div>
-        </section>
+        </div>
+        <% end %>
 
     <!-- 如果商品是隱藏狀態 -->
     <% else %>
