@@ -118,8 +118,13 @@ zh-CN:
   nav-currency: 切换币值
   wish-list-remove: 已收藏至愿望清单
   btn-add-to-cart-none: 商品缺货
+  best-matches: J & A SELECT 推荐商品
 
   product-brand: 品牌
+  product-size: 尺寸
+  product-material: 材质
+  product-country: 产地
+  product-color: 颜色
   product-quantity: 数量
   product-quantity-none: 没有库存
 
@@ -314,6 +319,10 @@ zh-CN:
   f-product-category: 商品分类
   f-product-brand: 商品品牌
   f-product-color: 商品颜色
+  f-specification: 商品规格
+  f-product-size: 商品尺寸
+  f-product-material: 商品材质
+  f-product-country: 商品产地
 
   btn-product-new: 新增产品
 

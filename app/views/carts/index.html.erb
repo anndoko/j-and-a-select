@@ -53,22 +53,9 @@
             <h3><%= t('cart-no-data') %></h3>
             <h3><%= t('cart-suggest') %></h3>
             <br/>
+            <!-- 顯示隨機推薦商品 -->
             <div class='col-md-8 col-md-offset-2'>
-              <!-- 顯示隨機推薦商品 -->
-              <% @suggests.each_with_index do |product, index| %>
-                <div class='col-xs-12 col-sm-4 col-md-4 suggested-product-content'>
-                  <%= link_to product_path(product) do %>
-                    <!-- 商品圖片 -->
-                    <% if product.product_images.present? %>
-                      <!-- 顯示第一張圖片 -->
-                      <%= image_tag(product.product_images[0].image.other.url, class: 'thumbnail')%>
-                    <% else %>
-                      <%= image_tag('http://placehold.it/50x50&text=No Pic', class: 'thumbnail') %>
-                    <% end %>
-                  <% end %>
-                  <p><%= link_to(product.name , product_path(product)) %></p>
-                </div>
-              <% end %>
+              <%= render "shared/suggest" %>
             </div>
             <div class='col-md-12'>
               <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-lg btn-default' ) %>
