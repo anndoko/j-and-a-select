@@ -118,8 +118,13 @@ zh-TW:
   nav-currency: 切換幣值
   wish-list-remove: 已收藏至願望清單
   btn-add-to-cart: 加入購物車
+  best-matches: J & A SELECT 推薦商品
 
   product-brand: 品牌
+  product-size: 尺寸
+  product-material: 材質
+  product-country: 產地
+  product-color: 顏色
   product-quantity: 數量
   product-quantity-none: 沒有庫存
 
@@ -314,6 +319,10 @@ zh-TW:
   f-product-category: 商品分類
   f-product-brand: 商品品牌
   f-product-color: 商品顏色
+  f-specification: 商品規格
+  f-product-size: 商品尺寸
+  f-product-material: 商品材質
+  f-product-country: 商品產地
 
   btn-product-new: 新增產品
 
