@@ -9,11 +9,4 @@ module CartsHelper
       "$ " + cart.total_price.to_s
     end
   end
-
-  # 計算剩餘庫存
-  def render_product_quantity(product)
-    @product = Product.find(product)
-    @orderSum = OrderItem.where("product_id" => product).sum(:quantity)
-    @product.quantity - @orderSum
-  end
 end
