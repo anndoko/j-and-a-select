@@ -315,6 +315,10 @@ zh-TW:
   f-product-category: 商品分類
   f-product-brand: 商品品牌
   f-product-color: 商品顏色
+  f-specification: 商品規格
+  f-product-size: 商品尺寸
+  f-product-material: 商品材質
+  f-product-country: 商品產地
 
   btn-product-new: 新增產品
 

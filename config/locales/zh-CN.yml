@@ -315,6 +315,10 @@ zh-CN:
   f-product-category: 商品分类
   f-product-brand: 商品品牌
   f-product-color: 商品颜色
+  f-specification: 商品规格
+  f-product-size: 商品尺寸
+  f-product-material: 商品材质
+  f-product-country: 商品产地
 
   btn-product-new: 新增产品
 
