@@ -44,9 +44,11 @@
             <p><%= simple_format(@product.description) %></p>
           </div>
           <hr />
-
           <div>
             <p><%= t('product-brand') %>：<%= link_to(@product.brand.name, products_path(:brand => @product.brand.name)) %></p>
+            <!-- 商品規格：尺寸 / 材質 / 產地 / 顏色 -->
+            <%= render 'products/specification' %>
+            <br/>
             <p>
               <% if @product.quantity > 0 %>
               <div class='quantity-box'>
@@ -61,17 +63,6 @@
                 <%= t('product-quantity-none') %>
               <% end %>
             </p>
-            <!-- 如果商品有顏色選擇 -->
-            <div class='color-circle'>
-              <% if @product.colors.present? %>
-                <p>
-                  <%= t('f-product-color') %>：
-                  <% @product.colors. each do |color|%>
-                      <button style='background-color:<%= color.code %>'></button>
-                  <% end %>
-                </p>
-              <% end %>
-            </div>
           </div>
           <hr />
           <div class='row'>

@@ -121,6 +121,10 @@ zh-TW:
   best-matches: J & A SELECT 推薦商品
 
   product-brand: 品牌
+  product-size: 尺寸
+  product-material: 材質
+  product-country: 產地
+  product-color: 顏色
   product-quantity: 數量
   product-quantity-none: 沒有庫存
 
