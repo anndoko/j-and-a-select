@@ -725,6 +725,11 @@ body {
       .quantity-actions:hover {
         border: 1px solid #eb5424;
       }
+
+      .quantity-none {
+        color: #999;
+        font-weight: 500;
+      }
     }
 
   }
@@ -1064,7 +1069,6 @@ body {
     }
   }
 }
-
 
 /*===== Admin 產品後台圖片區塊設置 =====*/
 .product-image {

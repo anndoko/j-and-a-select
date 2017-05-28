@@ -37,6 +37,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @product_images = @product.product_images.all
+    @orderSum = OrderItem.where("product_id" => @product.id).sum(:quantity)
 
     # 隨機推薦 3 項商品
     @suggests = Product.published.random3
