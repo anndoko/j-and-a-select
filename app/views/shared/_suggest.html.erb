@@ -1,0 +1,14 @@
+<!--=== 隨機推薦商品 ===-->
+<% @suggests.each_with_index do |product, index| %>
+  <div class='col-xs-12 col-sm-4 col-md-4 suggested-product-content'>
+    <%= link_to product_path(product) do %>
+      <!-- 商品圖片 -->
+      <% if product.product_images.present? %>
+        <!-- 顯示第一張圖片 -->
+        <%= image_tag(product.product_images[0].image.other.url, class: 'thumbnail')%>
+      <% else %>
+        <%= image_tag('http://placehold.it/100x100&text=No Pic', class: 'thumbnail') %>
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
