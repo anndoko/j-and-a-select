@@ -117,7 +117,7 @@ zh-CN:
   wish-list-add: 加入收藏
   nav-currency: 切换币值
   wish-list-remove: 已收藏至愿望清单
-  btn-add-to-cart: 加入购物车
+  btn-add-to-cart-none: 商品缺货
 
   product-brand: 品牌
   product-quantity: 数量
