@@ -18,27 +18,38 @@
 //= require_tree .
 
 
-$(window).scroll(function () {
-  /*===== Welcome#index - 首頁導航列變化 =====*/
-	if ($(this).scrollTop() > 125) {
-		$('#navbar').addClass('show_bgcolor')
-	} else {
-		$('#navbar').removeClass('show_bgcolor')
-	}
-
-  /*===== Welcome#index - 回到頁面頂端 =====*/
-  if ($(this).scrollTop() > 2500) {
-    $(".goTop").fadeIn(100); //按钮出现时间（画面下移）
-  } else {
-    $(".goTop").fadeOut(200); //按钮消失时间（画面上移）
-  }
-
+/*===== Welcome#index - 回到頁面頂端 =====*/
+function goTop(min_height) {
   $(".goTop").click(
     function() {
       $('html,body').animate({
           scrollTop: 0
       }, 700);
     });
+  min_height=min_height?min_height:2500; //按钮出现高度（画面下移）
+  $(window).scroll(function() {
+    var s = $(window).scrollTop();
+    if (s > min_height) {
+        $(".goTop").fadeIn(100); //按钮出现时间（画面下移）
+    } else {
+        $(".goTop").fadeOut(200); //按钮消失时间（画面上移）
+    }
+  });
+}
+
+$(function() {
+  goTop();
+});
+
+
+/*===== Welcome#index - 首頁導航列變化 =====*/
+$(window).scroll(function () {
+	var $navbar = $('#navbar')
+	if ($(this).scrollTop() > 125) {
+		$('#navbar').addClass('show_bgcolor')
+	} else {
+		$('#navbar').removeClass('show_bgcolor')
+	}
 })
 
 
