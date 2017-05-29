@@ -13,6 +13,9 @@
             <% if @product_images.present? %>
             <!-- 顯示第一張商品圖片 - main 尺寸大圖 -->
             <div class='col-md-12'>
+              <% if @product.is_chosen %>
+                <div class="chosen-box location"><%= t('product-chosen') %></div>
+              <% end %>
               <%= image_tag(@product_images.first.image.main.url, class: 'main-image thumbnail') %>
             </div>
               <% @product_images.each_with_index do |p| %>
