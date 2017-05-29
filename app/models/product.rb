@@ -38,6 +38,17 @@ class Product < ApplicationRecord
     self.save
   end
 
+  # 精選商品 #
+  def chosen!
+    self.is_chosen = true
+    self.save
+  end
+
+  def no_chosen!
+    self.is_chosen = false
+    self.save
+  end
+
   # 檢查 is_hidden 的 boolean 值 #
   def hidden?
     is_hidden

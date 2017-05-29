@@ -48,6 +48,17 @@
             <span class="fa fa-eye-slash"></span>
           <% end %>
         <% end %>
+
+        <!-- 精選商品 -->
+        <% if product.is_chosen %>
+          <%= link_to(chosen_admin_product_path(product), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+            <span class="fa fa-heart"></span>
+          <% end %>
+        <% else %>
+          <%= link_to(chosen_admin_product_path(product), :method => :post, class: "btn btn-md btn-default") do %>
+            <span class="fa fa-heart-o"></span>
+          <% end %>
+        <% end %>
         </div>
       </td>
     </tr>

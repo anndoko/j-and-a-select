@@ -102,6 +102,18 @@ class Admin::ProductsController < ApplicationController
     redirect_to :back
   end
 
+  # 精選商品
+  def chosen
+    @product = Product.find(params[:id])
+    if @product.is_chosen == true
+      @product.no_chosen!
+    else
+      @product.chosen!
+    end
+
+    redirect_to :back
+  end
+
   private
 
   def product_params
