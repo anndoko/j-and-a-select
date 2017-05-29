@@ -28,6 +28,10 @@ class ProductsController < ApplicationController
 
       @products = Product.where(:brand => @brand.id).published.recent.paginate(:page => params[:page], :per_page => 12)
 
+    # 判斷是否選擇精選商品
+    elsif params[:chosen].present?
+      @products = Product.where(:is_chosen => true).published.recent.paginate(:page => params[:page], :per_page => 12)
+
     # 預設顯示所有公開商品
     else
       @products = Product.published.recent.paginate(:page => params[:page], :per_page => 12)
