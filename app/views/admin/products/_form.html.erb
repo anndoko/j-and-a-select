@@ -44,6 +44,9 @@
     <%= f.input :quantity, :label => t('f-product-quantity'), input_html: { class: 'width-25' } %>
 
     <!-- 商品隱藏與否 -->
+    <span class="hidden-box"><%= f.input :is_chosen, :label => t('f-product-chosen') %></span>
+
+    <!-- 商品隱藏與否 -->
     <span class="hidden-box"><%= f.input :is_hidden, :label => t('f-hide') %></span>
 
     <div class="form-actions">
