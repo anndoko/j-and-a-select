@@ -8,6 +8,13 @@ module Admin::ProductsHelper
     end
   end
 
+  # 判斷產品是否為精選商品
+  def render_product_chosen_status(product)
+    if product.is_chosen
+      content_tag(:span, "", :class => "fa fa-heart fa-fw")
+    end
+  end
+
   # 判斷產品隱藏狀態，顯示 Publish/Hide 按鈕
   def render_product_publish_or_hide(product)
     if product.is_hidden

@@ -22,6 +22,9 @@
             <!-- 商品圖片 -->
             <% if product.product_images.present? %>
               <!-- 顯示第一張圖片 -->
+              <% if product.is_chosen %>
+                <div class="chosen-box"><%= t('product-chosen') %></div>
+              <% end %>
               <%= image_tag(product.product_images[0].image.other.url, class: 'thumbnail')%>
             <% else %>
               <%= image_tag('http://placehold.it/200x200&text=No Pic', class: 'thumbnail') %>

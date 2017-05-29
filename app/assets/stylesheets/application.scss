@@ -562,7 +562,11 @@ body {
     h2 {
       margin-top: 150px;
     }
+
+
   }
+
+
 
   .product-info {
     text-align: left;
@@ -608,6 +612,27 @@ body {
     button:active {
       outline: none; //點擊不顯示外框
     }
+  }
+
+  /*===== 精選商品圖示 =====*/
+  .chosen-box {
+    position: absolute;
+    border-radius: 45px;
+    top: 22px;
+    left: 27px;
+    width: 45px;
+    height: 45px;
+    padding-top: 11px;
+    color: #fff;
+    background-color: #02061A;
+    border: 2.5px solid #999;
+    opacity: 0.85;
+    z-index: 1;
+  }
+
+  .location {
+    top: 15px;
+    left: 30px;
   }
 }
 

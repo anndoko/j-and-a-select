@@ -1,5 +1,13 @@
 <!--=== 商品類型 & 品牌選單 ===-->
 <div class="btn-group">
+
+  <!--=== 精選商品 ===-->
+  <div class='dropdown btn-group clearfix'>
+    <%= link_to products_path(:chosen => 'y'), class: 'btn' do %>
+      <%= t('f-product-chosen') %> #
+    <% end %>
+  </div>
+
   <!--=== 類型選單 ===-->
   <% @category_groups.each do |category_group| %>
     <div class='dropdown btn-group clearfix'>
@@ -51,6 +59,8 @@
     / <a href="products?group=<%= @group.name %>"><%= @group.name %></a>
     <% elsif params[:brand].present? %>
     / <a href="products?brand=<%= @brand.name %>"><%= @brand.name %></a>
+    <% elsif params[:chosen].present? %>
+    / <a href="products?chosen=y"><%= t('f-product-chosen') %></a>
     <% end %>
   </div>
 

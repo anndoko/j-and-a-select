@@ -24,7 +24,7 @@
   <!--=== 商品列表內容 ===-->
   <% @products.each do |product| %>
     <tr>
-      <td><%= render_product_status(product) %> <%= link_to(product.name, admin_product_path(product)) %></td>
+      <td><%= render_product_status(product) %> <%= link_to(product.name, admin_product_path(product)) %> <%= render_product_chosen_status(product) %></td>
       <td><%= product.brand.name %></td>
       <td><%= product.category.name %></td>
       <td><%= product.category.category_group.name %></td>
@@ -46,6 +46,17 @@
         <% else %>
           <%= link_to(hide_admin_product_path(product), :method => :post, data: { confirm: "確定隱藏該商品？" }, class: "btn btn-md btn-default") do %>
             <span class="fa fa-eye-slash"></span>
+          <% end %>
+        <% end %>
+
+        <!-- 精選商品 -->
+        <% if product.is_chosen %>
+          <%= link_to(chosen_admin_product_path(product), :method => :post, class: "btn btn-md btn-default show-btn") do %>
+            <span class="fa fa-heart"></span>
+          <% end %>
+        <% else %>
+          <%= link_to(chosen_admin_product_path(product), :method => :post, class: "btn btn-md btn-default") do %>
+            <span class="fa fa-heart-o"></span>
           <% end %>
         <% end %>
         </div>
