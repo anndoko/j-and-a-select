@@ -85,14 +85,7 @@
               <% end %>
             </div>
             <div class='right-box share'>
-              <!-- <a href='#s'><%= image_tag('link_facebook.png') %></a>
-              <a href='#s'><%= image_tag('link_twitter.png') %></a>
-              <a href='#s'><%= image_tag('link_google-plus.png') %></a> -->
-
-
-              <%= social_share_button_tag(@product.name, :allow_sites => %w(facebook twitter google_plus wechat weibo), :url => "http://myapp.com/foo/bar", :image => "http://foo.bar/images/a.jpg", desc: "The summary of page", via: "MyTwitterName") %>
-              <%= social_share_button_tag(@product.name, :allow_sites => %w(facebook twitter google_plus wechat weibo), :image => "https://raw.github.com/vkulpa/social-share-button/master/lib/assets/images/sprites/social-share-button/tumblr.png", :'data-type' => 'photo') %>
-              <%= social_share_button_tag(@product.name, :allow_sites => %w(facebook twitter google_plus wechat weibo), :'data-source' => "https://raw.github.com/vkulpa/social-share-button/master/lib/assets/images/sprites/social-share-button/tumblr.png", :'data-type' => 'photo') %>
+              <%= social_share_button_tag(@product.name, :allow_sites => %w(facebook twitter google_plus wechat weibo)) %>
             </div>
           </div>
           <!--=== 如果庫存數量大於零 ===-->
