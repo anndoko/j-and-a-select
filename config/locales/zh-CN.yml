@@ -235,8 +235,17 @@ zh-CN:
   account-order-index: 历史订单
   f-order-created-at: 下订日期 / 年 /时间
   order-id: 订单编号
-  order-total: 订单总额
+  order-total: 订单金额
   order-date: 下单时间
+  order-status: 订单状态
+  order-status-placed: 请付款以确认订单
+  order-status-paid: 付款成功，订单准备出货
+  order-status-shipping: 订单出货中
+  order-status-shipped: 商品已送达
+  order-status-cancelled: 订单已取消
+  order-status-returned: 订单已退货
+  order-status-placed-a: 用户下单，等待付款
+  order-status-paid-a: 付款成功，准备出货
 
   order-no-data: 你还没买过任何东西哦！
 
@@ -258,6 +267,12 @@ zh-CN:
 
   f-order-user: 订购人
   f-order-status: 订单状态
+  f-order-action: 订单操作
+
+  f-order-status-shipping: 订单派送
+  f-order-status-shipped: 商品送达
+  f-order-status-cancelled: 订单取消
+  f-order-status-returned: 商品退货
 
   order-state-paid: 已付款
   order-state-unpaid: 未付款

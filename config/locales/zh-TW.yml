@@ -235,8 +235,17 @@ zh-TW:
   account-order-index: 歷史訂單
   f-order-created-at: 下訂日期 / 年 /時間
   order-id: 訂單編號
-  order-total: 訂單總額
+  order-total: 訂單金額
   order-date: 下單時間
+  order-status: 訂單狀態
+  order-status-placed: 請付款以確認訂單
+  order-status-paid: 付款成功，訂單準備出貨
+  order-status-shipping: 訂單出貨中
+  order-status-shipped: 商品已送達
+  order-status-cancelled: 訂單已取消
+  order-status-returned: 訂單已退貨
+  order-status-placed-a: 用戶下單，等待付款
+  order-status-paid-a: 付款成功，準備出貨
 
   order-no-data: 你還沒買過任何東西哦！
 
@@ -258,6 +267,12 @@ zh-TW:
 
   f-order-user: 訂購人
   f-order-status: 訂單狀態
+  f-order-action: 訂單操作
+
+  f-order-status-shipping: 訂單派送
+  f-order-status-shipped: 商品送達
+  f-order-status-cancelled: 訂單取消
+  f-order-status-returned: 商品退貨
 
   order-state-paid: 已付款
   order-state-unpaid: 未付款

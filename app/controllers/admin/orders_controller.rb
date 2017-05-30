@@ -15,8 +15,6 @@ class Admin::OrdersController < ApplicationController
     @order_items = @order.order_items
   end
 
-
-
   def cancel
     @order = Order.find(params[:id])
     @order.cancel_order!

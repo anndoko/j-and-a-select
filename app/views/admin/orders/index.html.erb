@@ -10,9 +10,10 @@
       <thead>
         <tr>
           <th>#</th>
-          <th><%= t('f-order-created-at') %></th>
+          <th><%= t('order-date') %></th>
           <th><%= t('f-order-user') %></th>
           <th><%= t('f-order-status') %></th>
+          <th><%= t('f-order-action') %></th>
         </tr>
       </thead>
       <!--=== 訂單列表內容 ===-->
@@ -20,9 +21,50 @@
         <% @orders.each do |order| %>
         <tr>
           <td><%= link_to(order.id, admin_order_path(order)) %></td>
-          <td><%= order.created_at.to_s(:long) %></td>
+          <td><%= order.created_at.strftime("%Y-%m-%d - %H:%M") %></td>
           <td><%= order.user.email %></td>
-          <td><%= order.aasm_state %></td>
+          <td><%= render_admin_order_status(order) %></td>
+          <td>
+            <%
+              case order.aasm_state
+              when 'order_placed'
+            %>
+                <%= link_to ship_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default disabled' do %>
+                  <%= t('f-order-status-shipping') %> <i class="fa fa-truck"></i>
+                <% end %>
+            <%
+              when 'paid'
+            %>
+                <%= link_to ship_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default' do %>
+                  <%= t('f-order-status-shipping') %> <i class="fa fa-truck"></i>
+                <% end %>
+            <%
+              when 'shipping'
+            %>
+                <%= link_to shipped_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default' do %>
+                  <%= t('f-order-status-shipped') %> <i class="fa fa-arrows-alt"></i>
+                <% end %>
+            <%
+              when 'shipped'
+            %>
+                <%= link_to return_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default' do %>
+                  <%= t('f-order-status-returned') %> <i class="fa fa-undo"></i>
+                <% end %>
+            <%
+              end
+
+              if order.aasm_state == 'order_cancelled' || order.aasm_state == 'good_returned'
+              elsif order.aasm_state == 'shipped'
+            %>
+              <%= link_to cancel_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default disabled' do %>
+                <%= t('f-order-status-cancelled') %> <i class="fa fa-close"></i>
+              <% end %>
+            <% else %>
+              <%= link_to cancel_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default' do %>
+                <%= t('f-order-status-cancelled') %> <i class="fa fa-close"></i>
+              <% end %>
+            <% end %>
+          </td>
         </tr>
         <% end %>
       </tbody>
