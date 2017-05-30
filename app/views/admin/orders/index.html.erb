@@ -29,25 +29,25 @@
               case order.aasm_state
               when 'order_placed'
             %>
-                <%= link_to products_path, :method => :post, :class => 'btn btn-sm btn-default disabled' do %>
+                <%= link_to ship_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default disabled' do %>
                   <%= t('f-order-status-shipping') %> <i class="fa fa-truck"></i>
                 <% end %>
             <%
               when 'paid'
             %>
-                <%= link_to products_path, :method => :post, :class => 'btn btn-sm btn-default' do %>
+                <%= link_to ship_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default' do %>
                   <%= t('f-order-status-shipping') %> <i class="fa fa-truck"></i>
                 <% end %>
             <%
               when 'shipping'
             %>
-                <%= link_to products_path, :method => :post, :class => 'btn btn-sm btn-default' do %>
+                <%= link_to shipped_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default' do %>
                   <%= t('f-order-status-shipped') %> <i class="fa fa-arrows-alt"></i>
                 <% end %>
             <%
               when 'shipped'
             %>
-                <%= link_to products_path, :method => :post, :class => 'btn btn-sm btn-default' do %>
+                <%= link_to return_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default' do %>
                   <%= t('f-order-status-returned') %> <i class="fa fa-undo"></i>
                 <% end %>
             <%
@@ -56,11 +56,11 @@
               if order.aasm_state == 'order_cancelled' || order.aasm_state == 'good_returned'
               elsif order.aasm_state == 'shipped'
             %>
-              <%= link_to products_path, :method => :post, :class => 'btn btn-sm btn-default disabled' do %>
+              <%= link_to cancel_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default disabled' do %>
                 <%= t('f-order-status-cancelled') %> <i class="fa fa-close"></i>
               <% end %>
             <% else %>
-              <%= link_to products_path, :method => :post, :class => 'btn btn-sm btn-default' do %>
+              <%= link_to cancel_admin_order_path(order), :method => :post, :class => 'btn btn-sm btn-default' do %>
                 <%= t('f-order-status-cancelled') %> <i class="fa fa-close"></i>
               <% end %>
             <% end %>
