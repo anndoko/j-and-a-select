@@ -16,15 +16,17 @@
               <th><%= t('order-id') %></th>
               <th><%= t('order-total') %></th>
               <th><%= t('order-date') %></th>
+              <th><%= t('order-status') %></th>
             </tr>
           </thead>
           <!-- 歷程訂單列表內容 -->
           <tbody>
             <% @orders.each do |order| %>
             <tr>
-              <td class="width-50"># <%= link_to(order.id, order_path(order.token)) %></td>
-              <td>$ <%= order.total %></td>
+              <td class="width-25"># <%= link_to(order.id, order_path(order.token)) %></td>
+              <td><%= order.currency %> <%= order.total %></td>
               <td><%= order.created_at.strftime("%Y-%m-%d - %H:%M") %></td>
+              <td><%= render_order_status(order) %></td>
             </tr>
             <% end %>
           </tbody>
