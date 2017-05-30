@@ -243,6 +243,8 @@ zh-TW:
   order-status-shipped: 商品已送達
   order-status-cancelled: 訂單已取消
   order-status-returned: 訂單已退貨
+  order-status-placed-a: 用戶下單，等待付款
+  order-status-paid-a: 付款成功，準備出貨
 
   order-no-data: 你還沒買過任何東西哦！
 
@@ -264,6 +266,12 @@ zh-TW:
 
   f-order-user: 訂購人
   f-order-status: 訂單狀態
+  f-order-action: 訂單操作
+
+  f-order-status-shipping: 訂單派送
+  f-order-status-shipped: 商品送達
+  f-order-status-cancelled: 訂單取消
+  f-order-status-returned: 商品退貨
 
   order-state-paid: 已付款
   order-state-unpaid: 未付款
