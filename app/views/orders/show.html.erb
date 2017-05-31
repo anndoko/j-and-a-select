@@ -60,7 +60,8 @@
             <tr>
               <td>
                 <strong><%= t('f-billing-name') %>：</strong><%= @order.billing_name%><br/>
-                <strong><%= t('f-billing-address') %>：</strong><%= @order.billing_address%>
+                <strong><%= t('f-billing-address') %>：</strong><%= @order.billing_address%><br/>
+                <strong><%= t('f-payment-method') %>：</strong><%= @order.payment_method %><br/>
               </td>
             </tr>
             <!-- 收件人資訊 -->
@@ -80,24 +81,21 @@
           </tbody>
         </table>
 
+
+        <!--=== 付款（暫） ===-->
+        <% if @order.is_paid? %>
+          <p class='text-center'>
+            <%= t('order-paid') %>
+          </p>
+        <% end %>
+
         <!--=== 申請取消訂單 ===-->
-        <div class='pull-left'>
+        <div class='text-center'>
           <% if @order.order_placed? || @order.paid? %>
             <%= link_to(t('btn-apply-to-cancel'), apply_to_cancel_order_path(@order), method: :post, class: 'btn btn-md btn-default') %>
           <% end %>
         </div>
 
-
-        <!--=== 付款（暫） ===-->
-        <% if !@order.is_paid? %>
-          <div class='group pull-right'>
-            <%= link_to(t('btn-pay'), pay_order_path(@order.token), :method => :post, class: 'btn btn-md btn-default') %>
-          </div>
-        <% else %>
-          <p class='text-center'>
-            <%= t('order-paid') %>
-          </p>
-        <% end %>
       </div>
     </div>
   </div>
