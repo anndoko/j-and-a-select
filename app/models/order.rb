@@ -18,6 +18,11 @@ class Order < ApplicationRecord
 
 
   # 付款 #
+
+  # 付款方式選項
+  PAYMENT_METHOD = ['VISA/Master', 'PayPal', 'Other']
+  validates_inclusion_of :payment_method, :in => PAYMENT_METHOD
+
   # 更新付款方式欄位
   def set_payment_with!(method)
     self.update_columns(payment_method: method)

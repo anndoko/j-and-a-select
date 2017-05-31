@@ -26,6 +26,9 @@ class OrdersController < ApplicationController
         order_item.save
       end
 
+      # 狀態更改為：已付款
+      @order.make_payment! # AASM 機制
+
       # 訂單成立後清空購物車
       current_cart.clear!
 
@@ -41,17 +44,6 @@ class OrdersController < ApplicationController
     @order_items = @order.order_items
   end
 
-  # 付款（暫）
-  def pay
-    @order = Order.find_by_token(params[:id])
-    @order.set_payment_with!(t('order-payment-method'))
-    @order.make_payment! # AASM 機制
-
-    redirect_to order_path(@order.token)
-
-    flash[:notice] = t('message-payment-success')
-  end
-
   # 申請取消訂單
   def apply_to_cancel
     @order = Order.find(params[:id])
@@ -62,7 +54,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :shipping_phone)
+    params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address, :shipping_phone, :payment_method)
   end
 
 

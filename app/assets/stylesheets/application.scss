@@ -888,6 +888,7 @@ body {
 .order-box {
   text-align: left;
 
+
   h3 {
     text-align: center;
   }
@@ -897,6 +898,7 @@ body {
   }
 
   thead{
+    line-height: 200%;
     background-color: #02061A;
     font-size: 16px;
     color: #fff;
@@ -906,6 +908,10 @@ body {
     border: 1px solid #ccc;
   }
 
+  strong {
+    line-height: 250%;
+  }
+
   .btn-default {
     margin: 0 5px 0 5px;
   }
@@ -913,6 +919,8 @@ body {
   img {
     max-width: 75px;
   }
+
+
 }
 
 /*===== Control 後台-控制選單 =====*/
