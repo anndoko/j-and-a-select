@@ -160,6 +160,7 @@ zh-TW:
   f-shipping-phone: 收件人 - 電話（選填）
   f-shipping-address: 收件人 - 收貨地址
   f-input-address: 請輸入地址
+  f-payment-method: 付款方式
 
   billing-name: 真實姓名
   billing-address: 帳單地址
