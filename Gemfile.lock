@@ -53,6 +53,8 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    braintree (2.76.0)
+      builder (>= 2.0.0)
     builder (3.2.3)
     byebug (9.0.6)
     carrierwave (1.1.0)
@@ -232,6 +234,7 @@ DEPENDENCIES
   aasm
   awesome_rails_console
   bootstrap-sass
+  braintree
   byebug
   carrierwave
   coffee-rails (~> 4.2)
