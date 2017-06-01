@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
     @order = Order.find_by_token(params[:id])
     @order_items = @order.order_items
 
-    # 產生 clientToken
+    # 產生 PayPal 付款的 clientToken
     @client_token = Braintree::ClientToken.generate
   end
 
@@ -54,17 +54,19 @@ class OrdersController < ApplicationController
         amount: @order.total,
         payment_method_nonce: nonce
       )
+
       if result
-        # 狀態更改為：已付款
-        @order.make_payment! # AASM 機制
-        redirect_to order_path(@order.token),   flash[:notice] = "刷卡成功"
+        # 付款成功
+        @order.make_payment!
+        redirect_to account_orders_path # 導至我的訂單
       else
         # 錯誤處理
-        flash[:notice] = "刷卡失敗"
+        flash[:notice] = t('message-payment-failed')
       end
+
     else
       # 錯誤處理
-      flash[:notice] = "刷卡失敗"
+      flash[:notice] = t('message-payment-failed')
     end
   end
 
