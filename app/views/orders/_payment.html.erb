@@ -1,5 +1,5 @@
 <!--=== 判斷用戶所選的付款方式 ===-->
-<% if @order.payment_method == 'PayPal' %>
+<% if @order.payment_method == 'PayPal' && !@order.is_paid %>
   <!-- PayPal 付款 -->
   <%= form_for(@order, url: pay_with_paypal_order_path(@order.token), method: :post) do |f| %>
     <div id='payment-form'></div>
