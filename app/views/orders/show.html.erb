@@ -1,5 +1,5 @@
-<div class="product-box">
-  <div class="container">
+<div class='product-box'>
+  <div class='container'>
     <div class='row content-box order-box'>
       <div class='col-md-8 col-md-offset-2'>
         <!--=== 頁面標題 ===-->
@@ -28,7 +28,7 @@
                   <%= image_tag('http://placehold.it/200x200&text=No Pic') %>
                 <% end %>
               </td>
-            <td class="width-50"><%= link_to(order_item.product.name, product_path(order_item.product)) %></td>
+            <td class='width-50'><%= link_to(order_item.product.name, product_path(order_item.product)) %></td>
             <td><%= render_order_product_price(order_item.product) %></td>
             <td>x <%= order_item.quantity %></td>
             <td><%= render_order_product_price_count(order_item.product,order_item.quantity) %></td>
@@ -81,13 +81,8 @@
           </tbody>
         </table>
 
-
-        <!--=== 付款（暫） ===-->
-        <% if @order.is_paid? %>
-          <p class='text-center'>
-            <%= t('order-paid') %>
-          </p>
-        <% end %>
+        <!--=== 付款方式 ===-->
+        <%= render 'orders/payment' %>
 
         <!--=== 申請取消訂單 ===-->
         <div class='text-center'>

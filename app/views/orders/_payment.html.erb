@@ -1,0 +1,17 @@
+<!--=== 判斷用戶所選的付款方式 ===-->
+<% if @order.payment_method == 'PayPal' && !@order.is_paid %>
+  <!-- PayPal 付款 -->
+  <%= form_for(@order, url: pay_with_paypal_order_path(@order.token), method: :post) do |f| %>
+    <div id='payment-form'></div>
+    <%= f.submit t('btn-pay'), class: 'btn btn-md btn-default' %>
+  <% end %>
+
+  <script src='https://js.braintreegateway.com/js/braintree-2.30.0.min.js'></script>
+  <script>
+  var clientToken = '<%= @client_token %>';
+
+  braintree.setup(clientToken, 'dropin', {
+    container: 'payment-form'
+  });
+  </script>
+<% end %>

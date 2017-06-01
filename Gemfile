@@ -64,6 +64,9 @@ gem 'figaro'
 # Intercom 客服系統
 gem 'intercom-rails'
 
+# PayPal 串接
+gem 'braintree'
+
 group :development, :test do
   # Debug 工具
   gem 'byebug', platform: :mri

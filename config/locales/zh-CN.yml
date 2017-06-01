@@ -40,6 +40,7 @@ zh-CN:
   message-clear-cart-success: 已清空购物车。
   message-payment-success: 已完成付款。
   message-cancel-request-sent: 已提交申请，J&A SELECT 会尽速与您联系。
+  message-payment-failed: 付款失败。
 
 #--=== 首页 ===--#
 
@@ -168,7 +169,7 @@ zh-CN:
   shipping-phone: 联络电话
   shipping-address: 收件地址
 
-  btn-order-create: 确认付款
+  btn-order-create: 确认下订
 
   # 订单 #
   order-show: 订单明细
