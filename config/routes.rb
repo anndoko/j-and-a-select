@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   # 訂單 #
   resources :orders do
     member do
-      post :pay # 付款（暫）
+      post :pay_with_paypal # 使用 PayPal 付款
       post :apply_to_cancel # 申請取消訂單
     end
   end

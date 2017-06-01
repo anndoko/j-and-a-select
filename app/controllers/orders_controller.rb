@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :authenticate_user!, only: [:create]
+  before_action :authenticate_user!, only: [:create, :pay]
 
   # 產生訂單
   def create
@@ -42,6 +42,33 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find_by_token(params[:id])
     @order_items = @order.order_items
+
+    # 產生 clientToken
+    @client_token = Braintree::ClientToken.generate
+  end
+
+  # PayPal 付款
+  def pay_with_paypal
+    @order = Order.find_by_token(params[:id])
+
+    if @order
+      nonce = params[:payment_method_nonce]
+
+      result = Braintree::Transaction.sale(
+      amount: @order.total,
+      payment_method_nonce: nonce
+    )
+      if result
+        redirect_to order_path(@order.token),   flash[:notice] = "刷卡成功"
+      else
+        # 錯誤處理
+        flash[:notice] = "刷卡失敗"
+      end
+    else
+      # 錯誤處理
+      flash[:notice] = "刷卡失敗"
+    end
+    
   end
 
   # 申請取消訂單
