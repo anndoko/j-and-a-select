@@ -26,12 +26,8 @@ class OrdersController < ApplicationController
         order_item.save
       end
 
-      # 狀態更改為：已付款
-      @order.make_payment! # AASM 機制
-
       # 訂單成立後清空購物車
       current_cart.clear!
-
       redirect_to order_path(@order.token)
     else
       render 'carts/checkout'
@@ -55,10 +51,12 @@ class OrdersController < ApplicationController
       nonce = params[:payment_method_nonce]
 
       result = Braintree::Transaction.sale(
-      amount: @order.total,
-      payment_method_nonce: nonce
-    )
+        amount: @order.total,
+        payment_method_nonce: nonce
+      )
       if result
+        # 狀態更改為：已付款
+        @order.make_payment! # AASM 機制
         redirect_to order_path(@order.token),   flash[:notice] = "刷卡成功"
       else
         # 錯誤處理
@@ -68,7 +66,6 @@ class OrdersController < ApplicationController
       # 錯誤處理
       flash[:notice] = "刷卡失敗"
     end
-    
   end
 
   # 申請取消訂單
