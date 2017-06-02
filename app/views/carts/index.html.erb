@@ -2,68 +2,78 @@
   <div class="container">
     <!--=== 商品類型 & 品牌選單 ===-->
     <%= render "common/menu" %>
+
     <div class='row content-box'>
-      <div class='col-md-12'>
         <!--=== 頁面標題 ===-->
         <h3><i class='fa fa-shopping-cart'></i> <%= t('cart-index') %></h3>
         <hr />
-        <!--=== 購物車資訊 ===-->
+
         <div class="row">
-          <!-- 如果購物車有商品，顯示商品內容 -->
+
+          <!--=== 如果購物車有商品 ===-->
           <% if current_cart.cart_items.length > 0 %>
 
-            <%=link_to(t('cart-clear'), clear_carts_path, method: :delete, class: 'pull-right' , data: { confirm: t('message-confirm-clear-cart') } ) %>
-
-            <!-- 購物車列表內容 -->
-            <% current_cart.cart_items.each do |cart_item| %>
-              <div class="col-md-12 cart-item-box">
-              <!-- 商品圖片 -->
-                <% if cart_item.product.product_images.present? %>
-                  <!-- 顯示第一張圖片 -->
-                  <%= image_tag(cart_item.product.product_images[0].image.other.url)%>
-                <% else %>
-                  <%= image_tag('http://placehold.it/200x200&text=No Pic') %>
+              <!--=== 顯示購物車內容 ===-->
+              <div class='col-xs-12 col-md-8 cart-item-box'>
+                <% current_cart.cart_items.each do |cart_item| %>
+                    <!-- 商品圖片 -->
+                    <% if cart_item.product.product_images.present? %>
+                      <!-- 顯示第一張圖片 -->
+                      <%= image_tag(cart_item.product.product_images[0].image.other.url)%>
+                    <% else %>
+                      <%= image_tag('http://placehold.it/200x200&text=No Pic') %>
+                    <% end %>
+                    <!-- 商品名稱 -->
+                    <div class="name"><%= link_to(cart_item.product.name, product_path(cart_item.product)) %></div>
+                    <!-- 商品單價 -->
+                    <div class="price"><%= render_product_price(cart_item.product) %></div>
+                    <!-- 商品數量 -->
+                    <div class="quantity"> x <input type="text" name="quantity" value="<%= cart_item.quantity %>" id="<%= cart_item.product.id %>" max="<%= render_product_quantity(cart_item.product) %>" class="cart-quantity-input"></div>
+                    <!-- 商品總價（單錢 x 數量） -->
+                    <div class="count"><%= render_product_price_count(cart_item.product,cart_item.quantity) %></div>
+                    <!-- 移除單項商品 -->
+                    <div>
+                      <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
+                        <i class='fa fa-remove'></i>
+                      <% end %>
+                    </div>
+                    <hr/>
                 <% end %>
-                <div class="name"><%= link_to(cart_item.product.name, product_path(cart_item.product)) %></div>
-                <div class="price"><%= render_product_price(cart_item.product) %></div>
-                <div class="quantity">x <input type="text" name="quantity" value="<%= cart_item.quantity %>" id="<%= cart_item.product.id %>" max="<%= render_product_quantity(cart_item.product) %>" class="cart-quantity-input"></div>
-                <div class="count">- <%= render_product_price_count(cart_item.product,cart_item.quantity) %></div>
-                <div>
-                  <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
-                    <i class='fa fa-close'></i>
-                  <% end %>
-                </div>
-                <hr/>
               </div>
-            <% end %>
-          </div>
-          <!-- 購物車內商品總價 -->
-          <div class='clearfix'>
-            <div class='pull-right'><%= t('f-cart-total') %><%= render_cart_total_price(current_cart) %></div>
-          </div>
-          <!-- 購物車結帳 -->
-          <div class='clearfix'>
-            <div class='pull-right'><%= link_to(t('btn-checkout'), checkout_carts_path, method: :post, class: 'btn btn-md btn-default') %></div>
-          </div>
 
-        <!-- 如果購物車沒有商品 -->
-        <% else %>
+              <!--=== 顯示購物車小計、結帳按鈕 ===-->
+              <div class='col-xs-12 col-md-4 cart-checkout-box'>
+                <!-- 商品總價 -->
+                <div class='clearfix'>
+                  <%= t('f-cart-total') %><%= render_cart_total_price(current_cart) %>
+                </div>
+                <!-- 前往結帳 -->
+                <div class='clearfix'>
+                  <%= link_to(t('btn-checkout'), checkout_carts_path, method: :post, class: 'btn btn-md btn-default') %>
+                </div>
+              </div>
 
-          <div class="buy-box">
-            <h3><%= t('cart-no-data') %></h3>
-            <h3><%= t('cart-suggest') %></h3>
-            <br/>
-            <!-- 顯示隨機推薦商品 -->
-            <div class='col-md-8 col-md-offset-2'>
-              <%= render "shared/suggest" %>
-            </div>
+          <!--=== 如果購物車沒有商品 ===-->
+          <% else %>
+
             <div class='col-md-12'>
-              <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-lg btn-default' ) %>
+              <div class="buy-box">
+                <h3><%= t('cart-no-data') %></h3>
+                <h3><%= t('cart-suggest') %></h3>
+                <br/>
+                <!-- 隨機推薦商品 -->
+                <div class='col-md-8 col-md-offset-2'>
+                  <%= render "shared/suggest" %>
+                </div>
+                <div class='col-md-12'>
+                  <%= link_to(t('btn-buy-now'), products_path, class:'btn btn-lg btn-default' ) %>
+                </div>
+              </div>
             </div>
-          </div>
 
-        <% end %>
-      </div>
+          <% end %>
+
+        </div>
     </div>
   </div>
 </div>
