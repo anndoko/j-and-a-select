@@ -58,15 +58,17 @@ class OrdersController < ApplicationController
       if result
         # 付款成功
         @order.make_payment!
-        redirect_to account_orders_path # 導至我的訂單
+        redirect_to order_path(@order.token)
       else
         # 錯誤處理
         flash[:notice] = t('message-payment-failed')
+        render :pay_with_paypal
       end
 
     else
       # 錯誤處理
       flash[:notice] = t('message-payment-failed')
+      render :pay_with_paypal
     end
   end
 
