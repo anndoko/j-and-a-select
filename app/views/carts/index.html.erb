@@ -16,15 +16,17 @@
               <!--=== 顯示購物車內容 ===-->
               <div class='col-xs-12 col-md-8 cart-item-box'>
                 <% current_cart.cart_items.each do |cart_item| %>
-                    <!-- 商品圖片 -->
-                    <% if cart_item.product.product_images.present? %>
-                      <!-- 顯示第一張圖片 -->
-                      <%= image_tag(cart_item.product.product_images[0].image.other.url)%>
-                    <% else %>
-                      <%= image_tag('http://placehold.it/200x200&text=No Pic') %>
-                    <% end %>
-                    <!-- 商品名稱 -->
-                    <div class="name"><%= link_to(cart_item.product.name, product_path(cart_item.product)) %></div>
+
+                      <!-- 商品圖片 -->
+                      <% if cart_item.product.product_images.present? %>
+                        <!-- 顯示第一張圖片 -->
+                        <%= image_tag(cart_item.product.product_images[0].image.other.url)%>
+                      <% else %>
+                        <%= image_tag('http://placehold.it/200x200&text=No Pic') %>
+                      <% end %>
+                      <!-- 商品名稱 -->
+                      <div class="name"><%= link_to(cart_item.product.name, product_path(cart_item.product)) %></div>
+
                     <!-- 商品單價 -->
                     <div class="price"><%= render_product_price(cart_item.product) %></div>
                     <!-- 商品數量 -->
@@ -32,21 +34,48 @@
                     <!-- 商品總價（單錢 x 數量） -->
                     <div class="count"><%= render_product_price_count(cart_item.product,cart_item.quantity) %></div>
                     <!-- 移除單項商品 -->
-                    <div>
+                    <div class="remove">
                       <%= link_to cart_item_path(cart_item.product_id), method: :delete do %>
                         <i class='fa fa-remove'></i>
                       <% end %>
                     </div>
+
                     <hr/>
+                    
                 <% end %>
               </div>
 
               <!--=== 顯示購物車小計、結帳按鈕 ===-->
               <div class='col-xs-12 col-md-4 cart-checkout-box'>
+
+                <!-- 小計、寄送方式 -->
+                <div class='clearfix'>
+                  <span class='pull-left'><%= t('f-cart-product-count') %></span>
+                  <span class='pull-right'><%= render_cart_total_price(current_cart) %></span>
+                </div>
+
+                </br>
+
+                <div class='clearfix'>
+                  <span class='pull-left'><%= t('f-cart-shipping-fee') %></span>
+                  <span class='pull-right'><%= t('f-cart-free-shipping') %></span>
+                </div>
+
+                <hr/>
+
                 <!-- 商品總價 -->
                 <div class='clearfix'>
-                  <%= t('f-cart-total') %><%= render_cart_total_price(current_cart) %>
+                  <span class='pull-left'><%= t('f-cart-total') %></span>
+                  <span class='pull-right'><%= render_cart_total_price(current_cart) %></span>
                 </div>
+
+                <br/>
+
+                <!-- 購物須知 -->
+                <div class='clearfix notice'>
+                  <p><%= t('cart-notice') %></p>
+                </div>
+
                 <!-- 前往結帳 -->
                 <div class='clearfix'>
                   <%= link_to(t('btn-checkout'), checkout_carts_path, method: :post, class: 'btn btn-md btn-default') %>
