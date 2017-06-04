@@ -143,10 +143,13 @@ zh-TW:
   f-cart-product-price: 商品單價
   f-cart-product-quantity: 商品數量
   f-cart-product-count: 小計
+  f-cart-shipping-fee: 運費
+  f-cart-free-shipping: 免運費
   f-cart-total: 合計：
 
   btn-checkout: 前往結帳
 
+  cart-notice: 提醒您：請於訂單確認後一小時內完成付款手續。
   cart-no-data: 您尚未加入任何商品。
   cart-suggest: J & A SELECT 誠摯向您推薦：
 

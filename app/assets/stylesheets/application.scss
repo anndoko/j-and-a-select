@@ -818,7 +818,7 @@ body {
 /*===== Cart 網站-購物車設定 =====*/
 .cart-item-box {
   text-align: left;
-  margin: 5px 0 5px 0;
+  margin: 30px 0 5px 0;
 
   img {
     max-width: 75px;
@@ -840,7 +840,11 @@ body {
   }
 
   .price {
-    min-width: 100px;
+    min-width: 50px;
+  }
+
+  .remove {
+    min-width: 10px;
   }
 
   input {
@@ -853,6 +857,19 @@ body {
 
   input:focus {
     border: 1px solid #000;
+  }
+}
+
+.cart-checkout-box {
+  text-align: center;
+  margin: 30px 0 5px 0;
+  padding: 50px;
+  background-color: #EEEEEE;
+
+  .notice {
+    margin: 20px 0 0 0;
+    text-align: left;
+    color: #999999;
   }
 }
 
