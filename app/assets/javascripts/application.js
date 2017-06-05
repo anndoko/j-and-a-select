@@ -20,7 +20,7 @@
 //= require_tree .
 
 
-$(window).scroll(function () {
+$(document).on('scroll', function () {
   /*===== Welcome#index - 首頁導航列變化 =====*/
 	if ($(this).scrollTop() > 125) {
 		$('#navbar').addClass('show_bgcolor')
@@ -37,9 +37,7 @@ $(window).scroll(function () {
 
   $(".goTop").click(
     function() {
-      $('html,body').animate({
-          scrollTop: 0
-      }, 700);
+      $('html,body').scrollTop(0);
     });
 })
 
@@ -83,6 +81,8 @@ $(document).on('turbolinks:load', function() {
     var numMax = $(this).attr("max");
     if (num > numMax) {
       num = numMax;
+    } else if (num < 0) {
+      num = 1
     }
     $(this).val(num);
     e.preventDefault();
@@ -95,6 +95,8 @@ $(document).on('turbolinks:load', function() {
     var numMax = $(this).attr("max");
     if (num > numMax) {
       num = numMax;
+    } else if (num < 0) {
+      num = 1
     }
     $(this).val(num);
     e.preventDefault();
