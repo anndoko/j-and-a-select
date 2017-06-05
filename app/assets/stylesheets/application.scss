@@ -756,8 +756,17 @@ body {
         color: #999;
         font-weight: 500;
       }
-    }
 
+      .quantity-button {
+        margin-top: -2px;
+      }
+
+      .quantity-stock {
+        margin-left: 5px;
+        color: red;
+        font-weight: 500;
+      }
+    }
   }
 }
 
