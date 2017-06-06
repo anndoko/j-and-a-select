@@ -6,6 +6,12 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta property="og:title" content=<%= @product.name %>/>
+    <% if @product_images.present? %>
+      <% @product_images.each_with_index do |p| %>
+        <meta property="og:image" content=<%= p.image.main.url %> />
+      <% end %>
+    <% end %>
   </head>
   <body>
     <div class="container-fluid">
