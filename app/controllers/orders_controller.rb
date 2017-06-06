@@ -40,7 +40,7 @@ class OrdersController < ApplicationController
     @order_items = @order.order_items
 
     # 產生 PayPal 付款的 clientToken
-    @client_token = Braintree::ClientToken.generate
+    # @client_token = Braintree::ClientToken.generate
   end
 
   # PayPal 付款
