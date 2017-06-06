@@ -1,3 +1,4 @@
+<meta property="og:image" content=<%= @product_images.first.image.main.url%> />
 <div class='product-box product-show'>
   <div class='container'>
     <!--=== 商品類型 & 品牌選單 ===-->
@@ -91,7 +92,7 @@
               <% end %>
             </div>
             <div class='right-box share'>
-              <%= social_share_button_tag(@product.name, :allow_sites => %w(facebook twitter google_plus wechat weibo), :image => @product_images.first.image.main.url , desc: @product.description, via: 'J&A SELECT - '+@product.name, 'data-twitter-title' => 'J&A SELECT - '+@product.name, :rel => "twipsy") %>
+              <%= social_share_button_tag(@product.name, :allow_sites => %w(facebook twitter google_plus wechat weibo), :image => @product_images.first.image.main.url , desc: @product.description, via: 'J&A SELECT - '+@product.name, 'data-twitter-title' => 'J&A SELECT - '+@product.name) %>
             </div>
           </div>
           <!--=== 如果庫存數量大於零 ===-->
