@@ -81,6 +81,26 @@
           </tbody>
         </table>
 
+        <!--=== 付款方式 ===-->
+        <%= render 'orders/payment' %>
+
+        <br/>
+
+        <!--=== 已付款 ===-->
+        <% if @order.is_paid? %>
+          <h4 class='text-center'>
+            <%= t('order-paid') %>
+          </h4>
+        <% end %>
+
+        <br/>
+
+        <!--=== 申請取消訂單 ===-->
+        <div class='text-center'>
+          <% if @order.order_placed? || @order.paid? %>
+            <%= link_to(t('btn-apply-to-cancel'), apply_to_cancel_order_path(@order), method: :post, class: 'btn btn-md btn-default') %>
+          <% end %>
+        </div>
 
       </div>
     </div>
