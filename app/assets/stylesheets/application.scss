@@ -914,9 +914,9 @@ body {
 .order-box {
   text-align: left;
 
-
-  h3 {
+  h3,h4 {
     text-align: center;
+    margin-top: 15px;
   }
 
   table{
@@ -946,7 +946,17 @@ body {
     max-width: 75px;
   }
 
+  .btn-default {
+    color: #666 !important;
+  }
 
+  .btn-default:hover,
+  .btn-default:active,
+  .btn-default:focus {
+    background-color: #fff !important;
+    border-color: #eb5424 !important;
+    color: #eb5424 !important;
+  }
 }
 
 /*===== Control 後台-控制選單 =====*/
