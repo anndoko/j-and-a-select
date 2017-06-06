@@ -3,7 +3,7 @@
   <!-- PayPal 付款 -->
   <%= form_for(@order, url: pay_with_paypal_order_path(@order.token), method: :post) do |f| %>
     <div id='payment-form'></div>
-    <div class="left-box"><%= f.submit t('btn-pay'), class: 'btn btn-md btn-default' %></div>
+    <div class="payment-action"><%= f.submit t('btn-pay'), class: 'btn btn-md btn-default' %></div>
   <% end %>
 
   <script src='https://js.braintreegateway.com/js/braintree-2.30.0.min.js'></script>

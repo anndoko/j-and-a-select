@@ -82,13 +82,11 @@
         </table>
 
         <!--=== 付款方式 ===-->
-        <div>
-          <%= render 'orders/payment' %>
-        </div>
+        <%= render 'orders/payment' %>      
 
         <!--=== 已付款 ===-->
         <% if @order.is_paid? %>
-        <h4><%= t('order-paid') %></h4>
+          <h4><%= t('order-paid') %></h4>
         <% end %>
 
       </div>

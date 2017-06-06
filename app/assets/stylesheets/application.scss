@@ -908,6 +908,13 @@ body {
       color: #eb5424;
     }
   }
+
+  .paymant {
+    input {
+      height: auto;
+      margin: 0 2.5px 0 12.5px;
+    }
+  }
 }
 
 /*===== Order 網站-訂單歷史 =====*/
@@ -944,6 +951,11 @@ body {
 
   img {
     max-width: 75px;
+  }
+
+  .payment-action {
+    margin-top: 35px;
+    text-align: center;
   }
 
   .btn-default {
