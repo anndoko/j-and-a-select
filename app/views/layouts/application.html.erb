@@ -14,7 +14,6 @@
         <% @product_images.each_with_index do |p| %>
           <meta property="og:image" content="<%= p.image.main.url %>" />
         <% end %>
-        <meta name="twitter:image" content="<%= @product_images.first.image.main.url %>">
       <% end %>
     <% end %>
   </head>
