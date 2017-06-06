@@ -908,15 +908,22 @@ body {
       color: #eb5424;
     }
   }
+
+  .paymant {
+    input {
+      height: auto;
+      margin: 0 2.5px 0 12.5px;
+    }
+  }
 }
 
 /*===== Order 網站-訂單歷史 =====*/
 .order-box {
   text-align: left;
 
-
-  h3 {
+  h3,h4 {
     text-align: center;
+    margin-top: 15px;
   }
 
   table{
@@ -946,7 +953,22 @@ body {
     max-width: 75px;
   }
 
+  .payment-action {
+    margin-top: 35px;
+    text-align: center;
+  }
 
+  .btn-default {
+    color: #666 !important;
+  }
+
+  .btn-default:hover,
+  .btn-default:active,
+  .btn-default:focus {
+    background-color: #fff !important;
+    border-color: #eb5424 !important;
+    color: #eb5424 !important;
+  }
 }
 
 /*===== Control 後台-控制選單 =====*/

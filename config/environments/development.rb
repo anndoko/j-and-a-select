@@ -58,5 +58,4 @@ Rails.application.configure do
   Braintree::Configuration.public_key = "82mtqv6yb2kdr8zf"
   Braintree::Configuration.private_key = "7f3ce3723158d751bf3da4c274d881a5"
 
-
 end

@@ -57,7 +57,7 @@
               <!-- 付款方式 -->
               <legend><%= t('f-payment-method') %></legend>
               <% Order::PAYMENT_METHOD.each do |payment| %>
-                <label>
+                <label class="paymant">
                   <%= f.radio_button :payment_method, payment %>
                   <%= t(payment, :scope => 'order.payment_method') %>
                 </label>
