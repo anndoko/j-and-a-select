@@ -9,11 +9,20 @@
     <% if current_page?(controller: 'products', action: 'index') %>
     <% elsif current_page?(controller: 'products', action: 'search') %>
     <% elsif current_page?(controller: 'products', action: 'show') %>
-      <meta property="og:title" content=<%= @product.name %>/>
+      <meta property="og:title" content="<%= simple_format(@product.name) %>"/>
       <% if @product_images.present? %>
         <% @product_images.each_with_index do |p| %>
-          <meta property="og:image" content=<%= p.image.main.url %> />
+          <meta property="og:image" content="<%= p.image.main.url %>" />
         <% end %>
+        <meta itemprop="name" content="<%= @product.name %>">
+        <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="123">
+        <meta name="twitter:title" content="Page Title">
+        <meta name="twitter:description" content="Page description less than 200 characters">
+        <meta name="twitter:creator" content="@author_handle">
+        <!-- Twitter summary card with large image must be at least 280x150px -->
+        <meta name="twitter:image:src" content="<%= @product_images.first.image.main.url %>">
       <% end %>
     <% end %>
   </head>
