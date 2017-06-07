@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:add_to_wish_list, :remove_from_wish_list]
   before_action :validate_search_key, only: [:search]
 
+  layout 'product'
+
   def index
     # 商品類型 / 品牌
     @category_groups = CategoryGroup.published
