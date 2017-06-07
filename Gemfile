@@ -45,7 +45,10 @@ gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 gem 'font-awesome-rails'
 gem 'masonry-rails'
+
+# 社群分享
 gem 'social-share-button'
+gem 'seo_helper'
 
 # 搜尋功能
 gem 'ransack'
