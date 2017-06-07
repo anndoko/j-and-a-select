@@ -1,7 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t('j-and-a-select') %></title>
+    <%= render_page_title_tag %>
+    <%= render_page_description_meta_tag %>
+    <%= render_page_keywords_meta_tag %>
+    <%= render_page_image_link_tag %>
+    <meta property="og:title"       content="<%= page_title %>"/>
+    <meta property="og:description" content="<%= page_description %>"/>
+    <meta property="og:image"       content="<%= page_image %>"/>
+
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
